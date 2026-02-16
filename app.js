@@ -343,7 +343,10 @@ async function startPractice() {
     // Request microphone permission explicitly (needed for PWA on Android)
     try {
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        // Release immediately so SpeechRecognition can use the mic
         stream.getTracks().forEach(t => t.stop());
+        // Small delay to let the mic fully release
+        await new Promise(r => setTimeout(r, 300));
     } catch(err) {
         alert('Microphone access is required for this app. Please allow microphone permission and try again.');
         return;
@@ -605,6 +608,14 @@ function speakFeedback(text, onDone) {
 
 // Pre-warm microphone - keeps voice-activated mics from needing a "wake" word
 async function preWarmMicrophone() {
+    // On Android/mobile, keeping getUserMedia open blocks SpeechRecognition
+    // Only pre-warm on desktop where voice-activated mics need it
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+        console.log('Mobile detected - skipping mic pre-warm (not needed)');
+        return;
+    }
+    
     try {
         if (!microphoneStream) {
             microphoneStream = await navigator.mediaDevices.getUserMedia({ 
@@ -752,6 +763,12 @@ function startListening() {
         ttsQueueBusy = false;
     }
     startListening._retries = 0;
+    
+    // Release any open mic stream so SpeechRecognition can use it (Android fix)
+    if (microphoneStream && !settings.useWhisper) {
+        microphoneStream.getTracks().forEach(t => t.stop());
+        microphoneStream = null;
+    }
     
     // Use Whisper if enabled and configured
     if (settings.useWhisper && settings.openaiApiKey && microphoneStream) {
