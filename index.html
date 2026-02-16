@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#7c6aef">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>German Vocabulary Practice</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>German Vocabulary Practice</h1>
+            <div class="stats-summary">
+                <span id="totalMastered">0</span> words mastered
+            </div>
+        </header>
+
+        <!-- Main Practice Area -->
+        <main class="main-content">
+            <!-- Practice Screen -->
+            <div id="practiceScreen" class="screen active">
+                <div class="status-indicator" id="statusIndicator">
+                    <div class="status-dot" id="statusDot"></div>
+                    <span id="statusText">Ready</span>
+                </div>
+                <div class="audio-tips" id="audioTips">
+                    <p>💡 Speak clearly into your microphone. The app will listen for your English translation.</p>
+                </div>
+
+                <div class="word-display">
+                    <div class="current-word" id="currentWord">Click Start to begin</div>
+                    <div class="word-info" id="wordInfo"></div>
+                </div>
+
+                <div class="answer-section">
+                    <div class="answer-display" id="answerDisplay"></div>
+                    <div class="feedback" id="feedback"></div>
+                </div>
+
+                <div class="controls">
+                    <button id="startBtn" class="btn btn-primary">Start Practice</button>
+                    <button id="repeatBtn" class="btn btn-secondary" disabled>Repeat Word</button>
+                    <button id="stopBtn" class="btn btn-secondary" disabled>Stop</button>
+                </div>
+
+                <div class="progress-bar-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="sessionProgress">0 / 0</span> words this session
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Screen -->
+            <div id="statsScreen" class="screen">
+                <h2>Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="statTotalMastered">0</div>
+                        <div class="stat-label">Words Mastered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="statMasteryPercentage">0%</div>
+                        <div class="stat-label">Mastery Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="statStreak">0</div>
+                        <div class="stat-label">Day Streak</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="statToday">0</div>
+                        <div class="stat-label">Learned Today</div>
+                    </div>
+                </div>
+
+                <div class="category-stats" id="categoryStats"></div>
+
+                <div class="mastered-words-section">
+                    <h3>Mark Words as Known</h3>
+                    <p style="color: var(--text-secondary); font-size: 13px; margin-bottom: 12px;">
+                        Search and mark words you already know so they won't appear in practice.
+                    </p>
+                    <input type="text" id="wordSearchInput" placeholder="Search German or English..." 
+                        style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; 
+                        font-size: 14px; background: var(--bg-secondary); color: var(--text-primary); outline: none; margin-bottom: 12px;">
+                    <div id="wordSearchResults" style="max-height: 300px; overflow-y: auto;"></div>
+                    <button id="markAllKnownBtn" class="btn btn-secondary" style="margin-top: 12px; width: 100%;">
+                        Mark All as Known
+                    </button>
+
+                    <h4 style="margin-top: 24px; margin-bottom: 8px;">Bulk Import Known Words</h4>
+                    <p style="color: var(--text-secondary); font-size: 13px; margin-bottom: 8px;">
+                        Paste a list of words you already know (one per line, or separated by commas). 
+                        Works with both German and English words.
+                    </p>
+                    <textarea id="bulkImportText" rows="6" 
+                        placeholder="Paste words here, e.g.:&#10;Haus&#10;Wasser&#10;house, water, book&#10;gehen, stehen"
+                        style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; 
+                        font-size: 14px; background: var(--bg-secondary); color: var(--text-primary); outline: none; 
+                        resize: vertical; font-family: inherit;"></textarea>
+                    <button id="bulkImportBtn" class="btn btn-primary" style="margin-top: 8px; width: 100%;">
+                        Import as Known
+                    </button>
+                    <div id="bulkImportResult" style="margin-top: 8px; padding: 8px 12px; border-radius: 6px; 
+                        font-size: 13px; background: var(--bg-tertiary); display: none;"></div>
+                </div>
+
+                <div class="mastered-words-section">
+                    <h3>Mastered Words</h3>
+                    <div class="mastered-words-list" id="masteredWordsList"></div>
+                </div>
+
+                <div class="mastered-words-section">
+                    <h3>Add Custom Words</h3>
+                    <p style="color: var(--text-secondary); font-size: 13px; margin-bottom: 12px;">
+                        Add your own German words to practice.
+                    </p>
+
+                    <div class="settings-group">
+                        <label>
+                            <span>German Word</span>
+                            <input type="text" id="newGerman" placeholder="e.g. Katze">
+                        </label>
+                        <label>
+                            <span>English Translation</span>
+                            <input type="text" id="newEnglish" placeholder="e.g. cat">
+                        </label>
+                        <label>
+                            <span>Synonyms (optional, comma-separated)</span>
+                            <input type="text" id="newSynonyms" placeholder="e.g. kitty, kitten">
+                        </label>
+                        <label>
+                            <span>Article (optional)</span>
+                            <select id="newArticle" style="padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; 
+                                font-size: 14px; background: var(--bg-secondary); color: var(--text-primary);">
+                                <option value="">None</option>
+                                <option value="der">der (masculine)</option>
+                                <option value="die">die (feminine)</option>
+                                <option value="das">das (neuter)</option>
+                            </select>
+                        </label>
+                        <button id="addSingleWordBtn" class="btn btn-primary" style="width: 100%;">Add Word</button>
+                        <div id="addWordResult" style="margin-top: 8px; padding: 8px 12px; border-radius: 6px; 
+                            font-size: 13px; display: none;"></div>
+                    </div>
+
+                    <h4 style="margin-top: 24px; margin-bottom: 8px;">Bulk Add Words</h4>
+                    <p style="color: var(--text-secondary); font-size: 13px; margin-bottom: 8px;">
+                        Paste multiple words, one per line. Format: <strong>German = English</strong><br>
+                        Optionally add synonyms: <strong>German = English, synonym1, synonym2</strong>
+                    </p>
+                    <textarea id="bulkAddText" rows="6" 
+                        placeholder="Paste words here, e.g.:&#10;Katze = cat, kitty&#10;Hund = dog&#10;Vogel = bird&#10;Fisch = fish"
+                        style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; 
+                        font-size: 14px; background: var(--bg-secondary); color: var(--text-primary); outline: none; 
+                        resize: vertical; font-family: inherit;"></textarea>
+                    <button id="bulkAddWordsBtn" class="btn btn-primary" style="margin-top: 8px; width: 100%;">Add All Words</button>
+                    <div id="bulkAddResult" style="margin-top: 8px; padding: 8px 12px; border-radius: 6px; 
+                        font-size: 13px; background: var(--bg-tertiary); display: none;"></div>
+
+                    <h4 style="margin-top: 24px; margin-bottom: 8px;">My Custom Words <span id="customWordCount" style="color: var(--text-tertiary); font-weight: 400;">(0)</span></h4>
+                    <div id="customWordsList" style="max-height: 300px; overflow-y: auto;"></div>
+                </div>
+
+                <button class="btn btn-secondary" onclick="showScreen('practiceScreen')">Back to Practice</button>
+            </div>
+
+            <!-- Settings Screen -->
+            <div id="settingsScreen" class="screen">
+                <h2>Settings</h2>
+                <div class="settings-group">
+                    <label>
+                        <span>Mastery Threshold (correct answers needed)</span>
+                        <input type="number" id="masteryThreshold" min="1" max="10" value="3">
+                    </label>
+                    <label>
+                        <span>TTS Speed</span>
+                        <input type="range" id="ttsSpeed" min="0.5" max="2" step="0.1" value="1">
+                        <span id="ttsSpeedValue">1.0x</span>
+                    </label>
+                    <label>
+                        <span>Words per Session</span>
+                        <input type="number" id="wordsPerSession" min="5" max="50" value="20">
+                    </label>
+                </div>
+
+                <h3 style="margin-top: 30px;">Speech Recognition</h3>
+                <div class="settings-group">
+                    <label style="display: flex; align-items: center; gap: 10px;">
+                        <input type="checkbox" id="useWhisper" style="width: auto;">
+                        <span>Use OpenAI Whisper (optional - even better recognition)</span>
+                    </label>
+                    <label>
+                        <span>OpenAI API Key</span>
+                        <input type="password" id="openaiApiKey" placeholder="sk-...">
+                        <small style="color: var(--text-secondary); font-size: 12px; display: block; margin-top: 5px;">
+                            Get a free API key at <a href="https://platform.openai.com/api-keys" target="_blank" style="color: var(--accent);">platform.openai.com</a><br>
+                            Cost: ~$0.006/minute (less than 5 øre per word)
+                        </small>
+                    </label>
+                    <div id="whisperStatus" style="padding: 8px 12px; border-radius: 6px; font-size: 13px; display: none;"></div>
+                </div>
+
+                <button class="btn btn-secondary" onclick="showScreen('practiceScreen')">Back to Practice</button>
+            </div>
+        </main>
+
+        <!-- Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-btn" onclick="showScreen('practiceScreen')">
+                <span>Practice</span>
+            </button>
+            <button class="nav-btn" onclick="showScreen('statsScreen')">
+                <span>Statistics</span>
+            </button>
+            <button class="nav-btn" onclick="showScreen('settingsScreen')">
+                <span>Settings</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then(reg => console.log('Service Worker registered'))
+                .catch(err => console.log('SW registration failed:', err));
+        }
+    </script>
+</body>
+</html>
