@@ -188,22 +188,33 @@ function saveSettings() {
 }
 
 // Setup Speech Recognition with improved settings
+function debugLog(msg) {
+    console.log('[DEBUG]', msg);
+    const fb = document.getElementById('feedback');
+    if (fb) fb.textContent = msg;
+}
+
 function setupSpeechRecognition() {
-    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-        alert('Speech recognition is not supported in your browser. Please use Chrome or Edge.');
+    const hasSR = ('SpeechRecognition' in window) || ('webkitSpeechRecognition' in window);
+    debugLog('Speech API available: ' + hasSR);
+    
+    if (!hasSR) {
+        alert('Speech recognition is not supported in your browser. Please use Chrome.');
         return;
     }
     
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     recognition = new SpeechRecognition();
-    recognition.lang = 'en-US'; // English
+    recognition.lang = 'en-US';
     recognition.continuous = false;
-    recognition.interimResults = true; // Show interim results for better feedback
-    recognition.maxAlternatives = 3; // Get multiple alternatives for better accuracy
+    recognition.interimResults = true;
+    recognition.maxAlternatives = 3;
+    
+    debugLog('Recognition object created');
     
     recognition.onstart = () => {
         isListening = true;
-        // Show "get ready" while mic calibrates, then "speak now" after 500ms
+        debugLog('Recognition started - listening');
         updateStatus('listening', 'Listening...');
         const tips = document.getElementById('audioTips');
         if (tips) tips.style.display = 'none';
@@ -279,7 +290,7 @@ function setupSpeechRecognition() {
     };
     
     recognition.onerror = (event) => {
-        console.error('Recognition error:', event.error);
+        debugLog('Recognition ERROR: ' + event.error);
         isListening = false;
         
         if (event.error === 'no-speech') {
@@ -306,6 +317,7 @@ function setupSpeechRecognition() {
     };
     
     recognition.onend = () => {
+        debugLog('Recognition ended');
         isListening = false;
         const tips = document.getElementById('audioTips');
         if (tips && currentWord) tips.style.display = 'block';
@@ -786,16 +798,17 @@ function startListening() {
     clearTimeout(interimTimeout);
     
     try {
+        debugLog('Calling recognition.start()...');
         recognition.start();
+        debugLog('recognition.start() called OK');
     } catch (e) {
-        console.error('Error starting recognition:', e);
-        // Recreate recognition if it's broken
+        debugLog('recognition.start() FAILED: ' + e.message);
         isListening = false;
         setupSpeechRecognition();
         setTimeout(() => {
             if (currentWord && !isListening && !waitingForNextWord) {
                 try { recognition.start(); } catch(e2) {
-                    console.error('Recognition restart failed:', e2);
+                    debugLog('Retry also failed: ' + e2.message);
                 }
             }
         }, 300);
