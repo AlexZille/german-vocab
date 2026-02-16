@@ -334,9 +334,18 @@ function setupSpeechRecognition() {
 }
 
 // Start Practice Session
-function startPractice() {
+async function startPractice() {
     if (vocabulary.length === 0) {
         alert('Vocabulary not loaded yet. Please wait and try again.');
+        return;
+    }
+    
+    // Request microphone permission explicitly (needed for PWA on Android)
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        stream.getTracks().forEach(t => t.stop());
+    } catch(err) {
+        alert('Microphone access is required for this app. Please allow microphone permission and try again.');
         return;
     }
     
