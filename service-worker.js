@@ -1,4 +1,4 @@
-const CACHE_NAME = 'german-vocab-v1';
+const CACHE_NAME = 'german-vocab-v2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -32,31 +32,16 @@ self.addEventListener('activate', event => {
   self.clients.claim();
 });
 
-// Fetch: serve from cache first, fall back to network
+// Fetch: NETWORK FIRST - always try to get fresh content, fall back to cache
 self.addEventListener('fetch', event => {
-  // Skip non-GET requests and chrome-extension requests
   if (event.request.method !== 'GET' || event.request.url.startsWith('chrome-extension')) {
     return;
   }
 
   event.respondWith(
-    caches.match(event.request).then(cachedResponse => {
-      if (cachedResponse) {
-        // Return cached version but also update cache in background
-        event.waitUntil(
-          fetch(event.request).then(networkResponse => {
-            if (networkResponse && networkResponse.status === 200) {
-              caches.open(CACHE_NAME).then(cache => {
-                cache.put(event.request, networkResponse);
-              });
-            }
-          }).catch(() => {})
-        );
-        return cachedResponse;
-      }
-      
-      // Not in cache, fetch from network
-      return fetch(event.request).then(networkResponse => {
+    fetch(event.request)
+      .then(networkResponse => {
+        // Got fresh response - update cache and return it
         if (networkResponse && networkResponse.status === 200) {
           const responseClone = networkResponse.clone();
           caches.open(CACHE_NAME).then(cache => {
@@ -64,7 +49,10 @@ self.addEventListener('fetch', event => {
           });
         }
         return networkResponse;
-      });
-    })
+      })
+      .catch(() => {
+        // Network failed - serve from cache (offline mode)
+        return caches.match(event.request);
+      })
   );
 });
