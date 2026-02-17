@@ -1263,6 +1263,7 @@ function updateStatisticsScreen() {
         userProgress.statistics.masteryPercentage + '%';
     document.getElementById('statStreak').textContent = userProgress.statistics.streakDays;
     document.getElementById('statToday').textContent = userProgress.statistics.wordsLearnedToday;
+    document.getElementById('statTotalWords').textContent = vocabulary.length;
     
     // Category stats
     const categoryStatsDiv = document.getElementById('categoryStats');
