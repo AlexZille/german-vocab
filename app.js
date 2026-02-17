@@ -36,7 +36,9 @@ let settings = {
     ttsSpeed: 1.0,
     wordsPerSession: 20,
     openaiApiKey: '',
-    useWhisper: false
+    useWhisper: false,
+    excludedCategories: ['places', 'names'],
+    enableDictionary: false
 };
 
 // Initialize App
@@ -44,6 +46,7 @@ async function init() {
     await loadVocabulary();
     loadCustomWords();
     applyWordOverrides();
+    applyDeletedWords();
     loadProgress();
     loadSettings();
     
@@ -107,6 +110,21 @@ async function init() {
             initMicrophone();
         }
     });
+
+    // Dictionary toggle
+    var dictToggle = document.getElementById('enableDictionary');
+    if (dictToggle) {
+        dictToggle.addEventListener('change', (e) => {
+            settings.enableDictionary = e.target.checked;
+            saveSettings();
+            var dictSection = document.getElementById('dictionarySection');
+            if (dictSection) dictSection.style.display = e.target.checked ? 'block' : 'none';
+        });
+    }
+
+    // Dictionary lookup button
+    var lookupBtn = document.getElementById('dictLookupBtn');
+    if (lookupBtn) lookupBtn.addEventListener('click', lookupWord);
 }
 
 // Load Vocabulary
@@ -175,6 +193,12 @@ function loadSettings() {
     document.getElementById('openaiApiKey').value = settings.openaiApiKey || '';
     document.getElementById('useWhisper').checked = settings.useWhisper || false;
     updateWhisperStatus();
+
+    // Dictionary toggle
+    var dictToggle = document.getElementById('enableDictionary');
+    if (dictToggle) dictToggle.checked = settings.enableDictionary || false;
+    var dictSection = document.getElementById('dictionarySection');
+    if (dictSection) dictSection.style.display = settings.enableDictionary ? 'block' : 'none';
     
     // Pre-initialize microphone if Whisper is enabled
     if (settings.useWhisper && settings.openaiApiKey) {
@@ -386,7 +410,10 @@ function getSessionWords() {
     const masteredIds = new Set(userProgress.masteredWords.map(w => w.wordId));
     const now = new Date();
     
-    // Get words due for review (exclude manually marked words)
+    // Categories to skip
+    const excludedCats = new Set((settings.excludedCategories || []).map(c => c.toLowerCase()));
+
+    // Get words due for review (exclude manually marked words and excluded categories)
     const reviewWords = userProgress.masteredWords
         .filter(w => {
             if (w.manuallyMarked) return false;
@@ -397,16 +424,16 @@ function getSessionWords() {
             const vocabWord = vocabulary.find(v => v.id === w.wordId);
             return vocabWord ? { ...vocabWord, isReview: true, progressData: w } : null;
         })
-        .filter(w => w !== null);
+        .filter(w => w !== null && !excludedCats.has((w.category || '').toLowerCase()));
     
     // Get IDs of manually marked words to fully exclude them
     const manuallyMarkedIds = new Set(
         userProgress.masteredWords.filter(w => w.manuallyMarked).map(w => w.wordId)
     );
     
-    // Get new words not yet mastered (exclude manually marked)
+    // Get new words not yet mastered (exclude manually marked + excluded categories)
     const newWords = vocabulary
-        .filter(w => !masteredIds.has(w.id) && !manuallyMarkedIds.has(w.id))
+        .filter(w => !masteredIds.has(w.id) && !manuallyMarkedIds.has(w.id) && !excludedCats.has((w.category || '').toLowerCase()))
         .slice(0, Math.floor(settings.wordsPerSession * 0.3)); // 30% new words
     
     // Mix: 70% review, 30% new
@@ -1307,6 +1334,9 @@ function showScreen(screenId) {
         renderWordSearch('');
         renderCustomWordsList();
     }
+    if (screenId === 'settingsScreen') {
+        renderCategorySettings();
+    }
 }
 
 // Render word search results for marking as known
@@ -1343,6 +1373,11 @@ function renderWordSearch(query) {
                             style="padding: 5px 10px; border: 1px solid var(--accent); border-radius: 6px; font-size: 11px; 
                             cursor: pointer; background: transparent; color: var(--accent);">
                             Edit
+                        </button>
+                        <button onclick="deleteWord('${w.id}')" 
+                            style="padding: 5px 10px; border: 1px solid var(--error, #e85a5a); border-radius: 6px; font-size: 11px; 
+                            cursor: pointer; background: transparent; color: var(--error, #e85a5a);">
+                            Del
                         </button>
                         <button onclick="markWordAsKnown('${w.id}')" 
                             style="padding: 5px 10px; border: 1px solid ${isKnown ? 'var(--success)' : 'var(--border-color)'}; 
@@ -1887,6 +1922,236 @@ function removeCustomWord(wordId) {
     saveProgress();
     
     renderCustomWordsList();
+}
+
+// Export all known/mastered words to clipboard for transfer to a new version
+function exportKnownWords() {
+    const mastered = userProgress.masteredWords.filter(w => w.masteredDate);
+    const resultDiv = document.getElementById('exportResult');
+    
+    if (mastered.length === 0) {
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = '<span style="color: var(--error, #e85a5a);">No known words to export yet.</span>';
+        return;
+    }
+    
+    const wordList = mastered.map(w => w.german).join('\n');
+    
+    // Always show the words in a visible textarea so the user can copy
+    resultDiv.style.display = 'block';
+    resultDiv.innerHTML = `
+        <span style="color: var(--success); font-weight: 600;">${mastered.length} known words ready!</span>
+        <span style="color: var(--text-secondary); display: block; margin-top: 4px; font-size: 12px;">
+            Text is selected below. Press Ctrl+C (or long-press > Copy on phone) to copy, then paste into "Bulk Import Known Words" on your new version.
+        </span>
+        <textarea id="exportTextArea" readonly rows="10" 
+            style="width: 100%; margin-top: 8px; padding: 10px 12px; border: 2px solid var(--success, #4CAF50); 
+            border-radius: 8px; font-size: 14px; background: var(--bg-secondary); color: var(--text-primary); 
+            outline: none; resize: vertical; font-family: inherit;">${wordList}</textarea>`;
+    
+    // Auto-select all text so user just needs to copy
+    setTimeout(function() {
+        var ta = document.getElementById('exportTextArea');
+        if (ta) {
+            ta.focus();
+            ta.select();
+            ta.setSelectionRange(0, ta.value.length);
+        }
+    }, 100);
+    
+    // Also try clipboard API in background (works on HTTPS/PWA)
+    try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(wordList).then(function() {
+                var span = resultDiv.querySelector('span');
+                if (span) span.innerHTML = mastered.length + ' words copied to clipboard!';
+            }).catch(function() {});
+        }
+    } catch(e) {}
+}
+
+// =====================
+// DELETE WORDS
+// =====================
+
+function getDeletedWords() {
+    try {
+        return JSON.parse(localStorage.getItem('germanVocabDeletedWords') || '[]');
+    } catch(e) {
+        return [];
+    }
+}
+
+function saveDeletedWords(ids) {
+    localStorage.setItem('germanVocabDeletedWords', JSON.stringify(ids));
+}
+
+function applyDeletedWords() {
+    const deleted = new Set(getDeletedWords());
+    if (deleted.size > 0) {
+        vocabulary = vocabulary.filter(w => !deleted.has(w.id));
+        userProgress.statistics.totalAvailable = vocabulary.length;
+    }
+}
+
+function deleteWord(wordId) {
+    var word = vocabulary.find(function(v) { return v.id === wordId; });
+    var label = word ? word.german + ' (' + (word.english || '') + ')' : wordId;
+    if (!confirm('Delete "' + label + '" from vocabulary?')) return;
+
+    // If custom word, remove from custom storage
+    var customWords = getCustomWords();
+    var isCustom = customWords.some(function(w) { return w.id === wordId; });
+    if (isCustom) {
+        customWords = customWords.filter(function(w) { return w.id !== wordId; });
+        saveCustomWords(customWords);
+    } else {
+        // Built-in word: add to deleted list
+        var deleted = getDeletedWords();
+        if (deleted.indexOf(wordId) === -1) {
+            deleted.push(wordId);
+            saveDeletedWords(deleted);
+        }
+    }
+
+    // Remove from live vocabulary
+    var idx = vocabulary.findIndex(function(v) { return v.id === wordId; });
+    if (idx !== -1) vocabulary.splice(idx, 1);
+    userProgress.statistics.totalAvailable = vocabulary.length;
+
+    // Remove from mastered words
+    userProgress.masteredWords = userProgress.masteredWords.filter(function(w) { return w.wordId !== wordId; });
+    saveProgress();
+
+    // Re-render
+    var query = document.getElementById('wordSearchInput').value.trim().toLowerCase();
+    renderWordSearch(query);
+    renderCustomWordsList();
+}
+
+// =====================
+// DICTIONARY LOOKUP
+// =====================
+
+function lookupWord() {
+    var input = document.getElementById('dictLookupInput');
+    var word = input.value.trim();
+    var resultDiv = document.getElementById('dictLookupResult');
+
+    if (!word) {
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = '<span style="color: var(--error, #e85a5a);">Please enter a German word.</span>';
+        return;
+    }
+
+    resultDiv.style.display = 'block';
+    resultDiv.innerHTML = '<span style="color: var(--text-secondary);">Looking up "' + word + '"...</span>';
+
+    var url = 'https://api.mymemory.translated.net/get?q=' + encodeURIComponent(word) + '&langpair=de|en';
+
+    fetch(url)
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+            if (data.responseStatus === 200 && data.responseData && data.responseData.translatedText) {
+                var translation = data.responseData.translatedText.trim();
+                // Collect alternative translations from matches
+                var alts = [];
+                if (data.matches) {
+                    data.matches.forEach(function(m) {
+                        var t = m.translation.trim().toLowerCase();
+                        if (t !== translation.toLowerCase() && t !== word.toLowerCase() && alts.indexOf(t) === -1) {
+                            alts.push(t);
+                        }
+                    });
+                }
+                var altText = alts.slice(0, 5).join(', ');
+
+                resultDiv.innerHTML = '<div style="margin-bottom: 8px;">' +
+                    '<span style="color: var(--success); font-weight: 600;">' + word + '</span>' +
+                    ' = <span style="color: var(--text-primary); font-weight: 600;">' + translation + '</span>' +
+                    (altText ? '<br><span style="color: var(--text-tertiary); font-size: 12px;">Also: ' + altText + '</span>' : '') +
+                    '</div>' +
+                    '<div style="display: flex; gap: 6px; flex-wrap: wrap;">' +
+                    '<input type="text" id="dictTranslation" value="' + translation.replace(/"/g, '&quot;') + '" ' +
+                    'placeholder="English translation" style="flex:1; min-width: 120px; padding: 8px 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--bg-secondary); color: var(--text-primary); outline: none;">' +
+                    '<input type="text" id="dictSynonyms" value="' + altText.replace(/"/g, '&quot;') + '" ' +
+                    'placeholder="Synonyms (comma-separated)" style="flex:1; min-width: 120px; padding: 8px 10px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: var(--bg-secondary); color: var(--text-primary); outline: none;">' +
+                    '</div>' +
+                    '<button onclick="addDictWord(\'' + word.replace(/'/g, "\\'") + '\')" ' +
+                    'style="margin-top: 8px; padding: 8px 16px; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; background: var(--accent); color: white; font-weight: 600; width: 100%;">' +
+                    'Add to Vocabulary</button>';
+            } else {
+                resultDiv.innerHTML = '<span style="color: var(--error, #e85a5a);">Could not find a translation for "' + word + '".</span>';
+            }
+        })
+        .catch(function(err) {
+            resultDiv.innerHTML = '<span style="color: var(--error, #e85a5a);">Network error. Check your internet connection.</span>';
+        });
+}
+
+function addDictWord(german) {
+    var english = document.getElementById('dictTranslation').value.trim();
+    var synonymsRaw = document.getElementById('dictSynonyms').value.trim();
+    var resultDiv = document.getElementById('dictLookupResult');
+
+    if (!english) {
+        alert('Please enter an English translation.');
+        return;
+    }
+
+    var synonyms = synonymsRaw ? synonymsRaw.split(',').map(function(s) { return s.trim(); }).filter(function(s) { return s; }) : [];
+    var result = addWordToVocabulary(german, english, synonyms, '');
+
+    if (result && result.duplicate) {
+        var e = result.existing;
+        resultDiv.innerHTML = '<span style="color: #e8a33a;">"' + e.german + '" already exists as: ' + (e.english || '') + '</span>';
+    } else if (result) {
+        resultDiv.innerHTML = '<span style="color: var(--success);">Added: ' + german + ' = ' + english + '</span>';
+        document.getElementById('dictLookupInput').value = '';
+    }
+}
+
+// =====================
+// CATEGORY SETTINGS
+// =====================
+
+function getAllCategories() {
+    var cats = new Set();
+    vocabulary.forEach(function(w) {
+        if (w.category) cats.add(w.category.toLowerCase());
+    });
+    return Array.from(cats).sort();
+}
+
+function renderCategorySettings() {
+    var container = document.getElementById('categoryCheckboxes');
+    if (!container) return;
+    var excluded = new Set((settings.excludedCategories || []).map(function(c) { return c.toLowerCase(); }));
+    var cats = getAllCategories();
+
+    container.innerHTML = cats.map(function(cat) {
+        var checked = !excluded.has(cat);
+        var label = cat.charAt(0).toUpperCase() + cat.slice(1);
+        var count = vocabulary.filter(function(w) { return (w.category || '').toLowerCase() === cat; }).length;
+        return '<label style="display: inline-flex; align-items: center; gap: 5px; padding: 4px 8px; font-size: 13px; white-space: nowrap; background: var(--bg-tertiary); border-radius: 6px; cursor: pointer;">' +
+            '<input type="checkbox" ' + (checked ? 'checked' : '') + ' value="' + cat + '" ' +
+            'onchange="toggleCategory(this)" style="width: auto; margin: 0;">' +
+            '<span>' + label + ' (' + count + ')</span></label>';
+    }).join('');
+}
+
+function toggleCategory(checkbox) {
+    var cat = checkbox.value.toLowerCase();
+    var excluded = (settings.excludedCategories || []).map(function(c) { return c.toLowerCase(); });
+
+    if (checkbox.checked) {
+        excluded = excluded.filter(function(c) { return c !== cat; });
+    } else {
+        if (excluded.indexOf(cat) === -1) excluded.push(cat);
+    }
+
+    settings.excludedCategories = excluded;
+    saveSettings();
 }
 
 // Load custom words into vocabulary on startup

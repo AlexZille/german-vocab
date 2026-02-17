@@ -118,6 +118,16 @@
 
                 <div class="mastered-words-section">
                     <h3>Mastered Words</h3>
+                    <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+                        <button id="exportKnownBtn" class="btn btn-primary" onclick="exportKnownWords()" style="flex: 1;">
+                            Copy All Known Words to Clipboard
+                        </button>
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 12px; margin-bottom: 12px;">
+                        Use this to transfer your progress: copy here, then paste into "Bulk Import Known Words" on the new version.
+                    </p>
+                    <div id="exportResult" style="margin-bottom: 12px; padding: 8px 12px; border-radius: 6px; 
+                        font-size: 13px; background: var(--bg-tertiary); display: none;"></div>
                     <div class="mastered-words-list" id="masteredWordsList"></div>
                 </div>
 
@@ -173,6 +183,23 @@
                     <div id="customWordsList" style="max-height: 300px; overflow-y: auto;"></div>
                 </div>
 
+                <div id="dictionarySection" class="mastered-words-section" style="display: none;">
+                    <h3>Look Up Word Online</h3>
+                    <p style="color: var(--text-secondary); font-size: 13px; margin-bottom: 12px;">
+                        Search for a German word and add it with its English translation. Enable this feature in Settings.
+                    </p>
+                    <div style="display: flex; gap: 8px;">
+                        <input type="text" id="dictLookupInput" placeholder="Enter a German word..." 
+                            style="flex: 1; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; 
+                            font-size: 14px; background: var(--bg-secondary); color: var(--text-primary); outline: none;">
+                        <button id="dictLookupBtn" class="btn btn-primary" style="white-space: nowrap;">
+                            Look Up
+                        </button>
+                    </div>
+                    <div id="dictLookupResult" style="margin-top: 10px; padding: 10px 12px; border-radius: 6px; 
+                        font-size: 13px; background: var(--bg-tertiary); display: none;"></div>
+                </div>
+
                 <button class="btn btn-secondary" onclick="showScreen('practiceScreen')">Back to Practice</button>
             </div>
 
@@ -192,6 +219,20 @@
                     <label>
                         <span>Words per Session</span>
                         <input type="number" id="wordsPerSession" min="5" max="50" value="20">
+                    </label>
+                </div>
+
+                <h3 style="margin-top: 30px;">Categories to Practice</h3>
+                <p style="color: var(--text-secondary); font-size: 13px; margin-bottom: 8px;">
+                    Uncheck categories you don't want to practice (e.g. place names).
+                </p>
+                <div id="categoryCheckboxes" class="settings-group" style="display: flex; flex-wrap: wrap; gap: 6px 16px; max-height: 200px; overflow-y: auto;"></div>
+
+                <h3 style="margin-top: 30px;">Online Dictionary</h3>
+                <div class="settings-group">
+                    <label style="display: flex; align-items: center; gap: 10px;">
+                        <input type="checkbox" id="enableDictionary" style="width: auto;">
+                        <span>Enable online dictionary lookup (adds word search in Statistics)</span>
                     </label>
                 </div>
 
