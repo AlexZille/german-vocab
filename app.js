@@ -1334,6 +1334,8 @@ function showScreen(screenId) {
         updateStatisticsScreen();
         renderWordSearch('');
         renderCustomWordsList();
+        var dictSection = document.getElementById('dictionarySection');
+        if (dictSection) dictSection.style.display = settings.enableDictionary ? 'block' : 'none';
     }
     if (screenId === 'settingsScreen') {
         renderCategorySettings();
