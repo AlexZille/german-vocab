@@ -38,7 +38,8 @@ let settings = {
     openaiApiKey: '',
     useWhisper: false,
     excludedCategories: ['places', 'names'],
-    enableDictionary: false
+    enableDictionary: false,
+    practiceDifficult: false
 };
 
 // Initialize App
@@ -125,6 +126,15 @@ async function init() {
     // Dictionary lookup button
     var lookupBtn = document.getElementById('dictLookupBtn');
     if (lookupBtn) lookupBtn.addEventListener('click', lookupWord);
+
+    // Difficult words toggle
+    var diffToggle = document.getElementById('practiceDifficult');
+    if (diffToggle) {
+        diffToggle.addEventListener('change', (e) => {
+            settings.practiceDifficult = e.target.checked;
+            saveSettings();
+        });
+    }
 }
 
 // Load Vocabulary
@@ -199,6 +209,11 @@ function loadSettings() {
     if (dictToggle) dictToggle.checked = settings.enableDictionary || false;
     var dictSection = document.getElementById('dictionarySection');
     if (dictSection) dictSection.style.display = settings.enableDictionary ? 'block' : 'none';
+
+    // Difficult words toggle
+    var diffToggle = document.getElementById('practiceDifficult');
+    if (diffToggle) diffToggle.checked = settings.practiceDifficult || false;
+    updateDifficultCountInfo();
     
     // Pre-initialize microphone if Whisper is enabled
     if (settings.useWhisper && settings.openaiApiKey) {
@@ -404,45 +419,28 @@ async function startPractice() {
     presentNextWord();
 }
 
-// Get words for session (prioritize words due for review, then new words)
+// Get words for session
 function getSessionWords() {
-    const wordsToPractice = [];
-    const masteredIds = new Set(userProgress.masteredWords.map(w => w.wordId));
-    const now = new Date();
-    
-    // Categories to skip
     const excludedCats = new Set((settings.excludedCategories || []).map(c => c.toLowerCase()));
-
-    // Get words due for review (exclude manually marked words and excluded categories)
-    const reviewWords = userProgress.masteredWords
-        .filter(w => {
-            if (w.manuallyMarked) return false;
-            if (!w.nextReviewDate) return true;
-            return new Date(w.nextReviewDate) <= now;
-        })
-        .map(w => {
-            const vocabWord = vocabulary.find(v => v.id === w.wordId);
-            return vocabWord ? { ...vocabWord, isReview: true, progressData: w } : null;
-        })
-        .filter(w => w !== null && !excludedCats.has((w.category || '').toLowerCase()));
-    
-    // Get IDs of manually marked words to fully exclude them
-    const manuallyMarkedIds = new Set(
-        userProgress.masteredWords.filter(w => w.manuallyMarked).map(w => w.wordId)
+    const masteredIds = new Set(
+        userProgress.masteredWords.filter(w => w.masteredDate).map(w => w.wordId)
     );
-    
-    // Get new words not yet mastered (exclude manually marked + excluded categories)
-    const newWords = vocabulary
-        .filter(w => !masteredIds.has(w.id) && !manuallyMarkedIds.has(w.id) && !excludedCats.has((w.category || '').toLowerCase()))
-        .slice(0, Math.floor(settings.wordsPerSession * 0.3)); // 30% new words
-    
-    // Mix: 70% review, 30% new
-    const reviewCount = Math.min(reviewWords.length, Math.floor(settings.wordsPerSession * 0.7));
-    wordsToPractice.push(...reviewWords.slice(0, reviewCount));
-    wordsToPractice.push(...newWords);
-    
-    // Shuffle
-    return shuffleArray(wordsToPractice).slice(0, settings.wordsPerSession);
+
+    if (settings.practiceDifficult) {
+        // Difficult-only mode: re-practice mastered words that had 3+ incorrect attempts
+        return shuffleArray(
+            userProgress.masteredWords
+                .filter(w => w.masteredDate && (w.incorrectCount || 0) >= 3)
+                .map(w => vocabulary.find(v => v.id === w.wordId))
+                .filter(w => w && !excludedCats.has((w.category || '').toLowerCase()))
+        ).slice(0, settings.wordsPerSession);
+    }
+
+    // Normal mode: only unmastered words
+    const newWords = vocabulary.filter(w =>
+        !masteredIds.has(w.id) && !excludedCats.has((w.category || '').toLowerCase())
+    );
+    return shuffleArray(newWords).slice(0, settings.wordsPerSession);
 }
 
 // Shuffle array
@@ -1334,11 +1332,13 @@ function showScreen(screenId) {
         updateStatisticsScreen();
         renderWordSearch('');
         renderCustomWordsList();
+        renderDifficultWords();
         var dictSection = document.getElementById('dictionarySection');
         if (dictSection) dictSection.style.display = settings.enableDictionary ? 'block' : 'none';
     }
     if (screenId === 'settingsScreen') {
         renderCategorySettings();
+        updateDifficultCountInfo();
     }
 }
 
@@ -2155,6 +2155,52 @@ function toggleCategory(checkbox) {
 
     settings.excludedCategories = excluded;
     saveSettings();
+}
+
+// =====================
+// DIFFICULT WORDS
+// =====================
+
+function getDifficultWords() {
+    return userProgress.masteredWords.filter(function(w) {
+        return w.masteredDate && (w.incorrectCount || 0) >= 3;
+    });
+}
+
+function updateDifficultCountInfo() {
+    var info = document.getElementById('difficultCountInfo');
+    if (!info) return;
+    var count = getDifficultWords().length;
+    info.textContent = count > 0
+        ? 'You have ' + count + ' difficult word' + (count !== 1 ? 's' : '') + ' to re-train.'
+        : 'No difficult words yet. Words you get wrong 3+ times will appear here.';
+}
+
+function renderDifficultWords() {
+    var section = document.getElementById('difficultWordsSection');
+    var list = document.getElementById('difficultWordsList');
+    var countSpan = document.getElementById('difficultWordCount');
+    if (!section || !list) return;
+
+    var difficult = getDifficultWords();
+    if (countSpan) countSpan.textContent = '(' + difficult.length + ')';
+
+    if (difficult.length === 0) {
+        section.style.display = 'none';
+        return;
+    }
+
+    section.style.display = 'block';
+    list.innerHTML = difficult.map(function(w) {
+        return '<div style="padding: 8px 4px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">' +
+            '<div>' +
+            '<span style="font-weight: 600; color: var(--text-primary);">' + w.german + '</span>' +
+            '<span style="color: var(--text-secondary); margin-left: 8px;">' + (w.english || '') + '</span>' +
+            '</div>' +
+            '<span style="color: var(--error, #e85a5a); font-size: 12px; white-space: nowrap;">' +
+            w.incorrectCount + ' wrong</span>' +
+            '</div>';
+    }).join('');
 }
 
 // Load custom words into vocabulary on startup
