@@ -1,4 +1,4 @@
-const CACHE_NAME = 'german-vocab-v5';
+const CACHE_NAME = 'german-vocab-v6';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -6,7 +6,9 @@ const ASSETS_TO_CACHE = [
   './app.js',
   './vocabulary.json',
   './manifest.json',
-  './logo.png'
+  './logo.png',
+  './icon-192.png',
+  './icon-512.png'
 ];
 
 // Install: cache all core assets
