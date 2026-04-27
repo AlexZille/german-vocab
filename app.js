@@ -245,7 +245,9 @@ function setupSpeechRecognition() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     recognition = new SpeechRecognition();
     recognition.lang = 'en-US';
-    recognition.continuous = false;
+    // Keep recognition running so we don't miss speech.
+    // We'll still stop it manually when processing an answer / speaking TTS.
+    recognition.continuous = true;
     recognition.interimResults = true;
     recognition.maxAlternatives = 3;
     
@@ -257,11 +259,6 @@ function setupSpeechRecognition() {
         updateStatus('listening', 'Listening...');
         const tips = document.getElementById('audioTips');
         if (tips) tips.style.display = 'none';
-        setTimeout(() => {
-            if (isListening) {
-                updateStatus('listening', 'Speak now!');
-            }
-        }, 500);
     };
     
     recognition.onresult = (event) => {
@@ -333,12 +330,12 @@ function setupSpeechRecognition() {
         isListening = false;
         
         if (event.error === 'no-speech') {
-            updateStatus('ready', 'No speech detected. Try again.');
-            setTimeout(() => {
-                if (currentWord && !waitingForNextWord) {
-                    startListening();
-                }
-            }, 1500);
+            // Don't flip UI/status for "no-speech" — just keep listening.
+            if (currentWord && !waitingForNextWord) {
+                setTimeout(() => startListening(), 150);
+            } else if (!currentWord) {
+                updateStatus('ready', 'Ready');
+            }
         } else if (event.error === 'audio-capture') {
             updateStatus('error', 'No microphone found. Please check your microphone.');
         } else if (event.error === 'not-allowed') {
@@ -346,12 +343,13 @@ function setupSpeechRecognition() {
         } else if (event.error === 'aborted') {
             // Aborted is normal when we stop recognition intentionally
         } else {
-            updateStatus('error', 'Recognition error. Try again.');
-            setTimeout(() => {
-                if (currentWord && !waitingForNextWord) {
-                    startListening();
-                }
-            }, 1000);
+            // For transient errors, immediately attempt to resume listening.
+            if (currentWord && !waitingForNextWord) {
+                updateStatus('listening', 'Listening...');
+                setTimeout(() => startListening(), 250);
+            } else if (!currentWord) {
+                updateStatus('ready', 'Ready');
+            }
         }
     };
     
@@ -370,13 +368,12 @@ function setupSpeechRecognition() {
             return;
         }
         
-        // Only auto-restart if we're still waiting for an answer (not transitioning)
+        // Keep listening continuously during practice.
         if (currentWord && !waitingForNextWord && document.getElementById('stopBtn').disabled === false) {
+            updateStatus('listening', 'Listening...');
             setTimeout(() => {
-                if (currentWord && !isListening && !waitingForNextWord) {
-                    startListening();
-                }
-            }, 500);
+                if (currentWord && !isListening && !waitingForNextWord) startListening();
+            }, 150);
         } else if (!currentWord) {
             updateStatus('ready', 'Ready');
             if (tips) tips.style.display = 'block';
