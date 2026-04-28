@@ -13,6 +13,8 @@ let interimTimeout = null;
 let mediaRecorder = null;
 let audioChunks = [];
 let microphoneStream = null;
+let core100Ids = new Set();
+let listeningStartedAtMs = 0;
 let userProgress = {
     masteredWords: [],
     statistics: {
@@ -144,6 +146,10 @@ async function loadVocabulary() {
         const data = await response.json();
         vocabulary = data.words;
         userProgress.statistics.totalAvailable = vocabulary.length;
+
+        // Build "Core 100" set from the first 100 entries in the vocabulary file.
+        // This avoids changing the JSON structure, but still allows category filtering.
+        core100Ids = new Set(vocabulary.slice(0, 100).map(w => w.id));
     } catch (error) {
         console.error('Error loading vocabulary:', error);
         alert('Error loading vocabulary. Please refresh the page.');
@@ -245,9 +251,9 @@ function setupSpeechRecognition() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     recognition = new SpeechRecognition();
     recognition.lang = 'en-US';
-    // Keep recognition running so we don't miss speech.
-    // We'll still stop it manually when processing an answer / speaking TTS.
-    recognition.continuous = true;
+    // Keep sessions short and auto-restart, otherwise background noise can trigger
+    // partial/garbage results that get treated as answers.
+    recognition.continuous = false;
     recognition.interimResults = true;
     recognition.maxAlternatives = 3;
     
@@ -255,6 +261,7 @@ function setupSpeechRecognition() {
     
     recognition.onstart = () => {
         isListening = true;
+        listeningStartedAtMs = Date.now();
         debugLog('Recognition started - listening');
         updateStatus('listening', 'Listening...');
         const tips = document.getElementById('audioTips');
@@ -279,6 +286,16 @@ function setupSpeechRecognition() {
             if (event.results[i].isFinal) {
                 clearTimeout(interimTimeout);
                 lastInterimResult = '';
+
+                // Ignore ultra-fast "final" results right after start (often noise)
+                const elapsed = Date.now() - (listeningStartedAtMs || Date.now());
+                if (elapsed < 600) {
+                    debugLog('Ignoring too-fast final result (' + elapsed + 'ms): ' + bestResult);
+                    setTimeout(() => {
+                        if (currentWord && !waitingForNextWord) startListening();
+                    }, 150);
+                    return;
+                }
                 
                 // Check for voice commands before treating as an answer
                 if (isRepeatCommand(bestResult)) {
@@ -287,6 +304,16 @@ function setupSpeechRecognition() {
                     return;
                 }
                 
+                // Ignore very short garbage results (e.g., clicks/noise)
+                const cleaned = cleanText(bestResult || '');
+                if (!cleaned || cleaned.length < 2) {
+                    debugLog('Ignoring too-short result: ' + bestResult);
+                    setTimeout(() => {
+                        if (currentWord && !waitingForNextWord) startListening();
+                    }, 150);
+                    return;
+                }
+
                 handleAnswer(bestResult);
                 return;
             }
@@ -304,24 +331,9 @@ function setupSpeechRecognition() {
                 document.getElementById('answerDisplay').textContent = `Hearing: "${bestResult}" (say: "${expected}")`;
             }
             
-            // If no final result comes within 2 seconds, accept the interim result
+            // Do NOT auto-accept interim results — that’s what causes “it heard a fart”
+            // and immediately marks the answer wrong. We only accept final results.
             clearTimeout(interimTimeout);
-            interimTimeout = setTimeout(() => {
-                if (lastInterimResult && currentWord && !waitingForNextWord) {
-                    const result = lastInterimResult;
-                    lastInterimResult = '';
-                    try { recognition.stop(); } catch(e) {}
-                    
-                    // Check for repeat command on interim timeout too
-                    if (isRepeatCommand(result)) {
-                        document.getElementById('answerDisplay').textContent = 'Repeating word...';
-                        repeatWord();
-                        return;
-                    }
-                    
-                    handleAnswer(result);
-                }
-            }, 2000);
         }
     };
     
@@ -330,7 +342,7 @@ function setupSpeechRecognition() {
         isListening = false;
         
         if (event.error === 'no-speech') {
-            // Don't flip UI/status for "no-speech" — just keep listening.
+            // Don't flip UI/status for "no-speech" — just restart listening.
             if (currentWord && !waitingForNextWord) {
                 setTimeout(() => startListening(), 150);
             } else if (!currentWord) {
@@ -358,15 +370,7 @@ function setupSpeechRecognition() {
         isListening = false;
         const tips = document.getElementById('audioTips');
         if (tips && currentWord) tips.style.display = 'block';
-        
-        // If we have an unprocessed interim result, use it as the answer
-        if (lastInterimResult && currentWord && !waitingForNextWord) {
-            clearTimeout(interimTimeout);
-            const result = lastInterimResult;
-            lastInterimResult = '';
-            handleAnswer(result);
-            return;
-        }
+        // Never use interim results as answers.
         
         // Keep listening continuously during practice.
         if (currentWord && !waitingForNextWord && document.getElementById('stopBtn').disabled === false) {
@@ -434,9 +438,14 @@ function getSessionWords() {
     }
 
     // Normal mode: only unmastered words
-    const newWords = vocabulary.filter(w =>
-        !masteredIds.has(w.id) && !excludedCats.has((w.category || '').toLowerCase())
-    );
+    const newWords = vocabulary.filter(w => {
+        if (masteredIds.has(w.id)) return false;
+        const cat = (w.category || '').toLowerCase();
+        if (excludedCats.has(cat)) return false;
+        // Special pseudo-category: "core100" (first 100 words)
+        if (excludedCats.has('core100') && core100Ids.has(w.id)) return false;
+        return true;
+    });
     return shuffleArray(newWords).slice(0, settings.wordsPerSession);
 }
 
@@ -2120,6 +2129,8 @@ function getAllCategories() {
     vocabulary.forEach(function(w) {
         if (w.category) cats.add(w.category.toLowerCase());
     });
+    // Add pseudo-category for beginner core list
+    cats.add('core100');
     return Array.from(cats).sort();
 }
 
@@ -2131,8 +2142,10 @@ function renderCategorySettings() {
 
     container.innerHTML = cats.map(function(cat) {
         var checked = !excluded.has(cat);
-        var label = cat.charAt(0).toUpperCase() + cat.slice(1);
-        var count = vocabulary.filter(function(w) { return (w.category || '').toLowerCase() === cat; }).length;
+        var label = cat === 'core100' ? 'Core 100 (Beginner)' : (cat.charAt(0).toUpperCase() + cat.slice(1));
+        var count = cat === 'core100'
+            ? Array.from(core100Ids).length
+            : vocabulary.filter(function(w) { return (w.category || '').toLowerCase() === cat; }).length;
         return '<label style="display: inline-flex; align-items: center; gap: 5px; padding: 4px 8px; font-size: 13px; white-space: nowrap; background: var(--bg-tertiary); border-radius: 6px; cursor: pointer;">' +
             '<input type="checkbox" ' + (checked ? 'checked' : '') + ' value="' + cat + '" ' +
             'onchange="toggleCategory(this)" style="width: auto; margin: 0;">' +
