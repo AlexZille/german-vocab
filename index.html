@@ -293,16 +293,13 @@
         </nav>
     </div>
 
-    <script src="app.js?v=4"></script>
+    <script src="app.js?v=5"></script>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistrations().then(function(regs) {
-                regs.forEach(function(reg) { reg.unregister(); });
-            }).then(function() {
-                navigator.serviceWorker.register('./service-worker.js?v=4')
-                    .then(reg => console.log('Service Worker registered'))
-                    .catch(err => console.log('SW registration failed:', err));
-            });
+            // Keep a persistent service worker; uninstalling on every load breaks PWA installability.
+            navigator.serviceWorker.register('./service-worker.js?v=6')
+                .then(() => console.log('Service Worker registered'))
+                .catch(err => console.log('SW registration failed:', err));
         }
     </script>
 </body>
