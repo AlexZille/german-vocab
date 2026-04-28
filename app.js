@@ -15,6 +15,8 @@ let audioChunks = [];
 let microphoneStream = null;
 let core100Ids = new Set();
 let listeningStartedAtMs = 0;
+let interimStableText = '';
+let interimStableCount = 0;
 let userProgress = {
     masteredWords: [],
     statistics: {
@@ -262,6 +264,8 @@ function setupSpeechRecognition() {
     recognition.onstart = () => {
         isListening = true;
         listeningStartedAtMs = Date.now();
+        interimStableText = '';
+        interimStableCount = 0;
         debugLog('Recognition started - listening');
         updateStatus('listening', 'Listening...');
         const tips = document.getElementById('audioTips');
@@ -323,6 +327,19 @@ function setupSpeechRecognition() {
         if (bestResult) {
             lastInterimResult = bestResult;
             const expected = currentWord ? (currentWord.english || currentWord.danish || '') : '';
+            const cleanedInterim = cleanText(bestResult || '');
+
+            if (cleanedInterim) {
+                if (cleanedInterim === interimStableText) {
+                    interimStableCount++;
+                } else {
+                    interimStableText = cleanedInterim;
+                    interimStableCount = 1;
+                }
+            } else {
+                interimStableText = '';
+                interimStableCount = 0;
+            }
             
             // Show repeat command detection in UI
             if (isRepeatCommand(bestResult)) {
@@ -331,9 +348,32 @@ function setupSpeechRecognition() {
                 document.getElementById('answerDisplay').textContent = `Hearing: "${bestResult}" (say: "${expected}")`;
             }
             
-            // Do NOT auto-accept interim results — that’s what causes “it heard a fart”
-            // and immediately marks the answer wrong. We only accept final results.
+            // Fallback: some devices never emit a "final" result.
+            // If the interim transcript is stable for a moment, accept it as the answer.
             clearTimeout(interimTimeout);
+            interimTimeout = setTimeout(() => {
+                if (!currentWord || waitingForNextWord) return;
+                if (!lastInterimResult) return;
+
+                const elapsed = Date.now() - (listeningStartedAtMs || Date.now());
+                const candidate = cleanText(lastInterimResult);
+
+                // Wait a bit after start, require stability, and ignore very short noise.
+                if (elapsed < 900) return;
+                if (!candidate || candidate.length < 2) return;
+                if (interimStableCount < 2) return;
+
+                try { recognition.stop(); } catch (e) {}
+
+                // Check for repeat command on fallback too
+                if (isRepeatCommand(lastInterimResult)) {
+                    document.getElementById('answerDisplay').textContent = 'Repeating word...';
+                    repeatWord();
+                    return;
+                }
+
+                handleAnswer(lastInterimResult);
+            }, 1200);
         }
     };
     
@@ -370,7 +410,7 @@ function setupSpeechRecognition() {
         isListening = false;
         const tips = document.getElementById('audioTips');
         if (tips && currentWord) tips.style.display = 'block';
-        // Never use interim results as answers.
+        // Interim answers (if needed) are handled by the fallback timeout above.
         
         // Keep listening continuously during practice.
         if (currentWord && !waitingForNextWord && document.getElementById('stopBtn').disabled === false) {
