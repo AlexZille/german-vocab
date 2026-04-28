@@ -480,10 +480,19 @@ function getSessionWords() {
     // Normal mode: only unmastered words
     const newWords = vocabulary.filter(w => {
         if (masteredIds.has(w.id)) return false;
+
+        const isCore = core100Ids.has(w.id);
         const cat = (w.category || '').toLowerCase();
-        if (excludedCats.has(cat)) return false;
+
         // Special pseudo-category: "core100" (first 100 words)
-        if (excludedCats.has('core100') && core100Ids.has(w.id)) return false;
+        // - If core100 is excluded, always exclude these words.
+        // - If core100 is included, allow these words EVEN if their normal category is excluded.
+        if (isCore) {
+            return !excludedCats.has('core100');
+        }
+
+        // Non-core words follow normal category exclusion rules.
+        if (excludedCats.has(cat)) return false;
         return true;
     });
     return shuffleArray(newWords).slice(0, settings.wordsPerSession);
