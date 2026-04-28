@@ -1036,6 +1036,24 @@ function cleanText(text) {
     return cleaned;
 }
 
+// Normalize common English homophones so speech recognition variants are accepted.
+// This helps with answers like "to/too/two" where the recognizer may pick any spelling.
+function normalizeHomophones(text) {
+    const t = cleanText(text || '');
+    if (!t) return t;
+
+    const mapWord = (w) => {
+        // Numbers / very common homophones
+        if (w === 'to' || w === 'too') return 'two';
+        if (w === 'for') return 'four';
+        if (w === 'won') return 'one';
+        if (w === 'ate') return 'eight';
+        return w;
+    };
+
+    return t.split(/\s+/).map(mapWord).join(' ').trim();
+}
+
 // Generate English word variants (plural, articles, common forms)
 function getEnglishVariants(word) {
     const variants = [word];
@@ -1068,16 +1086,29 @@ function checkAnswer(userAnswer, correctAnswer, synonyms) {
     
     for (const acceptable of allAcceptable) {
         const cleanCorrect = cleanText(acceptable);
+        const normUser = normalizeHomophones(cleanUser);
+        const normCorrect = normalizeHomophones(cleanCorrect);
         
         // Exact match
         if (cleanUser === cleanCorrect) return true;
+        // Homophone-normalized match
+        if (normUser && normCorrect && normUser === normCorrect) return true;
         
         // Check if any word the user said matches or its variants
         const userWords = cleanUser.split(/\s+/);
+        const normUserWords = normUser.split(/\s+/);
         const correctVariants = getEnglishVariants(cleanCorrect);
+        const normCorrectVariants = getEnglishVariants(normCorrect);
         
         for (const userWord of userWords) {
             for (const variant of correctVariants) {
+                if (userWord === variant) return true;
+            }
+        }
+
+        // Normalized word-by-word match (homophones)
+        for (const userWord of normUserWords) {
+            for (const variant of normCorrectVariants) {
                 if (userWord === variant) return true;
             }
         }
@@ -1086,10 +1117,15 @@ function checkAnswer(userAnswer, correctAnswer, synonyms) {
         for (const variant of correctVariants) {
             if (cleanUser === variant) return true;
         }
+        for (const variant of normCorrectVariants) {
+            if (normUser === variant) return true;
+        }
         
         // Check reverse variants
         const userVariants = userWords.flatMap(w => getEnglishVariants(w));
         if (userVariants.includes(cleanCorrect)) return true;
+        const normUserVariants = normUserWords.flatMap(w => getEnglishVariants(w));
+        if (normUserVariants.includes(normCorrect)) return true;
         
         // Fuzzy match each word
         for (const userWord of userWords) {
