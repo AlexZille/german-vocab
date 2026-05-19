@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#7c6aef">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>German Vocab Trainer</title>
+    <meta name="apple-mobile-web-app-title" content="Tysk Ord">
+    <title>Tysk Ordforråd</title>
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="icon-192.png">
     <link rel="icon" href="icon-192.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=4">
+    <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <h1>German Vocab Trainer</h1>
+            <h1>Tysk Ordforråd</h1>
             <div class="stats-summary">
                 <span id="totalMastered">0</span> words mastered
             </div>
@@ -45,6 +47,14 @@
                 <div class="answer-section">
                     <div class="answer-display" id="answerDisplay"></div>
                     <div class="feedback" id="feedback"></div>
+                </div>
+
+                <div class="module-selector" id="moduleSelector">
+                    <label for="activeModuleSelect" class="module-selector-label">Eksamensmodul</label>
+                    <select id="activeModuleSelect" class="module-select">
+                        <option value="">Alle ord (ingen modulfilter)</option>
+                    </select>
+                    <p class="module-selector-hint" id="modulePracticeHint"></p>
                 </div>
 
                 <div class="controls">
@@ -90,6 +100,7 @@
                 </div>
 
                 <div class="category-stats" id="categoryStats"></div>
+                <div class="category-stats" id="moduleStats" style="display: none;"></div>
 
                 <div class="mastered-words-section" id="difficultWordsSection" style="display: none;">
                     <h3>Difficult Words <span id="difficultWordCount" style="color: var(--text-tertiary); font-weight: 400;">(0)</span></h3>
@@ -235,6 +246,20 @@
                     </label>
                 </div>
 
+                <h3 style="margin-top: 30px;">Eksamensmoduler</h3>
+                <p style="color: var(--text-secondary); font-size: 13px; margin-bottom: 8px;">
+                    Opret moduler til din eksamensforberedelse. Indsæt tyske ord (ét per linje) for at tilføje dem til et modul.
+                </p>
+                <div class="settings-group">
+                    <label>
+                        <span>Nyt modulnavn</span>
+                        <input type="text" id="newModuleName" placeholder="f.eks. Modul 3 – Freizeit">
+                    </label>
+                    <button id="createModuleBtn" class="btn btn-primary" style="width: 100%;">Opret modul</button>
+                    <div id="createModuleResult" style="margin-top: 8px; padding: 8px 12px; border-radius: 6px; font-size: 13px; display: none;"></div>
+                </div>
+                <div id="examModulesList" class="exam-modules-list"></div>
+
                 <h3 style="margin-top: 30px;">Categories to Practice</h3>
                 <p style="color: var(--text-secondary); font-size: 13px; margin-bottom: 8px;">
                     Uncheck categories you don't want to practice (e.g. place names).
@@ -275,9 +300,24 @@
                     <div id="whisperStatus" style="padding: 8px 12px; border-radius: 6px; font-size: 13px; display: none;"></div>
                 </div>
 
+                <h3 style="margin-top: 30px;">Installer app</h3>
+                <div class="settings-group" id="installAppSettings">
+                    <p id="installAppSettingsText" style="color: var(--text-secondary); font-size: 13px; margin-bottom: 12px;"></p>
+                    <button id="installAppSettingsBtn" class="btn btn-primary" type="button" style="width: 100%; display: none;">Installer app</button>
+                </div>
+
                 <button class="btn btn-secondary" onclick="showScreen('practiceScreen')">Back to Practice</button>
             </div>
         </main>
+
+        <div id="installBanner" class="install-banner" hidden>
+            <div class="install-banner-text">
+                <strong id="installBannerTitle">Installer som app</strong>
+                <p id="installBannerBody"></p>
+            </div>
+            <button id="installAppBtn" class="btn btn-primary install-banner-btn" type="button" hidden>Installer</button>
+            <button id="installBannerDismiss" class="install-banner-dismiss" type="button" aria-label="Luk">×</button>
+        </div>
 
         <!-- Navigation -->
         <nav class="bottom-nav">
@@ -293,11 +333,10 @@
         </nav>
     </div>
 
-    <script src="app.js?v=5"></script>
+    <script src="app.js?v=8"></script>
     <script>
         if ('serviceWorker' in navigator) {
-            // Keep a persistent service worker; uninstalling on every load breaks PWA installability.
-            navigator.serviceWorker.register('./service-worker.js?v=6')
+            navigator.serviceWorker.register('./service-worker.js?v=7')
                 .then(() => console.log('Service Worker registered'))
                 .catch(err => console.log('SW registration failed:', err));
         }

@@ -1,10 +1,13 @@
 {
-  "name": "German Vocab Trainer",
-  "short_name": "Vocab Trainer",
-  "description": "Practice German vocabulary with audio-driven translation exercises",
+  "id": "./",
+  "name": "Tysk Ordforråd",
+  "short_name": "Tysk Ord",
+  "description": "Øv tysk ordforråd med tale – eksamensmoduler inkluderet",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
+  "lang": "da",
   "background_color": "#0f0f13",
   "theme_color": "#7c6aef",
   "icons": [

@@ -1,10 +1,11 @@
-const CACHE_NAME = 'german-vocab-v6';
+const CACHE_NAME = 'german-vocab-v7';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './styles.css',
   './app.js',
   './vocabulary.json',
+  './exam-modules.json',
   './manifest.json',
   './logo.png',
   './icon-192.png',

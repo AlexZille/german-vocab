@@ -35,6 +35,8 @@ let userProgress = {
 };
 
 // Settings
+let deferredInstallPrompt = null;
+
 let settings = {
     masteryThreshold: 3,
     ttsSpeed: 1.0,
@@ -43,7 +45,9 @@ let settings = {
     useWhisper: false,
     excludedCategories: ['places', 'names'],
     enableDictionary: false,
-    practiceDifficult: false
+    practiceDifficult: false,
+    activeModule: '',
+    examModules: []
 };
 
 // Initialize App
@@ -139,6 +143,41 @@ async function init() {
             saveSettings();
         });
     }
+
+    var moduleSelect = document.getElementById('activeModuleSelect');
+    if (moduleSelect) {
+        moduleSelect.addEventListener('change', function(e) {
+            settings.activeModule = e.target.value;
+            saveSettings();
+            updateModulePracticeHint();
+        });
+    }
+
+    var createModuleBtn = document.getElementById('createModuleBtn');
+    if (createModuleBtn) createModuleBtn.addEventListener('click', createExamModuleFromInput);
+
+    renderModuleSelector();
+    updateModulePracticeHint();
+    renderExamModulesList();
+    initInstallApp();
+}
+
+window.addEventListener('beforeinstallprompt', function(e) {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    updateInstallUI();
+});
+
+async function loadExamModulesFile() {
+    try {
+        const response = await fetch('exam-modules.json?v=' + Date.now());
+        const data = await response.json();
+        if (data.modules && data.modules.length) {
+            mergeModulesFromConfig(data.modules);
+        }
+    } catch (e) {
+        console.warn('exam-modules.json not loaded:', e);
+    }
 }
 
 // Load Vocabulary
@@ -148,6 +187,12 @@ async function loadVocabulary() {
         const data = await response.json();
         vocabulary = data.words;
         userProgress.statistics.totalAvailable = vocabulary.length;
+
+        if (data.modules && data.modules.length) {
+            mergeModulesFromConfig(data.modules);
+        } else {
+            loadExamModulesFile();
+        }
 
         // Build "Core 100" set from the first 100 entries in the vocabulary file.
         // This avoids changing the JSON structure, but still allows category filtering.
@@ -227,6 +272,11 @@ function loadSettings() {
     if (settings.useWhisper && settings.openaiApiKey) {
         initMicrophone();
     }
+
+    if (!settings.examModules) settings.examModules = [];
+
+    var moduleSelect = document.getElementById('activeModuleSelect');
+    if (moduleSelect) moduleSelect.value = settings.activeModule || '';
 }
 
 // Save Settings
@@ -448,7 +498,10 @@ async function startPractice() {
     sessionWords = getSessionWords();
     
     if (sessionWords.length === 0) {
-        alert('No words available for practice. All words may be mastered! Try adjusting your settings.');
+        var moduleMsg = settings.activeModule
+            ? 'Ingen ord tilbage i dette modul. Tilføj flere ord under Indstillinger → Eksamensmoduler, eller vælg et andet modul.'
+            : 'No words available for practice. All words may be mastered! Try adjusting your settings.';
+        alert(moduleMsg);
         return;
     }
     
@@ -463,9 +516,23 @@ async function startPractice() {
 // Get words for session
 function getSessionWords() {
     const excludedCats = new Set((settings.excludedCategories || []).map(c => c.toLowerCase()));
+    const activeModule = settings.activeModule || '';
     const masteredIds = new Set(
         userProgress.masteredWords.filter(w => w.masteredDate).map(w => w.wordId)
     );
+
+    function passesCategoryFilter(w) {
+        const isCore = core100Ids.has(w.id);
+        const cat = (w.category || '').toLowerCase();
+        if (isCore) return !excludedCats.has('core100');
+        if (excludedCats.has(cat)) return false;
+        return true;
+    }
+
+    function passesModuleFilter(w) {
+        if (!activeModule) return true;
+        return wordBelongsToModule(w, activeModule);
+    }
 
     if (settings.practiceDifficult) {
         // Difficult-only mode: re-practice mastered words that had 3+ incorrect attempts
@@ -473,27 +540,15 @@ function getSessionWords() {
             userProgress.masteredWords
                 .filter(w => w.masteredDate && (w.incorrectCount || 0) >= 3)
                 .map(w => vocabulary.find(v => v.id === w.wordId))
-                .filter(w => w && !excludedCats.has((w.category || '').toLowerCase()))
+                .filter(w => w && passesCategoryFilter(w) && passesModuleFilter(w))
         ).slice(0, settings.wordsPerSession);
     }
 
     // Normal mode: only unmastered words
     const newWords = vocabulary.filter(w => {
         if (masteredIds.has(w.id)) return false;
-
-        const isCore = core100Ids.has(w.id);
-        const cat = (w.category || '').toLowerCase();
-
-        // Special pseudo-category: "core100" (first 100 words)
-        // - If core100 is excluded, always exclude these words.
-        // - If core100 is included, allow these words EVEN if their normal category is excluded.
-        if (isCore) {
-            return !excludedCats.has('core100');
-        }
-
-        // Non-core words follow normal category exclusion rules.
-        if (excludedCats.has(cat)) return false;
-        return true;
+        if (!passesModuleFilter(w)) return false;
+        return passesCategoryFilter(w);
     });
     return shuffleArray(newWords).slice(0, settings.wordsPerSession);
 }
@@ -1367,6 +1422,8 @@ function updateStatisticsScreen() {
         `;
         categoryStatsDiv.appendChild(div);
     });
+
+    renderModuleStats();
     
     // Mastered words list
     const masteredList = document.getElementById('masteredWordsList');
@@ -1429,7 +1486,9 @@ function showScreen(screenId) {
     }
     if (screenId === 'settingsScreen') {
         renderCategorySettings();
+        renderExamModulesList();
         updateDifficultCountInfo();
+        updateInstallUI();
     }
 }
 
@@ -2203,6 +2262,341 @@ function addDictWord(german) {
         resultDiv.innerHTML = '<span style="color: var(--success);">Added: ' + german + ' = ' + english + '</span>';
         document.getElementById('dictLookupInput').value = '';
     }
+}
+
+// =====================
+// INSTALL APP (PWA)
+// =====================
+
+function isAppInstalled() {
+    return window.matchMedia('(display-mode: standalone)').matches ||
+        window.navigator.standalone === true;
+}
+
+function isIOS() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+}
+
+function isAndroid() {
+    return /Android/i.test(navigator.userAgent);
+}
+
+function getInstallInstructions() {
+    if (isIOS()) {
+        return 'Tryk på Del-knappen (firkant med pil) nederst i Safari, og vælg «Føj til hjemmeskærm». Åbn derefter appen fra ikonet på hjemmeskærmen.';
+    }
+    if (isAndroid()) {
+        if (deferredInstallPrompt) {
+            return 'Tryk «Installer app» herunder – eller vælg «Installer app» / «Føj til startskærm» i Chromes menu (⋮).';
+        }
+        return 'Åbn menuen (⋮) i Chrome og vælg «Installer app» eller «Føj til startskærm». Brug helst https://-adressen hvis du har den.';
+    }
+    return 'I Chrome/Edge: klik på installer-ikonet i adresselinjen, eller brug menuen «Installer app».';
+}
+
+function updateInstallUI() {
+    var installed = isAppInstalled();
+    var banner = document.getElementById('installBanner');
+    var bannerBody = document.getElementById('installBannerBody');
+    var installBtn = document.getElementById('installAppBtn');
+    var settingsText = document.getElementById('installAppSettingsText');
+    var settingsBtn = document.getElementById('installAppSettingsBtn');
+
+    var instructions = getInstallInstructions();
+    if (settingsText) settingsText.textContent = installed
+        ? 'Appen kører allerede i fuldskærms-tilstand.'
+        : instructions;
+
+    if (settingsBtn) {
+        settingsBtn.style.display = (!installed && deferredInstallPrompt) ? 'block' : 'none';
+    }
+
+    if (installBtn) {
+        installBtn.hidden = !deferredInstallPrompt || installed;
+    }
+
+    if (banner && bannerBody) {
+        if (installed || localStorage.getItem('installBannerDismissed') === '1') {
+            banner.hidden = true;
+        } else if (isIOS() || isAndroid() || deferredInstallPrompt) {
+            bannerBody.textContent = instructions;
+            banner.hidden = false;
+        }
+    }
+}
+
+function initInstallApp() {
+    var dismissBtn = document.getElementById('installBannerDismiss');
+    var installBtn = document.getElementById('installAppBtn');
+    var settingsBtn = document.getElementById('installAppSettingsBtn');
+
+    if (dismissBtn) {
+        dismissBtn.addEventListener('click', function() {
+            localStorage.setItem('installBannerDismissed', '1');
+            var banner = document.getElementById('installBanner');
+            if (banner) banner.hidden = true;
+        });
+    }
+
+    if (installBtn) {
+        installBtn.addEventListener('click', promptInstallApp);
+    }
+    if (settingsBtn) {
+        settingsBtn.addEventListener('click', promptInstallApp);
+    }
+
+    updateInstallUI();
+}
+
+async function promptInstallApp() {
+    if (!deferredInstallPrompt) {
+        updateInstallUI();
+        return;
+    }
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt = null;
+    updateInstallUI();
+}
+
+// =====================
+// EXAM MODULES
+// =====================
+
+function mergeModulesFromConfig(configModules) {
+    if (!settings.examModules) settings.examModules = [];
+    var existingIds = new Set(settings.examModules.map(function(m) { return m.id; }));
+    configModules.forEach(function(m) {
+        if (!m.id || existingIds.has(m.id)) return;
+        settings.examModules.push({
+            id: m.id,
+            name: m.name || m.id,
+            wordIds: Array.isArray(m.wordIds) ? m.wordIds.slice() : []
+        });
+        existingIds.add(m.id);
+    });
+    saveSettings();
+}
+
+function wordBelongsToModule(word, moduleId) {
+    if (!moduleId || !word) return false;
+    if (word.module === moduleId) return true;
+    if (Array.isArray(word.modules) && word.modules.indexOf(moduleId) !== -1) return true;
+    var mod = (settings.examModules || []).find(function(m) { return m.id === moduleId; });
+    if (!mod || !mod.wordIds) return false;
+    return mod.wordIds.indexOf(word.id) !== -1;
+}
+
+function getWordsInModule(moduleId) {
+    if (!moduleId) return vocabulary.slice();
+    return vocabulary.filter(function(w) { return wordBelongsToModule(w, moduleId); });
+}
+
+function getModuleAvailableWordCount(moduleId) {
+    var masteredIds = new Set(
+        userProgress.masteredWords.filter(function(w) { return w.masteredDate; }).map(function(w) { return w.wordId; })
+    );
+    return getWordsInModule(moduleId).filter(function(w) {
+        return !masteredIds.has(w.id);
+    }).length;
+}
+
+function renderModuleSelector() {
+    var select = document.getElementById('activeModuleSelect');
+    if (!select) return;
+
+    var current = settings.activeModule || '';
+    var modules = settings.examModules || [];
+
+    select.innerHTML = '<option value="">Alle ord (ingen modulfilter)</option>' +
+        modules.map(function(m) {
+            var count = getWordsInModule(m.id).length;
+            var label = m.name + ' (' + count + ' ord)';
+            return '<option value="' + m.id + '">' + escapeHtml(label) + '</option>';
+        }).join('');
+
+    if (current && modules.some(function(m) { return m.id === current; })) {
+        select.value = current;
+    } else {
+        select.value = '';
+        settings.activeModule = '';
+    }
+}
+
+function updateModulePracticeHint() {
+    var hint = document.getElementById('modulePracticeHint');
+    if (!hint) return;
+
+    var moduleId = settings.activeModule || '';
+    if (!moduleId) {
+        hint.textContent = '';
+        return;
+    }
+
+    var mod = (settings.examModules || []).find(function(m) { return m.id === moduleId; });
+    if (!mod) {
+        hint.textContent = '';
+        return;
+    }
+
+    var total = getWordsInModule(moduleId).length;
+    var remaining = getModuleAvailableWordCount(moduleId);
+    if (total === 0) {
+        hint.textContent = mod.name + ' har ingen ord endnu. Tilføj ord under Indstillinger.';
+        return;
+    }
+    hint.textContent = mod.name + ': ' + total + ' ord i alt, ' + remaining + ' tilbage at øve.';
+}
+
+function createExamModuleFromInput() {
+    var input = document.getElementById('newModuleName');
+    var result = document.getElementById('createModuleResult');
+    if (!input) return;
+
+    var name = input.value.trim();
+    if (!name) {
+        alert('Skriv et navn til modulet.');
+        return;
+    }
+
+    var id = 'modul_' + Date.now();
+    if (!settings.examModules) settings.examModules = [];
+    settings.examModules.push({ id: id, name: name, wordIds: [] });
+    saveSettings();
+    input.value = '';
+
+    renderExamModulesList();
+    renderModuleSelector();
+    updateModulePracticeHint();
+
+    if (result) {
+        result.style.display = 'block';
+        result.style.color = 'var(--success)';
+        result.textContent = 'Modul oprettet: ' + name;
+        setTimeout(function() { result.style.display = 'none'; }, 3000);
+    }
+}
+
+function deleteExamModule(moduleId) {
+    if (!confirm('Slet dette modul? Ordene forbliver i ordlisten.')) return;
+    settings.examModules = (settings.examModules || []).filter(function(m) { return m.id !== moduleId; });
+    if (settings.activeModule === moduleId) {
+        settings.activeModule = '';
+    }
+    saveSettings();
+    renderExamModulesList();
+    renderModuleSelector();
+    updateModulePracticeHint();
+}
+
+function addWordsToExamModule(moduleId) {
+    var textarea = document.getElementById('moduleWords_' + moduleId);
+    if (!textarea) return;
+
+    var mod = (settings.examModules || []).find(function(m) { return m.id === moduleId; });
+    if (!mod) return;
+
+    var raw = textarea.value.trim();
+    if (!raw) {
+        alert('Indsæt mindst ét tysk ord.');
+        return;
+    }
+
+    var tokens = raw.split(/[\n,;]+/).map(function(t) { return t.trim().toLowerCase(); }).filter(function(t) { return t; });
+    if (!mod.wordIds) mod.wordIds = [];
+    var existing = new Set(mod.wordIds);
+    var added = [];
+    var notFound = [];
+
+    tokens.forEach(function(token) {
+        var match = vocabulary.find(function(w) {
+            return w.german.toLowerCase() === token ||
+                (w.english && w.english.toLowerCase() === token);
+        });
+        if (match) {
+            if (!existing.has(match.id)) {
+                mod.wordIds.push(match.id);
+                existing.add(match.id);
+                added.push(match.german);
+            }
+        } else {
+            notFound.push(token);
+        }
+    });
+
+    saveSettings();
+    textarea.value = '';
+    renderExamModulesList();
+    renderModuleSelector();
+    updateModulePracticeHint();
+
+    var msg = added.length + ' ord tilføjet til modulet.';
+    if (notFound.length) {
+        msg += ' Kunne ikke finde: ' + notFound.slice(0, 8).join(', ') +
+            (notFound.length > 8 ? ' …' : '');
+    }
+    alert(msg);
+}
+
+function renderExamModulesList() {
+    var container = document.getElementById('examModulesList');
+    if (!container) return;
+
+    var modules = settings.examModules || [];
+    if (modules.length === 0) {
+        container.innerHTML = '<p style="color: var(--text-secondary); font-size: 13px;">Ingen moduler endnu. Opret dit første modul ovenfor.</p>';
+        return;
+    }
+
+    container.innerHTML = modules.map(function(m) {
+        var count = getWordsInModule(m.id).length;
+        var remaining = getModuleAvailableWordCount(m.id);
+        return '<div class="exam-module-card" data-module-id="' + m.id + '">' +
+            '<div class="exam-module-card-header">' +
+            '<span class="exam-module-card-title">' + escapeHtml(m.name) + '</span>' +
+            '<span class="exam-module-card-count">' + count + ' ord · ' + remaining + ' tilbage</span>' +
+            '</div>' +
+            '<p style="color: var(--text-secondary); font-size: 12px; margin-bottom: 8px;">Indsæt tyske ord (ét per linje). Engelsk virker også.</p>' +
+            '<textarea id="moduleWords_' + m.id + '" rows="4" placeholder="Haus&#10;Schule&#10;Lehrer"></textarea>' +
+            '<div class="exam-module-card-actions">' +
+            '<button class="btn btn-primary" onclick="addWordsToExamModule(\'' + m.id + '\')">Tilføj ord</button>' +
+            '<button class="btn btn-danger" onclick="deleteExamModule(\'' + m.id + '\')">Slet modul</button>' +
+            '</div>' +
+            '</div>';
+    }).join('');
+}
+
+function escapeHtml(text) {
+    var div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+function renderModuleStats() {
+    var container = document.getElementById('moduleStats');
+    if (!container) return;
+
+    var modules = settings.examModules || [];
+    if (modules.length === 0) {
+        container.style.display = 'none';
+        return;
+    }
+
+    container.style.display = 'block';
+    container.innerHTML = '<h3>Modulfremskridt</h3>';
+
+    modules.forEach(function(m) {
+        var words = getWordsInModule(m.id);
+        var mastered = words.filter(function(w) {
+            return userProgress.masteredWords.some(function(p) {
+                return p.wordId === w.id && p.masteredDate;
+            });
+        }).length;
+        var div = document.createElement('div');
+        div.className = 'category-stat-item';
+        div.innerHTML = '<span>' + escapeHtml(m.name) + '</span><span>' + mastered + ' / ' + words.length + '</span>';
+        container.appendChild(div);
+    });
 }
 
 // =====================
