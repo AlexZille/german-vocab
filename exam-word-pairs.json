@@ -1,136 +1,632 @@
 {
   "modul-1": [
-    {"german": "beweisen", "english": "bevise", "article": ""},
-    {"german": "einbrechen", "english": "bryde ind", "article": ""},
-    {"german": "entführen", "english": "kidnappe", "article": ""},
-    {"german": "entlassen", "english": "løslade", "article": ""},
-    {"german": "ermorden", "english": "myrde", "article": ""},
-    {"german": "festnehmen", "english": "anholde", "article": ""},
-    {"german": "gestehen", "english": "tilstå", "article": ""},
-    {"german": "nachforschen", "english": "efterforske", "article": ""},
-    {"german": "sterben", "english": "dø", "article": ""},
-    {"german": "töten", "english": "dræbe", "article": ""},
-    {"german": "überfallen", "english": "overfalde", "article": ""},
-    {"german": "untersuchen", "english": "undersøge", "article": ""},
-    {"german": "verdächtigen", "english": "mistænke", "article": ""},
-    {"german": "verhaften", "english": "anholde", "article": ""},
-    {"german": "verhören", "english": "afhøre", "article": ""},
-    {"german": "verteidigen", "english": "forsvare", "article": ""},
-    {"german": "bedrohlich", "english": "truende", "article": ""},
-    {"german": "brutal", "english": "brutal", "article": ""},
-    {"german": "gefährlich", "english": "farlig", "article": ""},
-    {"german": "gewalttätig", "english": "voldelig", "article": ""},
-    {"german": "gemein", "english": "ondskabsfuld", "article": ""},
-    {"german": "grausam", "english": "grusom", "article": ""},
-    {"german": "mutmaßlich", "english": "formodet", "article": ""},
-    {"german": "schrecklich", "english": "skrækkelig", "article": ""},
-    {"german": "schuldig", "english": "skyldig", "article": ""},
-    {"german": "unschuldig", "english": "uskyldig", "article": ""},
-    {"german": "ein Geständnis ablegen", "english": "aflægge tilståelse", "article": ""},
-    {"german": "einen Mord begehen", "english": "begå et mord", "article": ""},
-    {"german": "einen Tatort besichtigen", "english": "bese et gerningssted", "article": ""},
-    {"german": "einen Täter verhaften", "english": "anholde en gerningsmand", "article": ""},
-    {"german": "ein Urteil fällen", "english": "fælde en dom", "article": ""},
-    {"german": "ein Verbrechen begehen", "english": "planlægge en forbrydelse", "article": ""},
-    {"german": "einen Fall lösen", "english": "opklare en sag", "article": ""},
-    {"german": "ins Gefängnis kommen", "english": "komme i fængsel", "article": ""},
-    {"german": "Gewalt ausüben", "english": "udøve vold", "article": ""},
-    {"german": "jemanden unter dem Verdacht des Mordes verhaften", "english": "anholde en mordmistænkt", "article": ""},
-    {"german": "verurteilen zu", "english": "dømme til", "article": ""},
-    {"german": "vor Gericht stehen", "english": "afgive forklaring i retten", "article": ""}
+    {
+      "german": "beweisen",
+      "english": "prove",
+      "article": ""
+    },
+    {
+      "german": "einbrechen",
+      "english": "break in",
+      "article": ""
+    },
+    {
+      "german": "entführen",
+      "english": "kidnap",
+      "article": ""
+    },
+    {
+      "german": "entlassen",
+      "english": "dismissed",
+      "article": ""
+    },
+    {
+      "german": "ermorden",
+      "english": "murder",
+      "article": ""
+    },
+    {
+      "german": "festnehmen",
+      "english": "arrest",
+      "article": ""
+    },
+    {
+      "german": "gestehen",
+      "english": "confess",
+      "article": ""
+    },
+    {
+      "german": "nachforschen",
+      "english": "investigate",
+      "article": ""
+    },
+    {
+      "german": "sterben",
+      "english": "die",
+      "article": ""
+    },
+    {
+      "german": "töten",
+      "english": "kill",
+      "article": ""
+    },
+    {
+      "german": "überfallen",
+      "english": "ambushed",
+      "article": ""
+    },
+    {
+      "german": "untersuchen",
+      "english": "investigate",
+      "article": ""
+    },
+    {
+      "german": "verdächtigen",
+      "english": "suspect",
+      "article": ""
+    },
+    {
+      "german": "verhaften",
+      "english": "arrest",
+      "article": ""
+    },
+    {
+      "german": "verhören",
+      "english": "interrogate",
+      "article": ""
+    },
+    {
+      "german": "verteidigen",
+      "english": "defend",
+      "article": ""
+    },
+    {
+      "german": "bedrohlich",
+      "english": "threatening",
+      "article": ""
+    },
+    {
+      "german": "brutal",
+      "english": "brutally",
+      "article": ""
+    },
+    {
+      "german": "gefährlich",
+      "english": "dangerous",
+      "article": ""
+    },
+    {
+      "german": "gewalttätig",
+      "english": "violent",
+      "article": ""
+    },
+    {
+      "german": "gemein",
+      "english": "mean",
+      "article": ""
+    },
+    {
+      "german": "grausam",
+      "english": "awful",
+      "article": ""
+    },
+    {
+      "german": "mutmaßlich",
+      "english": "presumably",
+      "article": ""
+    },
+    {
+      "german": "schrecklich",
+      "english": "terrible",
+      "article": ""
+    },
+    {
+      "german": "schuldig",
+      "english": "guilty",
+      "article": ""
+    },
+    {
+      "german": "unschuldig",
+      "english": "innocent",
+      "article": ""
+    },
+    {
+      "german": "ein Geständnis ablegen",
+      "english": "make a confession",
+      "article": ""
+    },
+    {
+      "german": "einen Mord begehen",
+      "english": "commit a murder",
+      "article": ""
+    },
+    {
+      "german": "einen Tatort besichtigen",
+      "english": "visit a crime scene",
+      "article": ""
+    },
+    {
+      "german": "einen Täter verhaften",
+      "english": "arrest a perpetrator",
+      "article": ""
+    },
+    {
+      "german": "ein Urteil fällen",
+      "english": "make a judgment",
+      "article": ""
+    },
+    {
+      "german": "ein Verbrechen begehen",
+      "english": "commit a crime",
+      "article": ""
+    },
+    {
+      "german": "einen Fall lösen",
+      "english": "solve a case",
+      "article": ""
+    },
+    {
+      "german": "ins Gefängnis kommen",
+      "english": "go to prison",
+      "article": ""
+    },
+    {
+      "german": "Gewalt ausüben",
+      "english": "exercise violence",
+      "article": ""
+    },
+    {
+      "german": "jemanden unter dem Verdacht des Mordes verhaften",
+      "english": "to arrest someone on suspicion of murder",
+      "article": ""
+    },
+    {
+      "german": "verurteilen zu",
+      "english": "condemn to",
+      "article": ""
+    },
+    {
+      "german": "vor Gericht stehen",
+      "english": "stand in court",
+      "article": ""
+    }
   ],
   "modul-2": [
-    {"german": "duften", "english": "dufte", "article": ""},
-    {"german": "fahren", "english": "køre", "article": ""},
-    {"german": "kaufen", "english": "købe", "article": ""},
-    {"german": "riechen", "english": "lugte", "article": ""},
-    {"german": "schlafen", "english": "sove", "article": ""},
-    {"german": "sich beeilen", "english": "skynde sig, have travlt", "article": ""},
-    {"german": "sich sehnen nach etwas", "english": "længes efter noget", "article": ""},
-    {"german": "träumen", "english": "drømme", "article": ""},
-    {"german": "verkaufen", "english": "sælge", "article": ""},
-    {"german": "wählen", "english": "vælge", "article": ""},
-    {"german": "alt", "english": "gammel", "article": ""},
-    {"german": "arm", "english": "fattig", "article": ""},
-    {"german": "billig", "english": "billig", "article": ""},
-    {"german": "bunt", "english": "broget, forskelligartet", "article": ""},
-    {"german": "echt", "english": "ægte", "article": ""},
-    {"german": "gastfrei", "english": "gæstfri", "article": ""},
-    {"german": "günstig", "english": "billig, fordelagtig", "article": ""},
-    {"german": "jung", "english": "ung", "article": ""},
-    {"german": "klaustrophobisch", "english": "klaustrofobisk", "article": ""},
-    {"german": "kontrastreich", "english": "kontrastfyldt", "article": ""},
-    {"german": "mannigfaltig", "english": "mangfoldig", "article": ""},
-    {"german": "multikulturell", "english": "multikulturel", "article": ""},
-    {"german": "offen", "english": "åben", "article": ""},
-    {"german": "reich", "english": "rig", "article": ""},
-    {"german": "schmutzig", "english": "snavset, beskidt", "article": ""},
-    {"german": "stolz", "english": "stolt", "article": ""},
-    {"german": "teuer", "english": "dyr", "article": ""},
-    {"german": "tolerant", "english": "tolerant", "article": ""},
-    {"german": "vielfältig", "english": "mangfoldig", "article": ""},
-    {"german": "wach", "english": "vågen", "article": ""},
-    {"german": "zugänglich", "english": "tilgængelig", "article": ""}
+    {
+      "german": "duften",
+      "english": "smell",
+      "article": ""
+    },
+    {
+      "german": "fahren",
+      "english": "drive",
+      "article": ""
+    },
+    {
+      "german": "kaufen",
+      "english": "buy",
+      "article": ""
+    },
+    {
+      "german": "riechen",
+      "english": "smell",
+      "article": ""
+    },
+    {
+      "german": "schlafen",
+      "english": "sleep",
+      "article": ""
+    },
+    {
+      "german": "sich beeilen",
+      "english": "hurry up",
+      "article": ""
+    },
+    {
+      "german": "sich sehnen nach etwas",
+      "english": "long for something",
+      "article": ""
+    },
+    {
+      "german": "träumen",
+      "english": "dream",
+      "article": ""
+    },
+    {
+      "german": "verkaufen",
+      "english": "sell",
+      "article": ""
+    },
+    {
+      "german": "wählen",
+      "english": "choose",
+      "article": ""
+    },
+    {
+      "german": "alt",
+      "english": "old",
+      "article": ""
+    },
+    {
+      "german": "arm",
+      "english": "arm",
+      "article": ""
+    },
+    {
+      "german": "billig",
+      "english": "cheap",
+      "article": ""
+    },
+    {
+      "german": "bunt",
+      "english": "colorful",
+      "article": ""
+    },
+    {
+      "german": "echt",
+      "english": "real",
+      "article": ""
+    },
+    {
+      "german": "gastfrei",
+      "english": "hospitable",
+      "article": ""
+    },
+    {
+      "german": "günstig",
+      "english": "cheap",
+      "article": ""
+    },
+    {
+      "german": "jung",
+      "english": "young",
+      "article": ""
+    },
+    {
+      "german": "klaustrophobisch",
+      "english": "claustrophobic",
+      "article": ""
+    },
+    {
+      "german": "kontrastreich",
+      "english": "rich in contrast",
+      "article": ""
+    },
+    {
+      "german": "mannigfaltig",
+      "english": "diverse",
+      "article": ""
+    },
+    {
+      "german": "multikulturell",
+      "english": "multicultural",
+      "article": ""
+    },
+    {
+      "german": "offen",
+      "english": "open",
+      "article": ""
+    },
+    {
+      "german": "reich",
+      "english": "rich",
+      "article": ""
+    },
+    {
+      "german": "schmutzig",
+      "english": "dirty",
+      "article": ""
+    },
+    {
+      "german": "stolz",
+      "english": "proud",
+      "article": ""
+    },
+    {
+      "german": "teuer",
+      "english": "expensive",
+      "article": ""
+    },
+    {
+      "german": "tolerant",
+      "english": "tolerant",
+      "article": ""
+    },
+    {
+      "german": "vielfältig",
+      "english": "diverse",
+      "article": ""
+    },
+    {
+      "german": "wach",
+      "english": "awake",
+      "article": ""
+    },
+    {
+      "german": "zugänglich",
+      "english": "accessible",
+      "article": ""
+    }
   ],
   "modul-3": [
-    {"german": "angreifen", "english": "angribe", "article": ""},
-    {"german": "ausrotten", "english": "udrydde", "article": ""},
-    {"german": "beschützen", "english": "beskytte", "article": ""},
-    {"german": "helfen", "english": "hjælpe", "article": ""},
-    {"german": "hinrichten", "english": "henrette", "article": ""},
-    {"german": "kontrollieren", "english": "kontrollere", "article": ""},
-    {"german": "sterben", "english": "dø", "article": ""},
-    {"german": "töten", "english": "dræbe", "article": ""},
-    {"german": "vernichten", "english": "tilintetgøre, udslette", "article": ""},
-    {"german": "verstecken", "english": "gemme, skjule", "article": ""},
-    {"german": "verteidigen", "english": "forsvare", "article": ""},
-    {"german": "autoritär", "english": "autoritær", "article": ""},
-    {"german": "böse", "english": "ond, vred", "article": ""},
-    {"german": "brutal", "english": "brutal", "article": ""},
-    {"german": "extrem", "english": "ekstrem", "article": ""},
-    {"german": "gefährlich", "english": "farlig", "article": ""},
-    {"german": "gehorsam", "english": "lydig", "article": ""},
-    {"german": "gewalttätig", "english": "voldelig", "article": ""},
-    {"german": "grauenhaft", "english": "grufuld", "article": ""},
-    {"german": "grausam", "english": "grusom", "article": ""},
-    {"german": "Bewältigung der Vergangenheit", "english": "bearbejdelse af fortiden, opgør med fortiden", "article": ""},
-    {"german": "Aufarbeitung der Vergangenheit", "english": "bearbejdelse af fortiden, opgør med fortiden", "article": ""},
-    {"german": "Die Weiße Rose", "english": "Den hvide Rose", "article": "die"},
-    {"german": "Hakenkreuz", "english": "hagekors", "article": "das"},
-    {"german": "Manipulation", "english": "manipulation", "article": "die"}
+    {
+      "german": "angreifen",
+      "english": "attack",
+      "article": ""
+    },
+    {
+      "german": "ausrotten",
+      "english": "exterminate",
+      "article": ""
+    },
+    {
+      "german": "beschützen",
+      "english": "protect",
+      "article": ""
+    },
+    {
+      "german": "helfen",
+      "english": "help",
+      "article": ""
+    },
+    {
+      "german": "hinrichten",
+      "english": "execute",
+      "article": ""
+    },
+    {
+      "german": "kontrollieren",
+      "english": "control",
+      "article": ""
+    },
+    {
+      "german": "sterben",
+      "english": "die",
+      "article": ""
+    },
+    {
+      "german": "töten",
+      "english": "kill",
+      "article": ""
+    },
+    {
+      "german": "vernichten",
+      "english": "destroy",
+      "article": ""
+    },
+    {
+      "german": "verstecken",
+      "english": "hide",
+      "article": ""
+    },
+    {
+      "german": "verteidigen",
+      "english": "defend",
+      "article": ""
+    },
+    {
+      "german": "autoritär",
+      "english": "authoritarian",
+      "article": ""
+    },
+    {
+      "german": "böse",
+      "english": "evil",
+      "article": ""
+    },
+    {
+      "german": "brutal",
+      "english": "brutally",
+      "article": ""
+    },
+    {
+      "german": "extrem",
+      "english": "extreme",
+      "article": ""
+    },
+    {
+      "german": "gefährlich",
+      "english": "dangerous",
+      "article": ""
+    },
+    {
+      "german": "gehorsam",
+      "english": "obedience",
+      "article": ""
+    },
+    {
+      "german": "gewalttätig",
+      "english": "violent",
+      "article": ""
+    },
+    {
+      "german": "grauenhaft",
+      "english": "horrible",
+      "article": ""
+    },
+    {
+      "german": "grausam",
+      "english": "awful",
+      "article": ""
+    },
+    {
+      "german": "Bewältigung der Vergangenheit",
+      "english": "Coping with the past",
+      "article": ""
+    },
+    {
+      "german": "Aufarbeitung der Vergangenheit",
+      "english": "Coming to terms with the past",
+      "article": ""
+    },
+    {
+      "german": "Die Weiße Rose",
+      "english": "The White Rose",
+      "article": "die"
+    },
+    {
+      "german": "Hakenkreuz",
+      "english": "Nazi swastika",
+      "article": "das"
+    },
+    {
+      "german": "Manipulation",
+      "english": "manipulation",
+      "article": "die"
+    }
   ],
   "modul-4": [
-    {"german": "sich etwas leisten können", "english": "at have råd til noget", "article": ""},
-    {"german": "fehlen", "english": "mangle noget", "article": ""},
-    {"german": "sterben", "english": "dø", "article": ""},
-    {"german": "verlieren", "english": "miste", "article": ""},
-    {"german": "vermissen", "english": "savne", "article": ""},
-    {"german": "verzichten auf etwas", "english": "give afkald på noget", "article": ""},
-    {"german": "zerbomben", "english": "bombe, smadre, ødelægge", "article": ""},
-    {"german": "zurückkehren", "english": "vende tilbage", "article": ""},
-    {"german": "gehorsam", "english": "lydig", "article": ""},
-    {"german": "geistig", "english": "åndelig", "article": ""},
-    {"german": "materiell", "english": "materiel", "article": ""},
-    {"german": "Bewältigung der Vergangenheit", "english": "bearbejdelse af fortiden, opgør med fortiden", "article": ""},
-    {"german": "Aufarbeitung der Vergangenheit", "english": "bearbejdelse af fortiden, opgør med fortiden", "article": ""},
-    {"german": "Der kalte Krieg", "english": "den kolde krig", "article": "der"},
-    {"german": "Der schwarze Markt", "english": "det sorte marked", "article": "der"}
+    {
+      "german": "sich etwas leisten können",
+      "english": "can afford something",
+      "article": ""
+    },
+    {
+      "german": "fehlen",
+      "english": "miss",
+      "article": ""
+    },
+    {
+      "german": "sterben",
+      "english": "die",
+      "article": ""
+    },
+    {
+      "german": "verlieren",
+      "english": "lose",
+      "article": ""
+    },
+    {
+      "german": "vermissen",
+      "english": "miss",
+      "article": ""
+    },
+    {
+      "german": "verzichten auf etwas",
+      "english": "give up something",
+      "article": ""
+    },
+    {
+      "german": "zerbomben",
+      "english": "bomb",
+      "article": ""
+    },
+    {
+      "german": "zurückkehren",
+      "english": "return",
+      "article": ""
+    },
+    {
+      "german": "gehorsam",
+      "english": "obedience",
+      "article": ""
+    },
+    {
+      "german": "geistig",
+      "english": "spiritually",
+      "article": ""
+    },
+    {
+      "german": "materiell",
+      "english": "material",
+      "article": ""
+    },
+    {
+      "german": "Bewältigung der Vergangenheit",
+      "english": "Coping with the past",
+      "article": ""
+    },
+    {
+      "german": "Aufarbeitung der Vergangenheit",
+      "english": "Coming to terms with the past",
+      "article": ""
+    },
+    {
+      "german": "Der kalte Krieg",
+      "english": "The cold war",
+      "article": "der"
+    },
+    {
+      "german": "Der schwarze Markt",
+      "english": "The black market",
+      "article": "der"
+    }
   ],
   "modul-5": [
-    {"german": "flüchten", "english": "flygte", "article": ""},
-    {"german": "sich anpassen", "english": "tilpasse sig", "article": ""},
-    {"german": "unterdrücken", "english": "undertrykke", "article": ""},
-    {"german": "wettbewerbsfähig", "english": "konkurrencedygtig", "article": ""},
-    {"german": "zerrissen", "english": "splittet", "article": ""},
-    {"german": "Die Berliner Mauer", "english": "Berlinmuren", "article": "die"},
-    {"german": "Fall der Berliner Mauer", "english": "Berlinmurens fald", "article": "der"},
-    {"german": "Wir sind das Volk", "english": "Vi er folket", "article": ""},
-    {"german": "Die Mauer im Kopf", "english": "Muren i hovedet", "article": "die"},
-    {"german": "Bewältigung der Vergangenheit", "english": "bearbejdelse af fortiden, opgør med fortiden", "article": ""},
-    {"german": "Aufarbeitung der Vergangenheit", "english": "bearbejdelse af fortiden, opgør med fortiden", "article": ""},
-    {"german": "Der eiserne Vorhang", "english": "jerntæppet", "article": "der"},
-    {"german": "Freie Deutsche Jugend", "english": "Den frie, tyske ungdom", "article": "die"},
-    {"german": "SED", "english": "Tysklands socialistiske Enhedsparti", "article": "die"},
-    {"german": "Stasi", "english": "det hemmelige politi i DDR", "article": "die"}
+    {
+      "german": "flüchten",
+      "english": "escape",
+      "article": ""
+    },
+    {
+      "german": "sich anpassen",
+      "english": "adapt",
+      "article": ""
+    },
+    {
+      "german": "unterdrücken",
+      "english": "suppress",
+      "article": ""
+    },
+    {
+      "german": "wettbewerbsfähig",
+      "english": "competitive",
+      "article": ""
+    },
+    {
+      "german": "zerrissen",
+      "english": "torn",
+      "article": ""
+    },
+    {
+      "german": "Die Berliner Mauer",
+      "english": "The Berlin Wall",
+      "article": "die"
+    },
+    {
+      "german": "Fall der Berliner Mauer",
+      "english": "Fall of the Berlin Wall",
+      "article": "der"
+    },
+    {
+      "german": "Wir sind das Volk",
+      "english": "We are the people",
+      "article": ""
+    },
+    {
+      "german": "Die Mauer im Kopf",
+      "english": "The wall in the head",
+      "article": "die"
+    },
+    {
+      "german": "Bewältigung der Vergangenheit",
+      "english": "Coping with the past",
+      "article": ""
+    },
+    {
+      "german": "Aufarbeitung der Vergangenheit",
+      "english": "Coming to terms with the past",
+      "article": ""
+    },
+    {
+      "german": "Der eiserne Vorhang",
+      "english": "The Iron Curtain",
+      "article": "der"
+    },
+    {
+      "german": "Freie Deutsche Jugend",
+      "english": "Free German Youth",
+      "article": "die"
+    },
+    {
+      "german": "SED",
+      "english": "SED",
+      "article": "die"
+    },
+    {
+      "german": "Stasi",
+      "english": "Stasi",
+      "article": "die"
+    }
   ]
 }

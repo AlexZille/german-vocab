@@ -311,10 +311,13 @@ def main():
                 matched += 1
             else:
                 wid = f"exam_{mod_id}_{len(new_words):04d}"
+                english = w.get("english") or ""
+                if re.search(r"[æøåÆØÅ]", english):
+                    english = ""  # discard Danish from source docx
                 entry = {
                     "id": wid,
                     "german": w["german"],
-                    "english": w["english"],
+                    "english": english,
                     "category": "exam",
                     "module": mod_id,
                     "difficulty": "intermediate",

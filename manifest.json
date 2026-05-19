@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Tysk Ordforråd",
   "short_name": "Tysk Ord",
-  "description": "Øv tysk ordforråd med tale – eksamensmoduler inkluderet",
+  "description": "Practice German vocabulary with voice – exam modules included",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
