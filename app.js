@@ -499,7 +499,7 @@ async function startPractice() {
     
     if (sessionWords.length === 0) {
         var moduleMsg = settings.activeModule
-            ? 'Ingen ord tilbage i dette modul. Tilføj flere ord under Indstillinger → Eksamensmoduler, eller vælg et andet modul.'
+            ? 'No words left in this module. Add words under Settings → Exam modules, or choose another module.'
             : 'No words available for practice. All words may be mastered! Try adjusting your settings.';
         alert(moduleMsg);
         return;
@@ -1443,7 +1443,7 @@ function updateStatisticsScreen() {
             const date = new Date(word.masteredDate).toLocaleDateString();
             div.innerHTML = `
                 <span class="word-item-german">${word.german}</span>
-                <span class="word-item-danish">${word.english || word.danish || ''}</span>
+                <span class="word-item-english">${word.english || word.danish || ''}</span>
                 <span class="word-item-date">${date}</span>
             `;
             masteredList.appendChild(div);
@@ -2283,15 +2283,15 @@ function isAndroid() {
 
 function getInstallInstructions() {
     if (isIOS()) {
-        return 'Tryk på Del-knappen (firkant med pil) nederst i Safari, og vælg «Føj til hjemmeskærm». Åbn derefter appen fra ikonet på hjemmeskærmen.';
+        return 'Tap Share at the bottom of Safari, then Add to Home Screen. Open the app from the home screen icon.';
     }
     if (isAndroid()) {
         if (deferredInstallPrompt) {
-            return 'Tryk «Installer app» herunder – eller vælg «Installer app» / «Føj til startskærm» i Chromes menu (⋮).';
+            return 'Tap Install below — or use Chrome menu (⋮) → Install app / Add to Home screen.';
         }
-        return 'Åbn menuen (⋮) i Chrome og vælg «Installer app» eller «Føj til startskærm». Brug helst https://-adressen hvis du har den.';
+        return 'Open Chrome menu (⋮) → Install app or Add to Home screen.';
     }
-    return 'I Chrome/Edge: klik på installer-ikonet i adresselinjen, eller brug menuen «Installer app».';
+    return 'In Chrome/Edge: use the install icon in the address bar, or the browser menu → Install app.';
 }
 
 function updateInstallUI() {
@@ -2304,7 +2304,7 @@ function updateInstallUI() {
 
     var instructions = getInstallInstructions();
     if (settingsText) settingsText.textContent = installed
-        ? 'Appen kører allerede i fuldskærms-tilstand.'
+        ? 'The app is already running in standalone mode.'
         : instructions;
 
     if (settingsBtn) {
@@ -2313,6 +2313,7 @@ function updateInstallUI() {
 
     if (installBtn) {
         installBtn.hidden = !deferredInstallPrompt || installed;
+        if (installBtn && !installBtn.hidden) installBtn.textContent = 'Install';
     }
 
     if (banner && bannerBody) {
@@ -2408,10 +2409,10 @@ function renderModuleSelector() {
     var current = settings.activeModule || '';
     var modules = settings.examModules || [];
 
-    select.innerHTML = '<option value="">Alle ord (ingen modulfilter)</option>' +
+    select.innerHTML = '<option value="">All words (no module filter)</option>' +
         modules.map(function(m) {
             var count = getWordsInModule(m.id).length;
-            var label = m.name + ' (' + count + ' ord)';
+            var label = m.name + ' (' + count + ' words)';
             return '<option value="' + m.id + '">' + escapeHtml(label) + '</option>';
         }).join('');
 
@@ -2442,10 +2443,10 @@ function updateModulePracticeHint() {
     var total = getWordsInModule(moduleId).length;
     var remaining = getModuleAvailableWordCount(moduleId);
     if (total === 0) {
-        hint.textContent = mod.name + ' har ingen ord endnu. Tilføj ord under Indstillinger.';
+        hint.textContent = mod.name + ' has no words yet. Add words under Settings.';
         return;
     }
-    hint.textContent = mod.name + ': ' + total + ' ord i alt, ' + remaining + ' tilbage at øve.';
+    hint.textContent = mod.name + ': ' + total + ' words total, ' + remaining + ' left to practice.';
 }
 
 function createExamModuleFromInput() {
@@ -2455,7 +2456,7 @@ function createExamModuleFromInput() {
 
     var name = input.value.trim();
     if (!name) {
-        alert('Skriv et navn til modulet.');
+        alert('Enter a name for the module.');
         return;
     }
 
@@ -2472,13 +2473,13 @@ function createExamModuleFromInput() {
     if (result) {
         result.style.display = 'block';
         result.style.color = 'var(--success)';
-        result.textContent = 'Modul oprettet: ' + name;
+        result.textContent = 'Module created: ' + name;
         setTimeout(function() { result.style.display = 'none'; }, 3000);
     }
 }
 
 function deleteExamModule(moduleId) {
-    if (!confirm('Slet dette modul? Ordene forbliver i ordlisten.')) return;
+    if (!confirm('Delete this module? The words stay in the vocabulary list.')) return;
     settings.examModules = (settings.examModules || []).filter(function(m) { return m.id !== moduleId; });
     if (settings.activeModule === moduleId) {
         settings.activeModule = '';
@@ -2498,7 +2499,7 @@ function addWordsToExamModule(moduleId) {
 
     var raw = textarea.value.trim();
     if (!raw) {
-        alert('Indsæt mindst ét tysk ord.');
+        alert('Paste at least one German word.');
         return;
     }
 
@@ -2530,9 +2531,9 @@ function addWordsToExamModule(moduleId) {
     renderModuleSelector();
     updateModulePracticeHint();
 
-    var msg = added.length + ' ord tilføjet til modulet.';
+    var msg = added.length + ' word(s) added to the module.';
     if (notFound.length) {
-        msg += ' Kunne ikke finde: ' + notFound.slice(0, 8).join(', ') +
+        msg += ' Not found: ' + notFound.slice(0, 8).join(', ') +
             (notFound.length > 8 ? ' …' : '');
     }
     alert(msg);
@@ -2544,7 +2545,7 @@ function renderExamModulesList() {
 
     var modules = settings.examModules || [];
     if (modules.length === 0) {
-        container.innerHTML = '<p style="color: var(--text-secondary); font-size: 13px;">Ingen moduler endnu. Opret dit første modul ovenfor.</p>';
+        container.innerHTML = '<p style="color: var(--text-secondary); font-size: 13px;">No modules yet. Create your first module above.</p>';
         return;
     }
 
@@ -2554,13 +2555,13 @@ function renderExamModulesList() {
         return '<div class="exam-module-card" data-module-id="' + m.id + '">' +
             '<div class="exam-module-card-header">' +
             '<span class="exam-module-card-title">' + escapeHtml(m.name) + '</span>' +
-            '<span class="exam-module-card-count">' + count + ' ord · ' + remaining + ' tilbage</span>' +
+            '<span class="exam-module-card-count">' + count + ' words · ' + remaining + ' left</span>' +
             '</div>' +
-            '<p style="color: var(--text-secondary); font-size: 12px; margin-bottom: 8px;">Indsæt tyske ord (ét per linje). Engelsk virker også.</p>' +
+            '<p style="color: var(--text-secondary); font-size: 12px; margin-bottom: 8px;">Paste German words (one per line). English also works for matching.</p>' +
             '<textarea id="moduleWords_' + m.id + '" rows="4" placeholder="Haus&#10;Schule&#10;Lehrer"></textarea>' +
             '<div class="exam-module-card-actions">' +
-            '<button class="btn btn-primary" onclick="addWordsToExamModule(\'' + m.id + '\')">Tilføj ord</button>' +
-            '<button class="btn btn-danger" onclick="deleteExamModule(\'' + m.id + '\')">Slet modul</button>' +
+            '<button class="btn btn-primary" onclick="addWordsToExamModule(\'' + m.id + '\')">Add words</button>' +
+            '<button class="btn btn-danger" onclick="deleteExamModule(\'' + m.id + '\')">Delete module</button>' +
             '</div>' +
             '</div>';
     }).join('');
@@ -2583,7 +2584,7 @@ function renderModuleStats() {
     }
 
     container.style.display = 'block';
-    container.innerHTML = '<h3>Modulfremskridt</h3>';
+    container.innerHTML = '<h3>Module progress</h3>';
 
     modules.forEach(function(m) {
         var words = getWordsInModule(m.id);

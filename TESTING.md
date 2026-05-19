@@ -1,136 +1,99 @@
-# Testing the German Vocab Trainer
+# German Vocab Trainer – Test Guide
 
-## Quick Start (Easiest Method)
+## Download & use on your phone (recommended)
 
-### Option 1: Python HTTP Server (Recommended)
+**Live app (works anywhere, no computer needed):**
 
-1. **Open a terminal/command prompt** in this directory
-2. **Run the server script:**
-   ```bash
-   python start_server.py
-   ```
-   Or if you have Python 3:
-   ```bash
-   python3 start_server.py
-   ```
+### https://alexzille.github.io/german-vocab/
 
-3. **Open your browser** and go to: `http://localhost:8000`
-
-The script will automatically try to open your browser. If it doesn't, manually navigate to the URL.
-
-**To stop the server:** Press `Ctrl+C` in the terminal
+1. Open the link in **Chrome** (Android) or **Safari** (iPhone)
+2. Allow **microphone** access when asked
+3. **Install as app:**
+   - **iPhone:** Share → **Add to Home Screen** → open from icon **German Vocab**
+   - **Android:** Menu (⋮) → **Install app** (or use the Install button in the app)
+4. On **Practice**, choose an **Exam module** (Modul 1–6) or leave “All words”
+5. Tap **Start Practice** → hear German → say the **English** translation
 
 ---
 
-### Option 2: Python Built-in Server
+## Test on your computer
 
-If the script doesn't work, use Python's built-in server:
+### Option A: Double-click `start_server.bat`
+
+Then open: http://localhost:8000
+
+### Option B: Command line
 
 ```bash
-# Python 3
-python -m http.server 8000
-
-# Or Python 2 (if Python 3 not available)
-python -m SimpleHTTPServer 8000
+python start_server.py
 ```
 
-Then open: `http://localhost:8000`
+---
+
+## Quick test checklist
+
+- [ ] Page loads, title shows **German Vocab Trainer**
+- [ ] Microphone permission granted
+- [ ] **Start Practice** plays a German word
+- [ ] Say the English answer (e.g. *house* for *Haus*)
+- [ ] App shows correct / incorrect feedback
+- [ ] **Exam module** dropdown lists Modul 1–6
+- [ ] Selecting a module only practices words from that module
+- [ ] **Statistics** shows progress after a few correct answers
+- [ ] **Settings** → exam modules visible with word counts
 
 ---
 
-### Option 3: Node.js HTTP Server
+## Exam modules included
 
-If you have Node.js installed:
-
-```bash
-# Install http-server globally (one time)
-npm install -g http-server
-
-# Run the server
-http-server -p 8000
-```
-
-Then open: `http://localhost:8000`
+| Module | Topic |
+|--------|--------|
+| Modul 1 | Verbrechen und Strafe |
+| Modul 2 | Das Leben in der Großstadt |
+| Modul 3 | Kindheit und Jugend in der NS-Zeit |
+| Modul 4 | Nachkriegszeit |
+| Modul 5 | Reisefreiheit |
+| Modul 6 | Familienleben |
 
 ---
-
-### Option 4: VS Code Live Server Extension
-
-If you're using VS Code:
-
-1. Install the "Live Server" extension
-2. Right-click on `index.html`
-3. Select "Open with Live Server"
-
----
-
-## Why Do We Need a Server?
-
-The app uses the `fetch()` API to load `vocabulary.json`. Browsers block this when opening files directly (`file://` protocol) due to security restrictions. A local web server solves this.
-
-## Testing Checklist
-
-Once the server is running:
-
-- [ ] **Page loads** - You see the German Vocab Trainer interface
-- [ ] **Microphone permission** - Browser asks for microphone access (click "Allow")
-- [ ] **Start Practice** - Click "Start Practice" button
-- [ ] **Hear German word** - App speaks a German word
-- [ ] **Speech recognition** - Status shows "Listening..."
-- [ ] **Speak Danish translation** - Say the Danish word (e.g., "hus" for "Haus")
-- [ ] **Get feedback** - App tells you if correct/incorrect
-- [ ] **Statistics** - Check Statistics tab to see progress
-- [ ] **Settings** - Adjust mastery threshold, TTS speed, etc.
 
 ## Troubleshooting
 
-### "Vocabulary not loaded yet"
-- Make sure the server is running
-- Check browser console (F12) for errors
-- Verify `vocabulary.json` is in the same directory
+### Microphone not working
+- Use **Chrome** or **Edge** on desktop
+- On phone, use the **HTTPS** live link (not `file://`)
+- Check browser site settings → Microphone → Allow
 
-### "Speech recognition not supported"
-- Use Chrome or Edge browser (best support)
-- Make sure you're using `http://localhost:8000` (not `file://`)
+### “No words available”
+- You may have marked all words as known → Statistics → review mastered list
+- Or try another exam module
 
-### "No speech detected"
-- Check microphone permissions in browser settings
-- Speak clearly and wait for "Listening..." status
-- Try speaking louder or closer to microphone
+### Old version / wrong language on phone
+- Close the app completely and reopen https://alexzille.github.io/german-vocab/
+- Clear browser cache for the site if needed
 
-### Port Already in Use
-- Change the port number in `start_server.py` (line 10)
-- Or close the application using that port
+### Speech not recognized
+- Speak clearly in **English**
+- Reduce background noise
+- Optional: Settings → enable **OpenAI Whisper** (requires API key)
 
-## Browser Compatibility
+---
 
-- ✅ **Chrome/Edge**: Full support (recommended)
-- ✅ **Firefox**: Should work (may need HTTPS for some features)
-- ⚠️ **Safari**: Limited speech recognition support
+## Browser support
 
-## Testing Speech Recognition
+| Browser | Speech | Install as app |
+|---------|--------|----------------|
+| Chrome (Android) | ✅ | ✅ |
+| Safari (iPhone) | ✅ | ✅ (Add to Home Screen) |
+| Chrome / Edge (PC) | ✅ | ✅ |
+| Firefox | ⚠️ Limited | ⚠️ |
 
-1. Start practice session
-2. Wait for "Listening..." status
-3. Speak clearly: "hus" (for Haus), "vand" (for Wasser), etc.
-4. The app should recognize your Danish answer
+---
 
-## Testing Statistics
+## Local HTTPS (optional, for phone on same Wi-Fi)
 
-1. Practice a few words correctly
-2. Go to Statistics tab
-3. You should see:
-   - Words mastered count increasing
-   - Mastery percentage updating
-   - Words learned today
-   - List of mastered words
+```bash
+python start_server_https.py
+```
 
-## Need Help?
-
-- Check browser console (F12 → Console tab) for errors
-- Make sure all files are in the same directory:
-  - index.html
-  - styles.css
-  - app.js
-  - vocabulary.json
-  - start_server.py
+Open on phone: `https://YOUR-PC-IP:8443` (accept security warning once)

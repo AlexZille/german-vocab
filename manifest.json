@@ -1,7 +1,7 @@
 {
   "id": "./",
-  "name": "Tysk Ordforråd",
-  "short_name": "Tysk Ord",
+  "name": "German Vocab Trainer",
+  "short_name": "German Vocab",
   "description": "Practice German vocabulary with voice – exam modules included",
   "start_url": "./index.html",
   "scope": "./",

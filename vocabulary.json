@@ -11688,7 +11688,7 @@
     {
       "id": "exam_modul-1_0032",
       "german": "jemanden unter dem Verdacht des Mordes verhaften",
-      "english": "to arrest someone on suspicion of murder",
+      "english": "arrest someone on suspicion of murder",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
@@ -12157,8 +12157,8 @@
     },
     {
       "id": "exam_modul-2_0079",
-      "german": "BahnhöfebanegårdBeton",
-      "english": "Stationsbanegårdconcrete",
+      "german": "Bahnhof",
+      "english": "train station",
       "category": "exam",
       "module": "modul-2",
       "difficulty": "intermediate",
@@ -13417,12 +13417,12 @@
     },
     {
       "id": "exam_modul-5_0205",
-      "german": "Marshall-hjælpAufstand",
-      "english": "Marshall-hjælpUprising",
+      "german": "Aufbauhilfe",
+      "english": "Marshall Plan aid",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
-      "article": "der",
+      "article": "die",
       "exampleSentence": ""
     },
     {
@@ -13847,8 +13847,8 @@
     },
     {
       "id": "exam_modul-6_0248",
-      "german": "geborgenvære i gode",
-      "english": "recovered and saved",
+      "german": "sich gut aufgehoben fühlen",
+      "english": "to feel safe and cared for",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
@@ -13887,7 +13887,7 @@
     },
     {
       "id": "exam_modul-6_0252",
-      "german": "einmal die Wochenæsten hver",
+      "german": "einmal die Woche",
       "english": "once a week",
       "category": "exam",
       "module": "modul-6",
@@ -13977,8 +13977,8 @@
     },
     {
       "id": "exam_modul-6_0261",
-      "german": "wie es ihnen gehtvære afhængig/",
-      "english": "how they are doingvære afhængig/",
+      "german": "wie es ihnen geht",
+      "english": "how they are doing",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
