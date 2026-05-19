@@ -35,7 +35,10 @@ let userProgress = {
 };
 
 // Settings
+const APP_VERSION = '11';
 let deferredInstallPrompt = null;
+let swRegistration = null;
+let swUpdatePending = false;
 
 let settings = {
     masteryThreshold: 3,
@@ -167,6 +170,7 @@ async function init() {
     updateModulePracticeHint();
     renderExamModulesList();
     initInstallApp();
+    initServiceWorker();
 }
 
 window.addEventListener('beforeinstallprompt', function(e) {
@@ -2308,14 +2312,30 @@ function updateInstallUI() {
     var installBtn = document.getElementById('installAppBtn');
     var settingsText = document.getElementById('installAppSettingsText');
     var settingsBtn = document.getElementById('installAppSettingsBtn');
+    var versionText = document.getElementById('appVersionText');
+
+    if (versionText) {
+        versionText.textContent = 'Version ' + APP_VERSION + (swUpdatePending ? ' — update ready' : '');
+    }
 
     var instructions = getInstallInstructions();
-    if (settingsText) settingsText.textContent = installed
-        ? 'The app is already running in standalone mode.'
-        : instructions;
+    if (settingsText) {
+        if (installed) {
+            settingsText.textContent = 'App is installed. Use “Check for updates” below to get the newest version. ' +
+                (isIOS() ? 'On iPhone you can also open the link in Safari and pull down to refresh.' : '');
+        } else {
+            settingsText.textContent = instructions;
+        }
+    }
 
     if (settingsBtn) {
-        settingsBtn.style.display = (!installed && deferredInstallPrompt) ? 'block' : 'none';
+        var showInstall = !installed && (deferredInstallPrompt || isIOS() || isAndroid());
+        settingsBtn.style.display = showInstall ? 'block' : 'none';
+        if (showInstall && !deferredInstallPrompt) {
+            settingsBtn.textContent = isIOS() ? 'How to install (see steps above)' : 'Install app';
+        } else {
+            settingsBtn.textContent = 'Install app';
+        }
     }
 
     if (installBtn) {
@@ -2337,6 +2357,9 @@ function initInstallApp() {
     var dismissBtn = document.getElementById('installBannerDismiss');
     var installBtn = document.getElementById('installAppBtn');
     var settingsBtn = document.getElementById('installAppSettingsBtn');
+    var checkUpdateBtn = document.getElementById('checkUpdateBtn');
+    var updateBtn = document.getElementById('updateAppBtn');
+    var updateDismiss = document.getElementById('updateBannerDismiss');
 
     if (dismissBtn) {
         dismissBtn.addEventListener('click', function() {
@@ -2350,10 +2373,123 @@ function initInstallApp() {
         installBtn.addEventListener('click', promptInstallApp);
     }
     if (settingsBtn) {
-        settingsBtn.addEventListener('click', promptInstallApp);
+        settingsBtn.addEventListener('click', function() {
+            if (deferredInstallPrompt) {
+                promptInstallApp();
+            } else {
+                showScreen('settingsScreen');
+            }
+        });
+    }
+    if (checkUpdateBtn) {
+        checkUpdateBtn.addEventListener('click', checkForAppUpdate);
+    }
+    if (updateBtn) {
+        updateBtn.addEventListener('click', applyAppUpdate);
+    }
+    if (updateDismiss) {
+        updateDismiss.addEventListener('click', function() {
+            var b = document.getElementById('updateBanner');
+            if (b) b.hidden = true;
+        });
     }
 
     updateInstallUI();
+}
+
+function initServiceWorker() {
+    if (!('serviceWorker' in navigator)) return;
+
+    var refreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+        if (refreshing) return;
+        refreshing = true;
+        window.location.reload();
+    });
+
+    navigator.serviceWorker.register('./service-worker.js?v=' + APP_VERSION)
+        .then(function(reg) {
+            swRegistration = reg;
+            console.log('Service Worker registered');
+
+            if (reg.waiting) {
+                onSwUpdateWaiting(reg.waiting);
+            }
+
+            reg.addEventListener('updatefound', function() {
+                var newWorker = reg.installing;
+                if (!newWorker) return;
+                newWorker.addEventListener('statechange', function() {
+                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                        onSwUpdateWaiting(newWorker);
+                    }
+                });
+            });
+
+            setInterval(function() {
+                reg.update();
+            }, 60 * 60 * 1000);
+        })
+        .catch(function(err) {
+            console.log('SW registration failed:', err);
+        });
+}
+
+function onSwUpdateWaiting(worker) {
+    swUpdatePending = true;
+    updateInstallUI();
+    var banner = document.getElementById('updateBanner');
+    if (banner) banner.hidden = false;
+    if (worker) {
+        worker.addEventListener('statechange', function() {
+            if (worker.state === 'activated') {
+                swUpdatePending = false;
+            }
+        });
+    }
+}
+
+function applyAppUpdate() {
+    if (!swRegistration || !swRegistration.waiting) {
+        window.location.reload();
+        return;
+    }
+    swRegistration.waiting.postMessage({ type: 'SKIP_WAITING' });
+}
+
+async function checkForAppUpdate() {
+    var btn = document.getElementById('checkUpdateBtn');
+    if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Checking…';
+    }
+
+    try {
+        if ('serviceWorker' in navigator) {
+            var reg = swRegistration || await navigator.serviceWorker.getRegistration();
+            if (reg) {
+                await reg.update();
+                if (reg.waiting) {
+                    applyAppUpdate();
+                    return;
+                }
+            }
+        }
+        // Bust caches for vocabulary
+        await loadVocabulary();
+        mergeModulesFromConfig(
+            (await (await fetch('exam-modules.json?v=' + Date.now())).json()).modules || []
+        );
+        updateUI();
+        alert('You have the latest version (v' + APP_VERSION + ').');
+    } catch (e) {
+        alert('Could not check for updates. Open https://alexzille.github.io/german-vocab/ in your browser and refresh.');
+    } finally {
+        if (btn) {
+            btn.disabled = false;
+            btn.textContent = 'Check for updates';
+        }
+    }
 }
 
 async function promptInstallApp() {

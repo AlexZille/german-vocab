@@ -1,4 +1,4 @@
-const CACHE_NAME = 'german-vocab-v10';
+const CACHE_NAME = 'german-vocab-v11';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -32,6 +32,12 @@ self.addEventListener('activate', event => {
     })
   );
   self.clients.claim();
+});
+
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });
 
 // Fetch: NETWORK FIRST - always try to get fresh content, fall back to cache

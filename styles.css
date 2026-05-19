@@ -729,7 +729,12 @@ h3 {
     background: rgba(239, 107, 107, 0.2);
 }
 
-/* PWA install banner */
+/* PWA install / update banners */
+.update-banner {
+    border-color: #4ade80;
+    bottom: 140px;
+}
+
 .install-banner {
     position: fixed;
     left: 16px;

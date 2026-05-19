@@ -6,13 +6,66 @@
 
 ### https://alexzille.github.io/german-vocab/
 
-1. Open the link in **Chrome** (Android) or **Safari** (iPhone)
-2. Allow **microphone** access when asked
-3. **Install as app:**
-   - **iPhone:** Share → **Add to Home Screen** → open from icon **German Vocab**
-   - **Android:** Menu (⋮) → **Install app** (or use the Install button in the app)
-4. On **Practice**, choose an **Exam module** (Modul 1–6) or leave “All words”
-5. Tap **Start Practice** → hear German → say the **English** translation
+---
+
+## Install as app on your phone
+
+### iPhone (Safari)
+
+1. Open **https://alexzille.github.io/german-vocab/** in **Safari** (not Chrome)
+2. Tap **Share** (square with arrow) at the bottom
+3. Scroll down → **Add to Home Screen** → **Add**
+4. Open **German Vocab** from your home screen
+5. Allow **microphone** when asked
+
+### Android (Chrome)
+
+1. Open the link in **Chrome**
+2. Tap **Install** in the banner, or menu **⋮** → **Install app** / **Add to Home screen**
+3. Open the app from your home screen
+4. Allow **microphone** when asked
+
+---
+
+## Get the newest version on your phone
+
+If you already installed the app and want the latest fixes:
+
+### All phones (easiest)
+
+1. Open the app (or the link in the browser)
+2. Go to **Settings** (bottom right)
+3. Scroll down to **App on your phone**
+4. Tap **Check for updates**
+5. If you see a green **New version available** banner → tap **Update**
+
+### iPhone extra tip
+
+If something still looks old:
+
+1. Close the app completely (swipe it away)
+2. Open **Safari** → go to **https://alexzille.github.io/german-vocab/**
+3. Pull down to **refresh** the page
+4. Open the app again from the home screen icon
+
+### Android extra tip
+
+1. Chrome → **Settings** → **Site settings** → find the site → **Clear & reset**
+2. Open the link again and reinstall if needed
+
+**Current app version:** 11 (shown in Settings under “App on your phone”)
+
+---
+
+## Quick test checklist
+
+- [ ] Page loads, title shows **German Vocab Trainer**
+- [ ] Settings shows **Version 11**
+- [ ] Microphone permission granted
+- [ ] **Start Practice** plays a German word
+- [ ] Say the English answer (e.g. *house* for *Haus*)
+- [ ] **Exam module** dropdown lists Modul 1–6
+- [ ] **Settings** → mastery threshold stays at your value after reload
 
 ---
 
@@ -27,20 +80,6 @@ Then open: http://localhost:8000
 ```bash
 python start_server.py
 ```
-
----
-
-## Quick test checklist
-
-- [ ] Page loads, title shows **German Vocab Trainer**
-- [ ] Microphone permission granted
-- [ ] **Start Practice** plays a German word
-- [ ] Say the English answer (e.g. *house* for *Haus*)
-- [ ] App shows correct / incorrect feedback
-- [ ] **Exam module** dropdown lists Modul 1–6
-- [ ] Selecting a module only practices words from that module
-- [ ] **Statistics** shows progress after a few correct answers
-- [ ] **Settings** → exam modules visible with word counts
 
 ---
 
@@ -64,13 +103,13 @@ python start_server.py
 - On phone, use the **HTTPS** live link (not `file://`)
 - Check browser site settings → Microphone → Allow
 
-### “No words available”
-- You may have marked all words as known → Statistics → review mastered list
-- Or try another exam module
+### Settings not saved
+- Use version **11** or newer
+- Change a setting, close the app fully, reopen — value should stay
 
 ### Old version / wrong language on phone
-- Close the app completely and reopen https://alexzille.github.io/german-vocab/
-- Clear browser cache for the site if needed
+- Settings → **Check for updates**
+- Or follow **Get the newest version** above
 
 ### Speech not recognized
 - Speak clearly in **English**
