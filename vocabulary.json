@@ -1317,7 +1317,8 @@
       "synonyms": [
         "betagt",
         "antik"
-      ]
+      ],
+      "module": "modul-2"
     },
     {
       "id": "w116",
@@ -1830,12 +1831,13 @@
       "german": "Fall",
       "english": "case",
       "synonyms": [
-        "fall"
+        "matter"
       ],
       "category": "common",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": "Auf jeden Fall."
+      "exampleSentence": "Auf jeden Fall.",
+      "module": "modul-1"
     },
     {
       "id": "w160",
@@ -1943,7 +1945,8 @@
       "category": "verbs",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Ich fahre nach Hause."
+      "exampleSentence": "Ich fahre nach Hause.",
+      "module": "modul-2"
     },
     {
       "id": "w169",
@@ -2124,7 +2127,8 @@
       "synonyms": [
         "jugendlich",
         "minderjährig"
-      ]
+      ],
+      "module": "modul-2"
     },
     {
       "id": "w184",
@@ -2460,14 +2464,13 @@
       "german": "Vater",
       "english": "Father",
       "synonyms": [
-        "dad",
-        "daddy",
-        "papa"
+        "Fathersfarfar:"
       ],
       "category": "family",
       "difficulty": "beginner",
       "article": "der",
-      "exampleSentence": "Mein Vater arbeitet."
+      "exampleSentence": "Mein Vater arbeitet.",
+      "module": "modul-6"
     },
     {
       "id": "w212",
@@ -2572,14 +2575,13 @@
       "german": "Mutter",
       "english": "Mother",
       "synonyms": [
-        "mom",
-        "mum",
-        "mama"
+        "Motheroldefar:"
       ],
       "category": "family",
       "difficulty": "beginner",
       "article": "die",
-      "exampleSentence": "Meine Mutter ist nett."
+      "exampleSentence": "Meine Mutter ist nett.",
+      "module": "modul-6"
     },
     {
       "id": "w221",
@@ -2612,13 +2614,14 @@
       "german": "Grund",
       "english": "Reason",
       "synonyms": [
-        "ground",
-        "cause"
+        "cause",
+        "motives"
       ],
       "category": "common",
       "difficulty": "beginner",
       "article": "der",
-      "exampleSentence": "Aus diesem Grund."
+      "exampleSentence": "Aus diesem Grund.",
+      "module": "modul-1"
     },
     {
       "id": "w224",
@@ -3040,15 +3043,15 @@
     {
       "id": "w258",
       "german": "Kopf",
-      "english": "Head",
+      "english": "head",
       "category": "common",
       "difficulty": "beginner",
       "article": "der",
       "exampleSentence": "Mein Kopf tut weh.",
       "synonyms": [
-        "Haupt",
-        "Schädel"
-      ]
+        "mind"
+      ],
+      "module": "modul-5"
     },
     {
       "id": "w259",
@@ -3138,7 +3141,8 @@
       "category": "common",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": "Eine gute Möglichkeit."
+      "exampleSentence": "Eine gute Möglichkeit.",
+      "module": "modul-5"
     },
     {
       "id": "w266",
@@ -3494,30 +3498,30 @@
     {
       "id": "w294",
       "german": "Ziel",
-      "english": "Goal",
+      "english": "goal",
       "synonyms": [
-        "target",
-        "destination",
-        "aim"
+        "aim",
+        "objective",
+        "target"
       ],
       "category": "common",
       "difficulty": "beginner",
       "article": "das",
-      "exampleSentence": "Mein Ziel ist klar."
+      "exampleSentence": "Mein Ziel ist klar.",
+      "module": "modul-3"
     },
     {
       "id": "w295",
       "german": "Freund",
-      "english": "friend",
+      "english": "Friend",
       "synonyms": [
-        "buddy",
-        "pal",
-        "mate"
+        "friends"
       ],
       "category": "common",
       "difficulty": "beginner",
       "article": "der",
-      "exampleSentence": "Mein Freund ist hier."
+      "exampleSentence": "Mein Freund ist hier.",
+      "module": "modul-6"
     },
     {
       "id": "w296",
@@ -3580,7 +3584,8 @@
       "category": "verbs",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Ich will nicht verlieren."
+      "exampleSentence": "Ich will nicht verlieren.",
+      "module": "modul-4"
     },
     {
       "id": "w301",
@@ -3710,14 +3715,15 @@
     {
       "id": "w311",
       "german": "Eltern",
-      "english": "parents",
+      "english": "Parents",
       "category": "family",
       "difficulty": "beginner",
       "article": "die",
       "exampleSentence": "Meine Eltern sind nett.",
       "synonyms": [
-        "Erziehungsberechtigte"
-      ]
+        "Guardians"
+      ],
+      "module": "modul-6"
     },
     {
       "id": "w312",
@@ -3912,7 +3918,8 @@
       "synonyms": [
         "aufgeschlossen",
         "geöffnet"
-      ]
+      ],
+      "module": "modul-2"
     },
     {
       "id": "w328",
@@ -4034,12 +4041,14 @@
       "german": "helfen",
       "english": "help",
       "synonyms": [
-        "help"
+        "assist",
+        "aid"
       ],
       "category": "verbs",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Kannst du mir helfen?"
+      "exampleSentence": "Kannst du mir helfen?",
+      "module": "modul-6"
     },
     {
       "id": "w339",
@@ -4328,7 +4337,8 @@
       "category": "verbs",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": "Du fehlst mir."
+      "exampleSentence": "Du fehlst mir.",
+      "module": "modul-4"
     },
     {
       "id": "w363",
@@ -4348,9 +4358,9 @@
       "article": "der",
       "exampleSentence": "Mein Sohn ist groß.",
       "synonyms": [
-        "Junge",
-        "Bub"
-      ]
+        "Söhnesøskende: Siblingsøster:"
+      ],
+      "module": "modul-6"
     },
     {
       "id": "w365",
@@ -4719,9 +4729,10 @@
       "article": "die",
       "exampleSentence": "Eine gute Beziehung.",
       "synonyms": [
-        "Verhältnis",
-        "Verbindung"
-      ]
+        "Relationship",
+        "Connection"
+      ],
+      "module": "modul-6"
     },
     {
       "id": "w395",
@@ -5077,13 +5088,13 @@
       "german": "Wahrheit",
       "english": "Truth",
       "synonyms": [
-        "reality",
-        "verity"
+        "fact"
       ],
       "category": "common",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": "Sag mir die Wahrheit."
+      "exampleSentence": "Sag mir die Wahrheit.",
+      "module": "modul-1"
     },
     {
       "id": "w423",
@@ -5805,13 +5816,14 @@
       "german": "verteidigen",
       "english": "defend",
       "synonyms": [
-        "to protect",
-        "to stand up for"
+        "protect",
+        "represent in court"
       ],
       "category": "verbs",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": "Er verteidigt seinen Freund."
+      "exampleSentence": "Er verteidigt seinen Freund.",
+      "module": "modul-3"
     },
     {
       "id": "w478",
@@ -6672,12 +6684,13 @@
       "category": "common",
       "difficulty": "advanced",
       "article": "die",
-      "exampleSentence": "Die Großstadt bietet Anonymität."
+      "exampleSentence": "Die Großstadt bietet Anonymität.",
+      "module": "modul-2"
     },
     {
       "id": "w543",
       "german": "Bahnhof",
-      "english": "Railroad station",
+      "english": "train station",
       "synonyms": [
         "railway station",
         "station"
@@ -6685,7 +6698,8 @@
       "category": "common",
       "difficulty": "beginner",
       "article": "der",
-      "exampleSentence": "Wir treffen uns am Bahnhof."
+      "exampleSentence": "Wir treffen uns am Bahnhof.",
+      "module": "modul-2"
     },
     {
       "id": "w544",
@@ -6702,15 +6716,16 @@
     {
       "id": "w545",
       "german": "Café",
-      "english": "Cafe",
+      "english": "café",
       "synonyms": [
-        "coffee shop",
-        "coffeehouse"
+        "coffee house",
+        "coffee shop"
       ],
       "category": "common",
       "difficulty": "beginner",
       "article": "das",
-      "exampleSentence": "Wir sitzen im Café."
+      "exampleSentence": "Wir sitzen im Café.",
+      "module": "modul-2"
     },
     {
       "id": "w546",
@@ -6737,7 +6752,8 @@
       "category": "common",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": "Die Einsamkeit in der Großstadt ist real."
+      "exampleSentence": "Die Einsamkeit in der Großstadt ist real.",
+      "module": "modul-2"
     },
     {
       "id": "w548",
@@ -6763,7 +6779,8 @@
       "category": "common",
       "difficulty": "beginner",
       "article": "das",
-      "exampleSentence": "Ich fahre mit dem Fahrrad zur Arbeit."
+      "exampleSentence": "Ich fahre mit dem Fahrrad zur Arbeit.",
+      "module": "modul-2"
     },
     {
       "id": "w550",
@@ -6776,7 +6793,8 @@
       "category": "common",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": "Die Faszination der Stadt ist groß."
+      "exampleSentence": "Die Faszination der Stadt ist groß.",
+      "module": "modul-2"
     },
     {
       "id": "w551",
@@ -6789,20 +6807,22 @@
       "category": "common",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": "Freiheit ist wichtig."
+      "exampleSentence": "Freiheit ist wichtig.",
+      "module": "modul-5"
     },
     {
       "id": "w552",
       "german": "Fußgängerzone",
-      "english": "Pedestrian zone",
+      "english": "pedestrian zone",
       "synonyms": [
-        "walking area",
-        "pedestrian area"
+        "pedestrian area",
+        "car-free zone"
       ],
       "category": "common",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": "In der Fußgängerzone sind keine Autos erlaubt."
+      "exampleSentence": "In der Fußgängerzone sind keine Autos erlaubt.",
+      "module": "modul-2"
     },
     {
       "id": "w553",
@@ -6813,9 +6833,10 @@
       "article": "die",
       "exampleSentence": "Die Gentrifizierung verändert das Viertel.",
       "synonyms": [
-        "Aufwertung",
-        "Verdrängung"
-      ]
+        "Upgrading",
+        "displacement"
+      ],
+      "module": "modul-2"
     },
     {
       "id": "w554",
@@ -6828,7 +6849,8 @@
       "category": "common",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": "Gleichheit für alle Menschen."
+      "exampleSentence": "Gleichheit für alle Menschen.",
+      "module": "modul-2"
     },
     {
       "id": "w555",
@@ -6842,20 +6864,22 @@
       "category": "common",
       "difficulty": "advanced",
       "article": "der",
-      "exampleSentence": "Im Laden herrscht Hochbetrieb."
+      "exampleSentence": "Im Laden herrscht Hochbetrieb.",
+      "module": "modul-2"
     },
     {
       "id": "w556",
       "german": "Hochhaus",
-      "english": "High-rise building",
+      "english": "high-rise",
       "synonyms": [
-        "skyscraper",
-        "tower block"
+        "tower block",
+        "skyscraper"
       ],
       "category": "common",
       "difficulty": "intermediate",
       "article": "das",
-      "exampleSentence": "Das Hochhaus hat zwanzig Stockwerke."
+      "exampleSentence": "Das Hochhaus hat zwanzig Stockwerke.",
+      "module": "modul-2"
     },
     {
       "id": "w557",
@@ -6868,21 +6892,22 @@
       "category": "common",
       "difficulty": "advanced",
       "article": "der",
-      "exampleSentence": "Der Klassenunterschied ist deutlich sichtbar."
+      "exampleSentence": "Der Klassenunterschied ist deutlich sichtbar.",
+      "module": "modul-2"
     },
     {
       "id": "w558",
       "german": "Kneipe",
-      "english": "Bar",
+      "english": "pub",
       "synonyms": [
         "bar",
-        "tavern",
-        "watering hole"
+        "tavern"
       ],
       "category": "common",
       "difficulty": "beginner",
       "article": "die",
-      "exampleSentence": "Wir gehen heute Abend in die Kneipe."
+      "exampleSentence": "Wir gehen heute Abend in die Kneipe.",
+      "module": "modul-2"
     },
     {
       "id": "w559",
@@ -6894,20 +6919,21 @@
       "category": "common",
       "difficulty": "advanced",
       "article": "die",
-      "exampleSentence": "Die Komplexität des Problems ist groß."
+      "exampleSentence": "Die Komplexität des Problems ist groß.",
+      "module": "modul-2"
     },
     {
       "id": "w560",
       "german": "Laden",
       "english": "Load",
       "synonyms": [
-        "store",
-        "boutique"
+        "forretning."
       ],
       "category": "common",
       "difficulty": "beginner",
       "article": "der",
-      "exampleSentence": "Der Laden ist um die Ecke."
+      "exampleSentence": "Der Laden ist um die Ecke.",
+      "module": "modul-2"
     },
     {
       "id": "w561",
@@ -6921,7 +6947,8 @@
       "category": "common",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": "Der Lärm in der Stadt nervt."
+      "exampleSentence": "Der Lärm in der Stadt nervt.",
+      "module": "modul-2"
     },
     {
       "id": "w562",
@@ -6961,7 +6988,8 @@
       "category": "common",
       "difficulty": "advanced",
       "article": "die",
-      "exampleSentence": "Mitmenschlichkeit ist wichtig."
+      "exampleSentence": "Mitmenschlichkeit ist wichtig.",
+      "module": "modul-2"
     },
     {
       "id": "w565",
@@ -6992,15 +7020,16 @@
     {
       "id": "w567",
       "german": "Obdachlose",
-      "english": "Homeless",
+      "english": "homeless person",
       "synonyms": [
         "rough sleeper",
-        "unhoused person"
+        "person without shelter"
       ],
       "category": "common",
       "difficulty": "intermediate",
       "article": "der/die",
-      "exampleSentence": "Obdachlose brauchen Hilfe."
+      "exampleSentence": "Obdachlose brauchen Hilfe.",
+      "module": "modul-2"
     },
     {
       "id": "w568",
@@ -7018,16 +7047,17 @@
     {
       "id": "w569",
       "german": "Sehnsucht",
-      "english": "Longing",
+      "english": "longing",
       "synonyms": [
         "yearning",
-        "craving",
-        "desire"
+        "nostalgia",
+        "craving"
       ],
       "category": "common",
       "difficulty": "advanced",
       "article": "die",
-      "exampleSentence": "Ich habe Sehnsucht nach dir."
+      "exampleSentence": "Ich habe Sehnsucht nach dir.",
+      "module": "modul-2"
     },
     {
       "id": "w570",
@@ -7039,7 +7069,8 @@
       "category": "common",
       "difficulty": "advanced",
       "article": "die",
-      "exampleSentence": "Sexuelle Orientierung ist Privatsache."
+      "exampleSentence": "Sexuelle Orientierung ist Privatsache.",
+      "module": "modul-2"
     },
     {
       "id": "w571",
@@ -7060,12 +7091,13 @@
       "english": "Busker",
       "synonyms": [
         "busker",
-        "street performer"
+        "street performers"
       ],
       "category": "common",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": "Der Straßenmusikant spielt Gitarre."
+      "exampleSentence": "Der Straßenmusikant spielt Gitarre.",
+      "module": "modul-2"
     },
     {
       "id": "w573",
@@ -7078,7 +7110,8 @@
       "category": "common",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": "Toleranz ist wichtig für das Zusammenleben."
+      "exampleSentence": "Toleranz ist wichtig für das Zusammenleben.",
+      "module": "modul-2"
     },
     {
       "id": "w574",
@@ -7092,7 +7125,8 @@
       "category": "common",
       "difficulty": "beginner",
       "article": "die",
-      "exampleSentence": "Ich fahre mit der U-Bahn."
+      "exampleSentence": "Ich fahre mit der U-Bahn.",
+      "module": "modul-2"
     },
     {
       "id": "w575",
@@ -7105,7 +7139,8 @@
       "category": "common",
       "difficulty": "advanced",
       "article": "die",
-      "exampleSentence": "Unmenschlichkeit darf nicht toleriert werden."
+      "exampleSentence": "Unmenschlichkeit darf nicht toleriert werden.",
+      "module": "modul-2"
     },
     {
       "id": "w576",
@@ -7118,7 +7153,8 @@
       "category": "common",
       "difficulty": "beginner",
       "article": "der",
-      "exampleSentence": "Der Verkehr ist heute schlimm."
+      "exampleSentence": "Der Verkehr ist heute schlimm.",
+      "module": "modul-2"
     },
     {
       "id": "w577",
@@ -7132,7 +7168,8 @@
       "category": "common",
       "difficulty": "intermediate",
       "article": "das",
-      "exampleSentence": "Vertrauen muss man sich verdienen."
+      "exampleSentence": "Vertrauen muss man sich verdienen.",
+      "module": "modul-2"
     },
     {
       "id": "w578",
@@ -7146,21 +7183,23 @@
       "category": "common",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": "Die Vielfalt der Stadt ist wunderbar."
+      "exampleSentence": "Die Vielfalt der Stadt ist wunderbar.",
+      "module": "modul-2"
     },
     {
       "id": "w579",
       "german": "Zentrum",
       "english": "center",
       "synonyms": [
-        "centre",
+        "center",
         "downtown",
         "heart"
       ],
       "category": "common",
       "difficulty": "beginner",
       "article": "das",
-      "exampleSentence": "Wir wohnen im Zentrum."
+      "exampleSentence": "Wir wohnen im Zentrum.",
+      "module": "modul-2"
     },
     {
       "id": "w580",
@@ -7173,7 +7212,8 @@
       "category": "verbs",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": "Die Blumen duften wunderbar."
+      "exampleSentence": "Die Blumen duften wunderbar.",
+      "module": "modul-2"
     },
     {
       "id": "w581",
@@ -7185,7 +7225,8 @@
       "category": "verbs",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Ich kaufe ein neues Buch."
+      "exampleSentence": "Ich kaufe ein neues Buch.",
+      "module": "modul-2"
     },
     {
       "id": "w582",
@@ -7198,7 +7239,8 @@
       "category": "verbs",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Das riecht gut!"
+      "exampleSentence": "Das riecht gut!",
+      "module": "modul-2"
     },
     {
       "id": "w583",
@@ -7211,7 +7253,8 @@
       "category": "verbs",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Ich kann nie schlafen in der Stadt."
+      "exampleSentence": "Ich kann nie schlafen in der Stadt.",
+      "module": "modul-2"
     },
     {
       "id": "w584",
@@ -7224,7 +7267,8 @@
       "category": "verbs",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": "Wir müssen uns beeilen!"
+      "exampleSentence": "Wir müssen uns beeilen!",
+      "module": "modul-2"
     },
     {
       "id": "w585",
@@ -7251,7 +7295,8 @@
       "category": "verbs",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Ich träume von einer besseren Welt."
+      "exampleSentence": "Ich träume von einer besseren Welt.",
+      "module": "modul-2"
     },
     {
       "id": "w587",
@@ -7264,7 +7309,8 @@
       "synonyms": [
         "veräußern",
         "absetzen"
-      ]
+      ],
+      "module": "modul-2"
     },
     {
       "id": "w588",
@@ -7279,20 +7325,23 @@
       "category": "verbs",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Du kannst frei wählen."
+      "exampleSentence": "Du kannst frei wählen.",
+      "module": "modul-2"
     },
     {
       "id": "w589",
       "german": "arm",
-      "english": "arm",
+      "english": "poor",
       "synonyms": [
+        "needy",
         "impoverished",
         "destitute"
       ],
       "category": "adjectives",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Die Familie ist arm."
+      "exampleSentence": "Die Familie ist arm.",
+      "module": "modul-2"
     },
     {
       "id": "w590",
@@ -7305,7 +7354,8 @@
       "category": "adjectives",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Das T-Shirt ist billig."
+      "exampleSentence": "Das T-Shirt ist billig.",
+      "module": "modul-2"
     },
     {
       "id": "w591",
@@ -7319,7 +7369,8 @@
       "category": "adjectives",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Die Straße ist bunt."
+      "exampleSentence": "Die Straße ist bunt.",
+      "module": "modul-2"
     },
     {
       "id": "w592",
@@ -7333,7 +7384,8 @@
       "category": "adjectives",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Das ist echt gut!"
+      "exampleSentence": "Das ist echt gut!",
+      "module": "modul-2"
     },
     {
       "id": "w593",
@@ -7346,7 +7398,8 @@
       "category": "adjectives",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": "Die Leute hier sind gastfrei."
+      "exampleSentence": "Die Leute hier sind gastfrei.",
+      "module": "modul-2"
     },
     {
       "id": "w594",
@@ -7360,7 +7413,8 @@
       "category": "adjectives",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Das Restaurant ist günstig."
+      "exampleSentence": "Das Restaurant ist günstig.",
+      "module": "modul-2"
     },
     {
       "id": "w595",
@@ -7373,7 +7427,8 @@
       "category": "adjectives",
       "difficulty": "advanced",
       "article": "",
-      "exampleSentence": "Die U-Bahn fühlt sich klaustrophobisch an."
+      "exampleSentence": "Die U-Bahn fühlt sich klaustrophobisch an.",
+      "module": "modul-2"
     },
     {
       "id": "w596",
@@ -7386,7 +7441,8 @@
       "category": "adjectives",
       "difficulty": "advanced",
       "article": "",
-      "exampleSentence": "Berlin ist eine kontrastreiche Stadt."
+      "exampleSentence": "Berlin ist eine kontrastreiche Stadt.",
+      "module": "modul-2"
     },
     {
       "id": "w597",
@@ -7400,7 +7456,8 @@
       "category": "adjectives",
       "difficulty": "advanced",
       "article": "",
-      "exampleSentence": "Die Möglichkeiten sind mannigfaltig."
+      "exampleSentence": "Die Möglichkeiten sind mannigfaltig.",
+      "module": "modul-2"
     },
     {
       "id": "w598",
@@ -7412,7 +7469,8 @@
       "category": "adjectives",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": "Berlin ist eine multikulturelle Stadt."
+      "exampleSentence": "Berlin ist eine multikulturelle Stadt.",
+      "module": "modul-2"
     },
     {
       "id": "w599",
@@ -7426,7 +7484,8 @@
       "category": "adjectives",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Er ist sehr reich."
+      "exampleSentence": "Er ist sehr reich.",
+      "module": "modul-2"
     },
     {
       "id": "w600",
@@ -7440,7 +7499,8 @@
       "category": "adjectives",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Die Straße ist schmutzig."
+      "exampleSentence": "Die Straße ist schmutzig.",
+      "module": "modul-2"
     },
     {
       "id": "w601",
@@ -7452,7 +7512,8 @@
       "category": "adjectives",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Ich bin stolz auf dich."
+      "exampleSentence": "Ich bin stolz auf dich.",
+      "module": "modul-2"
     },
     {
       "id": "w602",
@@ -7465,7 +7526,8 @@
       "category": "adjectives",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Das Auto ist teuer."
+      "exampleSentence": "Das Auto ist teuer.",
+      "module": "modul-2"
     },
     {
       "id": "w603",
@@ -7478,7 +7540,8 @@
       "category": "adjectives",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": "Berlin ist eine tolerante Stadt."
+      "exampleSentence": "Berlin ist eine tolerante Stadt.",
+      "module": "modul-2"
     },
     {
       "id": "w604",
@@ -7491,7 +7554,8 @@
       "category": "adjectives",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": "Das Angebot ist vielfältig."
+      "exampleSentence": "Das Angebot ist vielfältig.",
+      "module": "modul-2"
     },
     {
       "id": "w605",
@@ -7504,7 +7568,8 @@
       "category": "adjectives",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Ich bin noch wach."
+      "exampleSentence": "Ich bin noch wach.",
+      "module": "modul-2"
     },
     {
       "id": "w606",
@@ -7518,7 +7583,8 @@
       "category": "adjectives",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": "Das Museum ist für alle zugänglich."
+      "exampleSentence": "Das Museum ist für alle zugänglich.",
+      "module": "modul-2"
     },
     {
       "id": "w607",
@@ -7554,32 +7620,35 @@
       "article": "die",
       "exampleSentence": "Meine Tochter ist zehn Jahre alt.",
       "synonyms": [
-        "Mädchen"
-      ]
+        "Daughters' neighbors:"
+      ],
+      "module": "modul-6"
     },
     {
       "id": "w610",
       "german": "Bruder",
       "english": "Brother",
       "synonyms": [
-        "bro"
+        "Brother dater:"
       ],
       "category": "family",
       "difficulty": "beginner",
       "article": "der",
-      "exampleSentence": "Mein Bruder wohnt in Berlin."
+      "exampleSentence": "Mein Bruder wohnt in Berlin.",
+      "module": "modul-6"
     },
     {
       "id": "w611",
       "german": "Schwester",
       "english": "Sister",
       "synonyms": [
-        "sis"
+        "Sister aunt:"
       ],
       "category": "family",
       "difficulty": "beginner",
       "article": "die",
-      "exampleSentence": "Meine Schwester ist älter als ich."
+      "exampleSentence": "Meine Schwester ist älter als ich.",
+      "module": "modul-6"
     },
     {
       "id": "w612",
@@ -7948,14 +8017,16 @@
     {
       "id": "w641",
       "german": "Liebe",
-      "english": "Love",
+      "english": "love",
       "synonyms": [
-        "affection"
+        "affection",
+        "devotion"
       ],
       "category": "common",
       "difficulty": "beginner",
       "article": "die",
-      "exampleSentence": "Liebe ist wichtig."
+      "exampleSentence": "Liebe ist wichtig.",
+      "module": "modul-6"
     },
     {
       "id": "w642",
@@ -8189,28 +8260,28 @@
     {
       "id": "w660",
       "german": "lachen",
-      "english": "to laugh",
+      "english": "laugh",
       "synonyms": [
-        "to giggle",
-        "to chuckle"
+        "smile"
       ],
       "category": "verbs",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Die Kinder lachen laut."
+      "exampleSentence": "Die Kinder lachen laut.",
+      "module": "modul-6"
     },
     {
       "id": "w661",
       "german": "weinen",
-      "english": "to cry",
+      "english": "cry",
       "synonyms": [
-        "to weep",
-        "to sob"
+        "weep"
       ],
       "category": "verbs",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Das Kind weint."
+      "exampleSentence": "Das Kind weint.",
+      "module": "modul-6"
     },
     {
       "id": "w662",
@@ -8293,13 +8364,14 @@
       "german": "sterben",
       "english": "die",
       "synonyms": [
-        "to pass away",
-        "to perish"
+        "pass away",
+        "perish"
       ],
       "category": "verbs",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Blumen sterben im Winter."
+      "exampleSentence": "Blumen sterben im Winter.",
+      "module": "modul-4"
     },
     {
       "id": "w669",
@@ -9258,7 +9330,8 @@
       "category": "adjectives",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Die Straße ist gefährlich."
+      "exampleSentence": "Die Straße ist gefährlich.",
+      "module": "modul-3"
     },
     {
       "id": "w746",
@@ -9276,16 +9349,17 @@
     {
       "id": "w747",
       "german": "brutal",
-      "english": "brutally",
+      "english": "brutal",
       "synonyms": [
-        "savage",
         "violent",
-        "harsh"
+        "savage",
+        "fierce"
       ],
       "category": "adjectives",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Das war brutal."
+      "exampleSentence": "Das war brutal.",
+      "module": "modul-3"
     },
     {
       "id": "w748",
@@ -9628,14 +9702,13 @@
       "german": "Schuld",
       "english": "Fault",
       "synonyms": [
-        "blame",
-        "fault",
-        "debt"
+        "fault"
       ],
       "category": "common",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": "Er fühlt Schuld."
+      "exampleSentence": "Er fühlt Schuld.",
+      "module": "modul-1"
     },
     {
       "id": "w776",
@@ -9754,14 +9827,16 @@
     {
       "id": "w785",
       "german": "Traum",
-      "english": "Dream",
+      "english": "dream",
       "synonyms": [
-        "vision"
+        "dreams",
+        "daydream"
       ],
       "category": "common",
       "difficulty": "beginner",
       "article": "der",
-      "exampleSentence": "Das war ein schöner Traum."
+      "exampleSentence": "Das war ein schöner Traum.",
+      "module": "modul-5"
     },
     {
       "id": "w786",
@@ -9862,13 +9937,14 @@
       "german": "anrufen",
       "english": "call",
       "synonyms": [
-        "to phone",
-        "to ring"
+        "phone",
+        "ring"
       ],
       "category": "verbs",
       "difficulty": "beginner",
       "article": "",
-      "exampleSentence": "Ruf mich an!"
+      "exampleSentence": "Ruf mich an!",
+      "module": "modul-6"
     },
     {
       "id": "w795",
@@ -9940,15 +10016,15 @@
     {
       "id": "w801",
       "german": "Großstadt",
-      "english": "big city",
+      "english": "Big city",
       "synonyms": [
-        "metropolis",
-        "major city"
+        "the city"
       ],
       "category": "common",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": "Berlin ist eine Großstadt."
+      "exampleSentence": "Berlin ist eine Großstadt.",
+      "module": "modul-6"
     },
     {
       "id": "w802",
@@ -10609,7 +10685,8 @@
       "category": "common",
       "difficulty": "advanced",
       "article": "die",
-      "exampleSentence": "Abhängigkeit ist eine Krankheit."
+      "exampleSentence": "Abhängigkeit ist eine Krankheit.",
+      "module": "modul-6"
     },
     {
       "id": "w860",
@@ -10751,7 +10828,8 @@
       "category": "common",
       "difficulty": "advanced",
       "article": "die",
-      "exampleSentence": "Das Gefühl der Zugehörigkeit ist wichtig."
+      "exampleSentence": "Das Gefühl der Zugehörigkeit ist wichtig.",
+      "module": "modul-2"
     },
     {
       "id": "w871",
@@ -10764,7 +10842,8 @@
       "category": "common",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": "Mobilität in der Stadt ist wichtig."
+      "exampleSentence": "Mobilität in der Stadt ist wichtig.",
+      "module": "modul-2"
     },
     {
       "id": "w872",
@@ -10790,7 +10869,8 @@
       "category": "common",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": "Die Ungleichheit wächst."
+      "exampleSentence": "Die Ungleichheit wächst.",
+      "module": "modul-2"
     },
     {
       "id": "w874",
@@ -11060,7 +11140,8 @@
       "category": "war",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": "Überall lagen Trümmer der zerbombten Häuser."
+      "exampleSentence": "Überall lagen Trümmer der zerbombten Häuser.",
+      "module": "modul-4"
     },
     {
       "id": "w894",
@@ -11376,314 +11457,430 @@
       "exampleSentence": "Die Essensrationen reichten kaum für eine Woche."
     },
     {
+      "id": "exam_modul-1_0000",
+      "german": "Alibi",
+      "english": "alibi",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "das",
+      "exampleSentence": "",
+      "synonyms": [
+        "alibis"
+      ]
+    },
+    {
       "id": "exam_modul-1_0001",
-      "german": "beweisen",
-      "english": "prove",
+      "german": "Angeklagte",
+      "english": "accused",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "defendant"
+      ]
     },
     {
       "id": "exam_modul-1_0002",
-      "german": "einbrechen",
-      "english": "break in",
+      "german": "Anwalt",
+      "english": "Attorney",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "attorney",
+        "solicitor"
+      ]
     },
     {
       "id": "exam_modul-1_0003",
-      "german": "entführen",
-      "english": "kidnap",
+      "german": "Anzeige",
+      "english": "report",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "charge",
+        "complaint",
+        "police report"
+      ]
     },
     {
       "id": "exam_modul-1_0004",
-      "german": "entlassen",
-      "english": "dismissed",
+      "german": "Beweis",
+      "english": "Proof",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "proof"
+      ]
     },
     {
       "id": "exam_modul-1_0005",
-      "german": "ermorden",
-      "english": "murder",
+      "german": "Detektiv",
+      "english": "detective",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "investigator"
+      ]
     },
     {
       "id": "exam_modul-1_0006",
-      "german": "festnehmen",
-      "english": "arrest",
+      "german": "Dieb",
+      "english": "Thief",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "robber"
+      ]
     },
     {
       "id": "exam_modul-1_0007",
-      "german": "gestehen",
-      "english": "confess",
+      "german": "Diebstahl",
+      "english": "theft",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "stealing"
+      ]
     },
     {
       "id": "exam_modul-1_0008",
-      "german": "nachforschen",
-      "english": "investigate",
+      "german": "Einbrecher",
+      "english": "burglar",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "break-in thief"
+      ]
     },
     {
       "id": "exam_modul-1_0009",
-      "german": "töten",
-      "english": "kill",
+      "german": "Entlassung",
+      "english": "Dismissal",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "parole"
+      ]
     },
     {
       "id": "exam_modul-1_0010",
-      "german": "überfallen",
-      "english": "ambushed",
+      "german": "Ermittlung",
+      "english": "determination",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "inquiry"
+      ]
     },
     {
       "id": "exam_modul-1_0011",
-      "german": "untersuchen",
-      "english": "investigate",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0012",
-      "german": "verdächtigen",
-      "english": "suspect",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0013",
-      "german": "verhaften",
+      "german": "Festnahme",
       "english": "arrest",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "detention"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0012",
+      "german": "Gefängnis",
+      "english": "Jail",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "das",
+      "exampleSentence": "",
+      "synonyms": [
+        "jail"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0013",
+      "german": "Gericht",
+      "english": "Court",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "das",
+      "exampleSentence": "",
+      "synonyms": [
+        "tribunal"
+      ]
     },
     {
       "id": "exam_modul-1_0014",
-      "german": "verhören",
-      "english": "interrogate",
+      "german": "Geständnis",
+      "english": "confession",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "das",
+      "exampleSentence": "",
+      "synonyms": [
+        "admission"
+      ]
     },
     {
       "id": "exam_modul-1_0015",
-      "german": "bedrohlich",
-      "english": "threatening",
+      "german": "Gewalt",
+      "english": "Violence",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "force"
+      ]
     },
     {
       "id": "exam_modul-1_0016",
-      "german": "gewalttätig",
-      "english": "violent",
+      "german": "Leiche",
+      "english": "Corpse",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "body",
+        "dead body"
+      ]
     },
     {
       "id": "exam_modul-1_0017",
-      "german": "gemein",
-      "english": "mean",
+      "german": "Mandant",
+      "english": "client",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "customer"
+      ]
     },
     {
       "id": "exam_modul-1_0018",
-      "german": "grausam",
-      "english": "awful",
+      "german": "Mörder",
+      "english": "Murderer",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "killer"
+      ]
     },
     {
       "id": "exam_modul-1_0019",
-      "german": "mutmaßlich",
-      "english": "presumably",
+      "german": "Motiv",
+      "english": "Motif",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "das",
+      "exampleSentence": "",
+      "synonyms": [
+        "reason.reason"
+      ]
     },
     {
       "id": "exam_modul-1_0020",
-      "german": "schrecklich",
-      "english": "terrible",
+      "german": "Opfer",
+      "english": "Victim",
       "category": "exam",
-      "module": "modul-1",
+      "module": "modul-3",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "das",
+      "exampleSentence": "",
+      "synonyms": [
+        "casualty"
+      ]
     },
     {
       "id": "exam_modul-1_0021",
-      "german": "schuldig",
-      "english": "guilty",
+      "german": "Polizist",
+      "english": "policeman",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "cop",
+        "policeman"
+      ]
     },
     {
       "id": "exam_modul-1_0022",
-      "german": "unschuldig",
-      "english": "innocent",
+      "german": "Raub",
+      "english": "Robbery",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "hold up"
+      ]
     },
     {
       "id": "exam_modul-1_0023",
-      "german": "ein Geständnis ablegen",
-      "english": "make a confession",
+      "german": "Richter",
+      "english": "Judge",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "magistrates"
+      ]
     },
     {
       "id": "exam_modul-1_0024",
-      "german": "einen Mord begehen",
-      "english": "commit a murder",
+      "german": "Strafe",
+      "english": "Penalty",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "penalty.penalty",
+        "sentence"
+      ]
     },
     {
       "id": "exam_modul-1_0025",
-      "german": "einen Tatort besichtigen",
-      "english": "visit a crime scene",
+      "german": "Straftat",
+      "english": "crime",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "crime"
+      ]
     },
     {
       "id": "exam_modul-1_0026",
-      "german": "einen Täter verhaften",
-      "english": "arrest a perpetrator",
+      "german": "Täter",
+      "english": "Perpetrator",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "offender",
+        "culprit"
+      ]
     },
     {
       "id": "exam_modul-1_0027",
-      "german": "ein Urteil fällen",
-      "english": "make a judgment",
+      "german": "Tatort",
+      "english": "Crime scene",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "scene of the crime"
+      ]
     },
     {
       "id": "exam_modul-1_0028",
-      "german": "ein Verbrechen begehen",
-      "english": "commit a crime",
+      "german": "Überfall",
+      "english": "raid",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "assault",
+        "raid"
+      ]
     },
     {
       "id": "exam_modul-1_0029",
-      "german": "einen Fall lösen",
-      "english": "solve a case",
+      "german": "Urteil",
+      "english": "Verdict",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "das",
+      "exampleSentence": "",
+      "synonyms": [
+        "judgment",
+        "sentence"
+      ]
     },
     {
       "id": "exam_modul-1_0030",
-      "german": "ins Gefängnis kommen",
-      "english": "go to prison",
+      "german": "Verbrechen",
+      "english": "crime",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "das",
+      "exampleSentence": "",
+      "synonyms": [
+        "offence",
+        "felony"
+      ]
     },
     {
       "id": "exam_modul-1_0031",
-      "german": "Gewalt ausüben",
-      "english": "exercise violence",
+      "german": "Verdacht",
+      "english": "Suspicion",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "doubt"
+      ]
     },
     {
       "id": "exam_modul-1_0032",
@@ -11692,2318 +11889,2542 @@
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "das",
+      "exampleSentence": "",
+      "synonyms": [
+        "questioning"
+      ]
     },
     {
       "id": "exam_modul-1_0033",
-      "german": "verurteilen zu",
-      "english": "condemn to",
+      "german": "Vernehmung",
+      "english": "Interrogation",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "interrogation"
+      ]
     },
     {
       "id": "exam_modul-1_0034",
-      "german": "vor Gericht stehen",
-      "english": "stand in court",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0035",
-      "german": "Alibi",
-      "english": "alibi",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "das",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0036",
-      "german": "Angeklagte",
-      "english": "accused",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0037",
-      "german": "Anwalt",
-      "english": "Attorney",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0038",
-      "german": "Anzeige",
-      "english": "report, charge",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0039",
-      "german": "Beweis",
-      "english": "Proof",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0040",
-      "german": "Detektiv",
-      "english": "detective",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0041",
-      "german": "Dieb",
-      "english": "Thief",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0042",
-      "german": "Diebstahl",
-      "english": "theft",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0043",
-      "german": "Einbrecher",
-      "english": "burglar",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0044",
-      "german": "Entlassung",
-      "english": "Dismissal",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0045",
-      "german": "Ermittlung",
-      "english": "investigation",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0046",
-      "german": "Festnahme",
-      "english": "arrest",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0047",
-      "german": "Gefängnis",
-      "english": "Jail",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "das",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0048",
-      "german": "Gericht",
-      "english": "Court",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "das",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0049",
-      "german": "Geständnis",
-      "english": "confession",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "das",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0050",
-      "german": "Gewalt",
-      "english": "Violence",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0051",
-      "german": "Leiche",
-      "english": "Corpse",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0052",
-      "german": "Mandant",
-      "english": "client",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0053",
-      "german": "Mörder",
-      "english": "Murderer",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0054",
-      "german": "Motiv",
-      "english": "Motif",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "das",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0055",
-      "german": "Opfer",
-      "english": "Victim",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "das",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0056",
-      "german": "Polizist",
-      "english": "policeman",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0057",
-      "german": "Raub",
-      "english": "Robbery",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0058",
-      "german": "Richter",
-      "english": "Judge",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0059",
-      "german": "Strafe",
-      "english": "Penalty",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0060",
-      "german": "Straftat",
-      "english": "crime",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0061",
-      "german": "Täter",
-      "english": "Perpetrator",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0062",
-      "german": "Tatort",
-      "english": "Crime scene",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0063",
-      "german": "Überfall",
-      "english": "raid",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0064",
-      "german": "Urteil",
-      "english": "Verdict",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "das",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0065",
-      "german": "Verbrechen",
-      "english": "crime",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "das",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0066",
-      "german": "Verdacht",
-      "english": "Suspicion",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0067",
-      "german": "Verhör",
-      "english": "interrogation",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "das",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0068",
-      "german": "Vernehmung",
-      "english": "interrogation",
-      "category": "exam",
-      "module": "modul-1",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-1_0069",
       "german": "Verteidiger",
       "english": "defender",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "defender",
+        "counsel"
+      ]
     },
     {
-      "id": "exam_modul-1_0070",
+      "id": "exam_modul-1_0035",
       "german": "Waffe",
       "english": "weapon",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "gun",
+        "arms"
+      ]
     },
     {
-      "id": "exam_modul-1_0071",
+      "id": "exam_modul-1_0036",
       "german": "Zeuge",
       "english": "Witness",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "eyewitness"
+      ]
     },
     {
-      "id": "exam_modul-1_0072",
-      "german": "beviseeinbrechen",
-      "english": "bevise break in",
+      "id": "exam_modul-1_0037",
+      "german": "beweisen",
+      "english": "prove",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "demonstrate",
+        "verify",
+        "show"
+      ]
     },
     {
-      "id": "exam_modul-1_0073",
-      "german": "geverdächtigen",
-      "english": "suspected",
+      "id": "exam_modul-1_0038",
+      "german": "einbrechen",
+      "english": "break in",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "burglarize",
+        "break into"
+      ]
     },
     {
-      "id": "exam_modul-1_0074",
-      "german": "nkeverhaftenanholdeverhören",
-      "english": "nkearrest and interrogation",
+      "id": "exam_modul-1_0039",
+      "german": "entführen",
+      "english": "kidnap",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "kidnaps"
+      ]
     },
     {
-      "id": "exam_modul-1_0075",
-      "german": "eine Straftat begehen",
+      "id": "exam_modul-1_0040",
+      "german": "entlassen",
+      "english": "release",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "free",
+        "discharge",
+        "let out"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0041",
+      "german": "ermorden",
+      "english": "murder",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "kill",
+        "assassinate"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0042",
+      "german": "festnehmen",
+      "english": "arrest",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "detain",
+        "apprehend",
+        "take into custody"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0043",
+      "german": "gestehen",
+      "english": "confess",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "admit",
+        "own up"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0044",
+      "german": "nachforschen",
+      "english": "investigate",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "investigates"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0045",
+      "german": "töten",
+      "english": "kill",
+      "category": "exam",
+      "module": "modul-3",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "murder",
+        "slay"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0046",
+      "german": "überfallen",
+      "english": "attack",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "mug",
+        "raid",
+        "assault"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0047",
+      "german": "untersuchen",
+      "english": "investigate",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "investigates"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0048",
+      "german": "verdächtigen",
+      "english": "suspect",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "distrust",
+        "have suspicions about"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0049",
+      "german": "verhaften",
+      "english": "arrest",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "detain",
+        "take into custody"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0050",
+      "german": "verhören",
+      "english": "interrogate",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "question",
+        "cross-examine"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0051",
+      "german": "bedrohlich",
+      "english": "threatening",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "threatenings"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0052",
+      "german": "gewalttätig",
+      "english": "violent",
+      "category": "exam",
+      "module": "modul-3",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "violents"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0053",
+      "german": "gemein",
+      "english": "mean",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "means"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0054",
+      "german": "grausam",
+      "english": "cruel",
+      "category": "exam",
+      "module": "modul-3",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "brutal",
+        "vicious",
+        "merciless"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0055",
+      "german": "mutmaßlich",
+      "english": "presumably",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "presumablies"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0056",
+      "german": "schrecklich",
+      "english": "terrible",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "terribles"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0057",
+      "german": "schuldig",
+      "english": "guilty",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "guilties"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0058",
+      "german": "unschuldig",
+      "english": "innocent",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "innocents"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0059",
+      "german": "ein Geständnis ablegen",
+      "english": "make a confession",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "make a confessions"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0060",
+      "german": "einen Mord begehen",
+      "english": "commit a murder",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "commit a murders"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0061",
+      "german": "einen Tatort besichtigen",
+      "english": "visit a crime scene",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "visit a crime scenes"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0062",
+      "german": "einen Täter verhaften",
+      "english": "arrest a perpetrator",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "arrest a perpetrators"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0063",
+      "german": "ein Urteil fällen",
+      "english": "make a judgment",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "make a judgments"
+      ]
+    },
+    {
+      "id": "exam_modul-1_0064",
+      "german": "ein Verbrechen begehen",
       "english": "commit a crime",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "commit a crimes"
+      ]
     },
     {
-      "id": "exam_modul-1_0076",
-      "german": "Gew",
-      "english": "wt",
+      "id": "exam_modul-1_0065",
+      "german": "einen Fall lösen",
+      "english": "solve a case",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "solve a cases"
+      ]
     },
     {
-      "id": "exam_modul-1_0077",
-      "german": "jem",
-      "english": "jem",
+      "id": "exam_modul-1_0066",
+      "german": "ins Gefängnis kommen",
+      "english": "go to prison",
       "category": "exam",
       "module": "modul-1",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "go to prisons"
+      ]
     },
     {
-      "id": "exam_modul-2_0078",
-      "german": "sich sehnen nach etwas",
-      "english": "long for something",
+      "id": "exam_modul-1_0067",
+      "german": "Gewalt ausüben",
+      "english": "exercise violence",
       "category": "exam",
-      "module": "modul-2",
+      "module": "modul-1",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "exercise violences"
+      ]
     },
     {
-      "id": "exam_modul-2_0079",
-      "german": "Bahnhof",
-      "english": "train station",
+      "id": "exam_modul-1_0068",
+      "german": "jemanden unter dem Verdacht des Mordes verhaften",
+      "english": "arrest someone on suspicion of murder",
       "category": "exam",
-      "module": "modul-2",
+      "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "detain on murder suspicion"
+      ]
     },
     {
-      "id": "exam_modul-2_0080",
-      "german": "CaféscaféChaos",
-      "english": "CafécaféChaos",
+      "id": "exam_modul-1_0069",
+      "german": "verurteilen zu",
+      "english": "condemn to",
       "category": "exam",
-      "module": "modul-2",
+      "module": "modul-1",
       "difficulty": "intermediate",
-      "article": "das",
-      "exampleSentence": ""
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "condemn tos"
+      ]
     },
     {
-      "id": "exam_modul-2_0081",
+      "id": "exam_modul-1_0070",
+      "german": "vor Gericht stehen",
+      "english": "stand in court",
+      "category": "exam",
+      "module": "modul-1",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "stand in courts"
+      ]
+    },
+    {
+      "id": "exam_modul-2_0072",
       "german": "Multikultur",
       "english": "Multiculture",
       "category": "exam",
       "module": "modul-2",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Multicultures"
+      ]
     },
     {
-      "id": "exam_modul-2_0082",
-      "german": "duftenduftefahren",
-      "english": "smellingsmelling",
+      "id": "exam_modul-2_0073",
+      "german": "sich sehnen nach etwas",
+      "english": "long for something",
       "category": "exam",
       "module": "modul-2",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "long for somethings"
+      ]
     },
     {
-      "id": "exam_modul-2_0083",
-      "german": "rekaufen",
-      "english": "repurchase",
-      "category": "exam",
-      "module": "modul-2",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-2_0084",
-      "german": "beriechen",
-      "english": "smell",
-      "category": "exam",
-      "module": "modul-2",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-2_0085",
-      "german": "beeilen",
-      "english": "hurry up",
-      "category": "exam",
-      "module": "modul-2",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-2_0086",
-      "german": "sehnen",
-      "english": "yearn",
-      "category": "exam",
-      "module": "modul-2",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-2_0087",
-      "german": "nogetträumen",
-      "english": "night dreams",
-      "category": "exam",
-      "module": "modul-2",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-2_0088",
-      "german": "mmeverkaufen",
-      "english": "mmeselling",
-      "category": "exam",
-      "module": "modul-2",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-2_0089",
-      "german": "altgammelarmfattigbilligbillig",
-      "english": "old, poor, fat, cheap, cheap",
-      "category": "exam",
-      "module": "modul-2",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-2_0090",
-      "german": "forskellig",
-      "english": "forskelly",
-      "category": "exam",
-      "module": "modul-2",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-2_0091",
-      "german": "benreichrigschmutzig",
-      "english": "plentydirty",
-      "category": "exam",
-      "module": "modul-2",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-2_0092",
-      "german": "mangfoldig",
-      "english": "mangfoldig",
-      "category": "exam",
-      "module": "modul-2",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-2_0093",
-      "german": "genzugänglich",
-      "english": "accessible",
-      "category": "exam",
-      "module": "modul-2",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0094",
-      "german": "angreifen",
-      "english": "attack",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0095",
-      "german": "ausrotten",
-      "english": "exterminate",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0096",
-      "german": "beschützen",
-      "english": "protect",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0097",
-      "german": "hinrichten",
-      "english": "execute",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0098",
-      "german": "kontrollieren",
-      "english": "control",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0099",
-      "german": "vernichten",
-      "english": "destroy",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0100",
-      "german": "verstecken",
-      "english": "hide",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0101",
-      "german": "autoritär",
-      "english": "authoritarian",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0102",
-      "german": "böse",
-      "english": "evil",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0103",
-      "german": "extrem",
-      "english": "extreme",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0104",
-      "german": "gehorsam",
-      "english": "obedience",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0105",
-      "german": "grauenhaft",
-      "english": "horrible",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0106",
-      "german": "Bewältigung der Vergangenheit",
-      "english": "Coping with the past",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0107",
-      "german": "Aufarbeitung der Vergangenheit",
-      "english": "Coming to terms with the past",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0108",
-      "german": "Weiße Rose",
-      "english": "White rose",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0109",
-      "german": "Hakenkreuz",
-      "english": "swastika",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "das",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0110",
-      "german": "Manipulation",
-      "english": "manipulation",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0111",
+      "id": "exam_modul-3_0074",
       "german": "Arier",
       "english": "Aryans",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "aryan",
+        "aryans"
+      ]
     },
     {
-      "id": "exam_modul-3_0112",
+      "id": "exam_modul-3_0075",
       "german": "Autorität",
       "english": "authority",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "authorities"
+      ]
     },
     {
-      "id": "exam_modul-3_0113",
+      "id": "exam_modul-3_0076",
+      "german": "Weiße Rose",
+      "english": "White rose",
+      "category": "exam",
+      "module": "modul-3",
+      "difficulty": "intermediate",
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "White roses"
+      ]
+    },
+    {
+      "id": "exam_modul-3_0077",
       "german": "Diktatur",
       "english": "dictatorship",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "dictatorships"
+      ]
     },
     {
-      "id": "exam_modul-3_0114",
+      "id": "exam_modul-3_0078",
       "german": "Entartete Kunst",
       "english": "Degenerate art",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Degenerate arts"
+      ]
     },
     {
-      "id": "exam_modul-3_0115",
+      "id": "exam_modul-3_0079",
       "german": "Feind",
       "english": "Enemy",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Enemies"
+      ]
     },
     {
-      "id": "exam_modul-3_0116",
+      "id": "exam_modul-3_0080",
       "german": "Führer",
       "english": "Leader",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "leather"
+      ]
     },
     {
-      "id": "exam_modul-3_0117",
+      "id": "exam_modul-3_0081",
       "german": "Gestapo",
       "english": "Gestapo",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Gestapos"
+      ]
     },
     {
-      "id": "exam_modul-3_0118",
+      "id": "exam_modul-3_0082",
       "german": "Gleichschaltung",
       "english": "Synchronization",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Synchronizations"
+      ]
     },
     {
-      "id": "exam_modul-3_0119",
+      "id": "exam_modul-3_0083",
       "german": "Hitlergruß",
       "english": "Hitler salute",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Hitler salutes"
+      ]
     },
     {
-      "id": "exam_modul-3_0120",
+      "id": "exam_modul-3_0084",
       "german": "Hitlerjugend",
       "english": "Hitler Youth",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Hitler Youths"
+      ]
     },
     {
-      "id": "exam_modul-3_0121",
+      "id": "exam_modul-3_0085",
       "german": "Hinrichtung",
       "english": "execution",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "executions"
+      ]
     },
     {
-      "id": "exam_modul-3_0122",
+      "id": "exam_modul-3_0086",
       "german": "Ideologie",
       "english": "ideology",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "ideologies"
+      ]
     },
     {
-      "id": "exam_modul-3_0123",
+      "id": "exam_modul-3_0087",
       "german": "Jude",
       "english": "Jew",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Jewish person"
+      ]
     },
     {
-      "id": "exam_modul-3_0124",
+      "id": "exam_modul-3_0088",
       "german": "Judenstern",
       "english": "Jewish star",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Jewish stars"
+      ]
     },
     {
-      "id": "exam_modul-3_0125",
+      "id": "exam_modul-3_0089",
       "german": "Jüdin",
       "english": "Jewess",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "jewish woman",
+        "jewish female"
+      ]
     },
     {
-      "id": "exam_modul-3_0126",
+      "id": "exam_modul-3_0090",
       "german": "KZ-lager",
       "english": "Concentration camp",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "das",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Concentration camps"
+      ]
     },
     {
-      "id": "exam_modul-3_0127",
+      "id": "exam_modul-3_0091",
       "german": "Lebensraum",
       "english": "living space",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Lebensraum",
+        "territorial expansion"
+      ]
     },
     {
-      "id": "exam_modul-3_0128",
+      "id": "exam_modul-3_0092",
       "german": "Mahnmal",
       "english": "memorial",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "das",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "at en historisk hændelse ikke må gentage sig."
+      ]
     },
     {
-      "id": "exam_modul-3_0129",
+      "id": "exam_modul-3_0093",
       "german": "Nazi",
       "english": "Nazi",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Nazi stars"
+      ]
     },
     {
-      "id": "exam_modul-3_0130",
+      "id": "exam_modul-3_0094",
       "german": "NS-Zeit",
       "english": "Nazi period",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "1933-1945."
+      ]
     },
     {
-      "id": "exam_modul-3_0131",
+      "id": "exam_modul-3_0095",
       "german": "Partei",
       "english": "party",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "parties"
+      ]
     },
     {
-      "id": "exam_modul-3_0132",
+      "id": "exam_modul-3_0096",
       "german": "Propaganda",
       "english": "propaganda",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "propagandas"
+      ]
     },
     {
-      "id": "exam_modul-3_0133",
+      "id": "exam_modul-3_0097",
       "german": "Prügelknabe",
       "english": "whipping boy",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "syndebuk"
+      ]
     },
     {
-      "id": "exam_modul-3_0134",
+      "id": "exam_modul-3_0098",
       "german": "Rassismus",
       "english": "racism",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "racisms"
+      ]
     },
     {
-      "id": "exam_modul-3_0135",
+      "id": "exam_modul-3_0099",
       "german": "Stolperstein",
       "english": "stumbling block",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "stumbling blocks"
+      ]
     },
     {
-      "id": "exam_modul-3_0136",
+      "id": "exam_modul-3_0100",
       "german": "Symbol",
       "english": "symbol",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "das",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "symbols"
+      ]
     },
     {
-      "id": "exam_modul-3_0137",
+      "id": "exam_modul-3_0101",
       "german": "Verfolgung",
       "english": "Persecution",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Persecutions"
+      ]
     },
     {
-      "id": "exam_modul-3_0138",
+      "id": "exam_modul-3_0102",
       "german": "Widerstandsbewegung",
       "english": "resistance movement",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "resistance movements"
+      ]
     },
     {
-      "id": "exam_modul-3_0139",
+      "id": "exam_modul-3_0103",
       "german": "Widerstandskämpfer",
       "english": "Resistance fighters",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "resistance fighter",
+        "freedom fighter"
+      ]
     },
     {
-      "id": "exam_modul-3_0140",
-      "german": "Wirschaftskrise",
+      "id": "exam_modul-3_0104",
+      "german": "Wirtschaftskrise",
       "english": "economic crisis",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "economic crisis",
+        "financial crisis"
+      ]
     },
     {
-      "id": "exam_modul-3_0141",
+      "id": "exam_modul-3_0105",
       "german": "Übermensch",
       "english": "Superman",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Supermans"
+      ]
     },
     {
-      "id": "exam_modul-3_0142",
+      "id": "exam_modul-3_0106",
       "german": "Vertriebene",
       "english": "Displaced people",
       "category": "exam",
-      "module": "modul-3",
+      "module": "modul-4",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Fordrevne"
+      ]
     },
     {
-      "id": "exam_modul-3_0143",
+      "id": "exam_modul-3_0107",
       "german": "Zensur",
       "english": "censorship",
       "category": "exam",
-      "module": "modul-3",
+      "module": "modul-5",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "censorships"
+      ]
     },
     {
-      "id": "exam_modul-3_0144",
-      "german": "bevernichten",
+      "id": "exam_modul-3_0108",
+      "german": "angreifen",
+      "english": "attack",
+      "category": "exam",
+      "module": "modul-3",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "attacks"
+      ]
+    },
+    {
+      "id": "exam_modul-3_0109",
+      "german": "ausrotten",
+      "english": "exterminate",
+      "category": "exam",
+      "module": "modul-3",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "exterminates"
+      ]
+    },
+    {
+      "id": "exam_modul-3_0110",
+      "german": "beschützen",
+      "english": "protect",
+      "category": "exam",
+      "module": "modul-3",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "protects"
+      ]
+    },
+    {
+      "id": "exam_modul-3_0111",
+      "german": "hinrichten",
+      "english": "execute",
+      "category": "exam",
+      "module": "modul-3",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "executes"
+      ]
+    },
+    {
+      "id": "exam_modul-3_0112",
+      "german": "kontrollieren",
+      "english": "control",
+      "category": "exam",
+      "module": "modul-3",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "controls"
+      ]
+    },
+    {
+      "id": "exam_modul-3_0113",
+      "german": "vernichten",
       "english": "destroy",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "destroies"
+      ]
     },
     {
-      "id": "exam_modul-3_0145",
-      "german": "udsletteverstecken",
-      "english": "udslettehide",
+      "id": "exam_modul-3_0114",
+      "german": "verstecken",
+      "english": "hide",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "hides"
+      ]
     },
     {
-      "id": "exam_modul-3_0146",
-      "german": "skjuleverteidigen",
-      "english": "skjuledefend",
+      "id": "exam_modul-3_0115",
+      "german": "autoritär",
+      "english": "authoritarian",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "authoritarians"
+      ]
     },
     {
-      "id": "exam_modul-3_0147",
-      "german": "Herrenvolk",
-      "english": "master race",
+      "id": "exam_modul-3_0116",
+      "german": "böse",
+      "english": "evil",
+      "category": "exam",
+      "module": "modul-3",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "evils"
+      ]
+    },
+    {
+      "id": "exam_modul-3_0117",
+      "german": "extrem",
+      "english": "extreme",
+      "category": "exam",
+      "module": "modul-3",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "extremes"
+      ]
+    },
+    {
+      "id": "exam_modul-3_0118",
+      "german": "gehorsam",
+      "english": "obedient",
+      "category": "exam",
+      "module": "modul-4",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "submissive",
+        "compliant",
+        "dutiful"
+      ]
+    },
+    {
+      "id": "exam_modul-3_0119",
+      "german": "grauenhaft",
+      "english": "horrible",
+      "category": "exam",
+      "module": "modul-3",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "horribles"
+      ]
+    },
+    {
+      "id": "exam_modul-3_0120",
+      "german": "Bewältigung der Vergangenheit",
+      "english": "Coping with the past",
+      "category": "exam",
+      "module": "modul-5",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "Coping with the pasts"
+      ]
+    },
+    {
+      "id": "exam_modul-3_0121",
+      "german": "Aufarbeitung der Vergangenheit",
+      "english": "Coming to terms with the past",
+      "category": "exam",
+      "module": "modul-5",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "Coming to terms with the pasts"
+      ]
+    },
+    {
+      "id": "exam_modul-3_0122",
+      "german": "Hakenkreuz",
+      "english": "swastika",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "das",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Nazi symbol",
+        "swastika emblem"
+      ]
     },
     {
-      "id": "exam_modul-3_0148",
-      "german": "Ostalgie",
-      "english": "nostalgia for East Germany",
+      "id": "exam_modul-3_0123",
+      "german": "Manipulation",
+      "english": "manipulation",
       "category": "exam",
       "module": "modul-3",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "manipulations"
+      ]
     },
     {
-      "id": "exam_modul-3_0149",
-      "german": "Holocaust",
-      "english": "holocaust",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0150",
-      "german": "Humanismus",
-      "english": "humanism",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0151",
-      "german": "Mitglied",
-      "english": "Member",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "das",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0152",
-      "german": "Sündenbock",
-      "english": "scapegoat",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0153",
-      "german": "Kontrolle",
-      "english": "control",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0154",
-      "german": "Die Weiße Rose",
-      "english": "The White Rose",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0155",
-      "german": "Der kalte Krieg",
-      "english": "The cold war",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0156",
-      "german": "Der schwarze Markt",
-      "english": "The black market",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0157",
-      "german": "Die Berliner Mauer",
-      "english": "The Berlin Wall",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0158",
-      "german": "Fall der Berliner Mauer",
-      "english": "Fall of the Berlin Wall",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0159",
-      "german": "Wir sind das Volk",
-      "english": "We are the people",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0160",
-      "german": "Die Mauer im Kopf",
-      "english": "The wall in the head",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0161",
-      "german": "Freie Deutsche Jugend",
-      "english": "Free German Youth",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-3_0162",
-      "german": "SED",
-      "english": "SED",
-      "category": "exam",
-      "module": "modul-3",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-4_0163",
-      "german": "sich etwas leisten können",
-      "english": "can afford something",
-      "category": "exam",
-      "module": "modul-4",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-4_0164",
-      "german": "vermissen",
-      "english": "miss",
-      "category": "exam",
-      "module": "modul-4",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-4_0165",
-      "german": "verzichten auf etwas",
-      "english": "give up something",
-      "category": "exam",
-      "module": "modul-4",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-4_0166",
-      "german": "zerbomben",
-      "english": "bomb",
-      "category": "exam",
-      "module": "modul-4",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-4_0167",
-      "german": "zurückkehren",
-      "english": "return",
-      "category": "exam",
-      "module": "modul-4",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-4_0168",
-      "german": "geistig",
-      "english": "spiritually",
-      "category": "exam",
-      "module": "modul-4",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-4_0169",
-      "german": "materiell",
-      "english": "material",
-      "category": "exam",
-      "module": "modul-4",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-4_0170",
-      "german": "kalte Krieg",
-      "english": "cold war",
-      "category": "exam",
-      "module": "modul-4",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-4_0171",
-      "german": "schwarze Markt",
-      "english": "black market",
-      "category": "exam",
-      "module": "modul-4",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-4_0172",
+      "id": "exam_modul-4_0124",
       "german": "Aufbauhilfe",
       "english": "Construction assistance",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        ""
+      ]
     },
     {
-      "id": "exam_modul-4_0173",
+      "id": "exam_modul-4_0125",
       "german": "Besatzungszone",
       "english": "occupation zone",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "occupation zones"
+      ]
     },
     {
-      "id": "exam_modul-4_0174",
+      "id": "exam_modul-4_0126",
       "german": "D-Mark",
       "english": "Deutsche Mark",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Tysklands valuta indtil 2002."
+      ]
     },
     {
-      "id": "exam_modul-4_0175",
+      "id": "exam_modul-4_0127",
       "german": "Entnazifizierung",
       "english": "denazification",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "denazifications"
+      ]
     },
     {
-      "id": "exam_modul-4_0176",
+      "id": "exam_modul-4_0128",
       "german": "Fernseher",
       "english": "TV",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "TVs"
+      ]
     },
     {
-      "id": "exam_modul-4_0177",
+      "id": "exam_modul-4_0129",
       "german": "Flüchtling",
       "english": "refugee",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "refugees"
+      ]
     },
     {
-      "id": "exam_modul-4_0178",
+      "id": "exam_modul-4_0130",
       "german": "Grundgesetz",
       "english": "Basic Law",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "das",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Basic Laws"
+      ]
     },
     {
-      "id": "exam_modul-4_0179",
+      "id": "exam_modul-4_0131",
       "german": "Heizmaterial",
       "english": "fuel",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "das",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "fuels"
+      ]
     },
     {
-      "id": "exam_modul-4_0180",
+      "id": "exam_modul-4_0132",
+      "german": "kalte Krieg",
+      "english": "cold war",
+      "category": "exam",
+      "module": "modul-4",
+      "difficulty": "intermediate",
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "cold wars"
+      ]
+    },
+    {
+      "id": "exam_modul-4_0133",
       "german": "Kapitulation",
       "english": "surrender",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "surrenders"
+      ]
     },
     {
-      "id": "exam_modul-4_0181",
+      "id": "exam_modul-4_0134",
       "german": "Konsum",
       "english": "consumption",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "forbrug"
+      ]
     },
     {
-      "id": "exam_modul-4_0182",
+      "id": "exam_modul-4_0135",
       "german": "Kriegsgefangenschaft",
       "english": "Prisoner of war",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Prisoner of wars"
+      ]
     },
     {
-      "id": "exam_modul-4_0183",
+      "id": "exam_modul-4_0136",
       "german": "Kriegsgericht",
       "english": "Court Martial",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "das",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Court Martials"
+      ]
     },
     {
-      "id": "exam_modul-4_0184",
+      "id": "exam_modul-4_0137",
       "german": "Kühlschrank",
       "english": "Refrigerator",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Refrigerators"
+      ]
     },
     {
-      "id": "exam_modul-4_0185",
+      "id": "exam_modul-4_0138",
       "german": "Materialismus",
       "english": "materialism",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "materialisms"
+      ]
     },
     {
-      "id": "exam_modul-4_0186",
+      "id": "exam_modul-4_0139",
       "german": "Mitläufer",
       "english": "followers",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "hanger-on",
+        "accomplice",
+        "collaborator"
+      ]
     },
     {
-      "id": "exam_modul-4_0187",
+      "id": "exam_modul-4_0140",
       "german": "Normalverbraucher",
       "english": "Average consumer",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Average consumers"
+      ]
     },
     {
-      "id": "exam_modul-4_0188",
+      "id": "exam_modul-4_0141",
+      "german": "schwarze Markt",
+      "english": "black market",
+      "category": "exam",
+      "module": "modul-4",
+      "difficulty": "intermediate",
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "The vendte hjem fra sit fangskab mange år efter krigens afslutning"
+      ]
+    },
+    {
+      "id": "exam_modul-4_0142",
       "german": "Trümmerfrau",
       "english": "Rubble woman",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "the hjalp med at genopbygge"
+      ]
     },
     {
-      "id": "exam_modul-4_0189",
+      "id": "exam_modul-4_0143",
       "german": "Währung",
       "english": "currency",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "currencies"
+      ]
     },
     {
-      "id": "exam_modul-4_0190",
+      "id": "exam_modul-4_0144",
       "german": "Waschmaschine",
       "english": "washing machine",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "washing machines"
+      ]
     },
     {
-      "id": "exam_modul-4_0191",
+      "id": "exam_modul-4_0145",
       "german": "Wirtschaftswunder",
       "english": "Economic miracle",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "das",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Economic miracles"
+      ]
     },
     {
-      "id": "exam_modul-4_0192",
-      "german": "nogetsterben",
-      "english": "noget die",
+      "id": "exam_modul-4_0146",
+      "german": "sich etwas leisten können",
+      "english": "can afford something",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "can afford somethings"
+      ]
     },
     {
-      "id": "exam_modul-4_0193",
-      "german": "nogetzerbomben",
-      "english": "nogetzer bombs",
+      "id": "exam_modul-4_0147",
+      "german": "vermissen",
+      "english": "miss",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "miss someone",
+        "be missing"
+      ]
     },
     {
-      "id": "exam_modul-4_0194",
-      "german": "ven",
-      "english": "ven",
+      "id": "exam_modul-4_0148",
+      "german": "verzichten auf etwas",
+      "english": "give up something",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "give up somethings"
+      ]
     },
     {
-      "id": "exam_modul-4_0195",
-      "german": "ndelig",
-      "english": "materiell materiel",
+      "id": "exam_modul-4_0149",
+      "german": "zerbomben",
+      "english": "bomb",
       "category": "exam",
       "module": "modul-4",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "bombs"
+      ]
     },
     {
-      "id": "exam_modul-5_0196",
-      "german": "flüchten",
-      "english": "escape",
+      "id": "exam_modul-4_0150",
+      "german": "zurückkehren",
+      "english": "return",
       "category": "exam",
-      "module": "modul-5",
+      "module": "modul-4",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "returns"
+      ]
     },
     {
-      "id": "exam_modul-5_0197",
-      "german": "sich anpassen",
-      "english": "adapt",
+      "id": "exam_modul-4_0151",
+      "german": "geistig",
+      "english": "spiritually",
       "category": "exam",
-      "module": "modul-5",
+      "module": "modul-4",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "spirituallies"
+      ]
     },
     {
-      "id": "exam_modul-5_0198",
-      "german": "unterdrücken",
-      "english": "suppress",
+      "id": "exam_modul-4_0152",
+      "german": "materiell",
+      "english": "material",
       "category": "exam",
-      "module": "modul-5",
+      "module": "modul-4",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "materials"
+      ]
     },
     {
-      "id": "exam_modul-5_0199",
-      "german": "wettbewerbsfähig",
-      "english": "competitive",
-      "category": "exam",
-      "module": "modul-5",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-5_0200",
-      "german": "zerrissen",
-      "english": "torn",
-      "category": "exam",
-      "module": "modul-5",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-5_0201",
-      "german": "Berliner Mauer",
-      "english": "Berlin wall",
-      "category": "exam",
-      "module": "modul-5",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-5_0202",
-      "german": "Mauer im Kopf",
-      "english": "Wall in the head",
-      "category": "exam",
-      "module": "modul-5",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-5_0203",
-      "german": "eiserne Vorhang",
-      "english": "iron curtain",
-      "category": "exam",
-      "module": "modul-5",
-      "difficulty": "intermediate",
-      "article": "der",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-5_0204",
-      "german": "Stasi",
-      "english": "Stasi",
-      "category": "exam",
-      "module": "modul-5",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-5_0205",
-      "german": "Aufbauhilfe",
-      "english": "Marshall Plan aid",
-      "category": "exam",
-      "module": "modul-5",
-      "difficulty": "intermediate",
-      "article": "die",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-5_0206",
+      "id": "exam_modul-5_0153",
       "german": "Parole",
       "english": "parole",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "paroles"
+      ]
     },
     {
-      "id": "exam_modul-5_0207",
+      "id": "exam_modul-5_0154",
       "german": "Demonstration",
       "english": "demonstration",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "demonstrations"
+      ]
     },
     {
-      "id": "exam_modul-5_0208",
+      "id": "exam_modul-5_0155",
+      "german": "eiserne Vorhang",
+      "english": "iron curtain",
+      "category": "exam",
+      "module": "modul-5",
+      "difficulty": "intermediate",
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "iron curtains"
+      ]
+    },
+    {
+      "id": "exam_modul-5_0156",
+      "german": "Fall der Berliner Mauer",
+      "english": "Fall of the Berlin Wall",
+      "category": "exam",
+      "module": "modul-5",
+      "difficulty": "intermediate",
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "Fall of the Berlin Walls"
+      ]
+    },
+    {
+      "id": "exam_modul-5_0157",
+      "german": "Freie Deutsche Jugend",
+      "english": "Free German Youth",
+      "category": "exam",
+      "module": "modul-5",
+      "difficulty": "intermediate",
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "“tyske ungdom” – communist ungdom organization in the GDR."
+      ]
+    },
+    {
+      "id": "exam_modul-5_0158",
       "german": "Hoffnung",
       "english": "Hope",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Hopes"
+      ]
     },
     {
-      "id": "exam_modul-5_0209",
+      "id": "exam_modul-5_0159",
       "german": "Jungpionier",
       "english": "Young pioneer",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Young pioneers"
+      ]
     },
     {
-      "id": "exam_modul-5_0210",
+      "id": "exam_modul-5_0160",
       "german": "Massenflucht",
       "english": "Mass exodus",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "mass flight",
+        "exodus"
+      ]
     },
     {
-      "id": "exam_modul-5_0211",
+      "id": "exam_modul-5_0161",
       "german": "Mauer",
       "english": "Wall",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Walls"
+      ]
     },
     {
-      "id": "exam_modul-5_0212",
+      "id": "exam_modul-5_0162",
       "german": "Ossi",
       "english": "Ossi",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Ossis"
+      ]
     },
     {
-      "id": "exam_modul-5_0213",
+      "id": "exam_modul-5_0163",
+      "german": "Ostalgie",
+      "english": "nostalgia for East Germany",
+      "category": "exam",
+      "module": "modul-5",
+      "difficulty": "intermediate",
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "Ostalgie",
+        "DDR nostalgia"
+      ]
+    },
+    {
+      "id": "exam_modul-5_0164",
       "german": "Planwirtschaft",
       "english": "Planned economy",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Planned economies"
+      ]
     },
     {
-      "id": "exam_modul-5_0214",
+      "id": "exam_modul-5_0165",
       "german": "Politischer Gegner",
       "english": "Political opponent",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Political opponents"
+      ]
     },
     {
-      "id": "exam_modul-5_0215",
+      "id": "exam_modul-5_0166",
       "german": "Pressefreiheit",
       "english": "Freedom of the press",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "freedom of press",
+        "press liberty"
+      ]
     },
     {
-      "id": "exam_modul-5_0216",
+      "id": "exam_modul-5_0167",
       "german": "Protest",
       "english": "protest",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "protests"
+      ]
     },
     {
-      "id": "exam_modul-5_0217",
+      "id": "exam_modul-5_0168",
       "german": "Reisefreiheit",
       "english": "Freedom to travel",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "beforehand man vil."
+      ]
     },
     {
-      "id": "exam_modul-5_0218",
+      "id": "exam_modul-5_0169",
+      "german": "SED - Sozialistische Einheitspartei Deutschland",
+      "english": "SED - Socialist Unity Party of Germany",
+      "category": "exam",
+      "module": "modul-5",
+      "difficulty": "intermediate",
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "SED - Socialist Unity Party of Germanies"
+      ]
+    },
+    {
+      "id": "exam_modul-5_0170",
       "german": "Spitzel",
       "english": "Spy",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Spies"
+      ]
     },
     {
-      "id": "exam_modul-5_0219",
+      "id": "exam_modul-5_0171",
+      "german": "Stasi",
+      "english": "Stasi",
+      "category": "exam",
+      "module": "modul-5",
+      "difficulty": "intermediate",
+      "article": "der",
+      "exampleSentence": "",
+      "synonyms": [
+        "secret police"
+      ]
+    },
+    {
+      "id": "exam_modul-5_0172",
       "german": "Überwachung",
       "english": "surveillance",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "surveillances"
+      ]
     },
     {
-      "id": "exam_modul-5_0220",
+      "id": "exam_modul-5_0173",
       "german": "Umweltverschmutzung",
       "english": "pollution",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "pollutions"
+      ]
     },
     {
-      "id": "exam_modul-5_0221",
+      "id": "exam_modul-5_0174",
       "german": "Wende",
       "english": "turn",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "“vendpointed”",
+        "“omvæltningen” – the fænomen",
+        "at mange ting forandrede sig",
+        "there de"
+      ]
     },
     {
-      "id": "exam_modul-5_0222",
+      "id": "exam_modul-5_0175",
       "german": "Vesttyskland",
       "english": "Vesttyskland",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Vesttysklands"
+      ]
     },
     {
-      "id": "exam_modul-5_0223",
+      "id": "exam_modul-5_0176",
       "german": "Wessi",
       "english": "Wessy",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Wessies"
+      ]
     },
     {
-      "id": "exam_modul-5_0224",
+      "id": "exam_modul-5_0177",
       "german": "Zerrissenheit",
       "english": "brokenness",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "division",
+        "fragmentation",
+        "inner conflict"
+      ]
     },
     {
-      "id": "exam_modul-5_0225",
-      "german": "anpassen",
-      "english": "adjust",
+      "id": "exam_modul-5_0178",
+      "german": "flüchten",
+      "english": "escape",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "escapes"
+      ]
     },
     {
-      "id": "exam_modul-5_0226",
-      "german": "sigunterdrücken",
-      "english": "suppress sign",
+      "id": "exam_modul-5_0179",
+      "german": "sich anpassen",
+      "english": "adapt",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "adapts"
+      ]
     },
     {
-      "id": "exam_modul-5_0227",
-      "german": "konkurrencedygtig",
-      "english": "zerrissensplittet",
+      "id": "exam_modul-5_0180",
+      "german": "unterdrücken",
+      "english": "suppress",
       "category": "exam",
       "module": "modul-5",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "oppress",
+        "repress",
+        "suppress"
+      ]
     },
     {
-      "id": "exam_modul-6_0228",
+      "id": "exam_modul-5_0181",
+      "german": "wettbewerbsfähig",
+      "english": "competitive",
+      "category": "exam",
+      "module": "modul-5",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "competitives"
+      ]
+    },
+    {
+      "id": "exam_modul-5_0182",
+      "german": "zerrissen",
+      "english": "torn",
+      "category": "exam",
+      "module": "modul-5",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "torns"
+      ]
+    },
+    {
+      "id": "exam_modul-5_0183",
+      "german": "Berliner Mauer",
+      "english": "Berlin wall",
+      "category": "exam",
+      "module": "modul-5",
+      "difficulty": "intermediate",
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "Berlin walls"
+      ]
+    },
+    {
+      "id": "exam_modul-5_0184",
+      "german": "Wir sind das Volk",
+      "english": "We are the people",
+      "category": "exam",
+      "module": "modul-5",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "We are the peoples"
+      ]
+    },
+    {
+      "id": "exam_modul-5_0185",
+      "german": "Mauer im Kopf",
+      "english": "Wall in the head",
+      "category": "exam",
+      "module": "modul-5",
+      "difficulty": "intermediate",
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "Wall in the heads"
+      ]
+    },
+    {
+      "id": "exam_modul-5_0186",
+      "german": "SED",
+      "english": "SED",
+      "category": "exam",
+      "module": "modul-5",
+      "difficulty": "intermediate",
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "Socialist Unity Party"
+      ]
+    },
+    {
+      "id": "exam_modul-6_0187",
       "german": "Enkelkind",
       "english": "grandchild",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "das",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Grandchildrenbror:"
+      ]
     },
     {
-      "id": "exam_modul-6_0229",
+      "id": "exam_modul-6_0188",
       "german": "Einzelkind",
       "english": "Only child",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "das",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Single child fare:"
+      ]
     },
     {
-      "id": "exam_modul-6_0230",
+      "id": "exam_modul-6_0189",
       "german": "Opa",
       "english": "Grandpa",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Grandpasfarmor/mormor:"
+      ]
     },
     {
-      "id": "exam_modul-6_0231",
+      "id": "exam_modul-6_0190",
       "german": "Oma",
       "english": "granny",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Omasforældre: Parents halfbror:"
+      ]
     },
     {
-      "id": "exam_modul-6_0232",
-      "german": "E",
-      "english": "E",
-      "category": "exam",
-      "module": "modul-6",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-6_0233",
+      "id": "exam_modul-6_0191",
       "german": "Halbbruder",
       "english": "half-brother",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Half-brothers Mor:"
+      ]
     },
     {
-      "id": "exam_modul-6_0234",
+      "id": "exam_modul-6_0192",
       "german": "Uropa",
       "english": "Great-grandpa",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Uropasoldemor:"
+      ]
     },
     {
-      "id": "exam_modul-6_0235",
+      "id": "exam_modul-6_0193",
       "german": "Uroma",
       "english": "Great grandma",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Great-grandfather:"
+      ]
     },
     {
-      "id": "exam_modul-6_0236",
+      "id": "exam_modul-6_0194",
       "german": "Onkel",
       "english": "Uncle",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Uncle son:"
+      ]
     },
     {
-      "id": "exam_modul-6_0237",
-      "german": "G",
-      "english": "G",
-      "category": "exam",
-      "module": "modul-6",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-6_0238",
+      "id": "exam_modul-6_0195",
       "german": "Tante",
       "english": "aunt",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Auntievilling:"
+      ]
     },
     {
-      "id": "exam_modul-6_0239",
+      "id": "exam_modul-6_0196",
       "german": "Zwilling",
       "english": "twin",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Gemini Even: Boyfriend (m/f)",
+        "Friends Afhængighed:"
+      ]
     },
     {
-      "id": "exam_modul-6_0240",
-      "german": "Freund/in",
-      "english": "Girlfriend",
-      "category": "exam",
-      "module": "modul-6",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-6_0241",
+      "id": "exam_modul-6_0197",
       "german": "Fürsorge",
       "english": "care",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "cares"
+      ]
     },
     {
-      "id": "exam_modul-6_0242",
+      "id": "exam_modul-6_0198",
       "german": "Hass",
       "english": "hate",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "hates"
+      ]
     },
     {
-      "id": "exam_modul-6_0243",
+      "id": "exam_modul-6_0199",
       "german": "Unabhängigkeit",
       "english": "independence",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "die",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "autonomy",
+        "self-reliance"
+      ]
     },
     {
-      "id": "exam_modul-6_0244",
+      "id": "exam_modul-6_0200",
       "german": "Verhältnis",
       "english": "Relationship",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "das",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "Relationships"
+      ]
     },
     {
-      "id": "exam_modul-6_0245",
+      "id": "exam_modul-6_0201",
       "german": "Wurzel",
       "english": "root",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "roots"
+      ]
     },
     {
-      "id": "exam_modul-6_0246",
-      "german": "lachentage sig",
-      "english": "laughing days sig",
+      "id": "exam_modul-6_0202",
+      "german": "Geschwister",
+      "english": "Siblings",
+      "category": "exam",
+      "module": "modul-6",
+      "difficulty": "intermediate",
+      "article": "die",
+      "exampleSentence": "",
+      "synonyms": [
+        "brothers and sisters"
+      ]
+    },
+    {
+      "id": "exam_modul-6_0203",
+      "german": "sich kümmern",
+      "english": "take care",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "look after"
+      ]
     },
     {
-      "id": "exam_modul-6_0247",
-      "german": "weinenringe",
-      "english": "crying rings",
+      "id": "exam_modul-6_0204",
+      "german": "unterstützen",
+      "english": "support",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "help",
+        "assist"
+      ]
     },
     {
-      "id": "exam_modul-6_0248",
+      "id": "exam_modul-6_0205",
+      "german": "abhängig",
+      "english": "dependent",
+      "category": "exam",
+      "module": "modul-6",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "dependents"
+      ]
+    },
+    {
+      "id": "exam_modul-6_0206",
+      "german": "bedingungslos",
+      "english": "unconditionally",
+      "category": "exam",
+      "module": "modul-6",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "unconditionallies"
+      ]
+    },
+    {
+      "id": "exam_modul-6_0207",
+      "german": "geborgen",
+      "english": "recovered",
+      "category": "exam",
+      "module": "modul-6",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "secure",
+        "protected"
+      ]
+    },
+    {
+      "id": "exam_modul-6_0208",
       "german": "sich gut aufgehoben fühlen",
-      "english": "to feel safe and cared for",
+      "english": "feel safe and cared for",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "feel secure",
+        "feel looked after"
+      ]
     },
     {
-      "id": "exam_modul-6_0249",
-      "german": "sich gut aufgehoben",
-      "english": "in good hands",
-      "category": "exam",
-      "module": "modul-6",
-      "difficulty": "intermediate",
-      "article": "",
-      "exampleSentence": ""
-    },
-    {
-      "id": "exam_modul-6_0250",
+      "id": "exam_modul-6_0209",
       "german": "unabhängig",
       "english": "independent",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "independents"
+      ]
     },
     {
-      "id": "exam_modul-6_0251",
-      "german": "alle drei/vier Tageen gang om",
-      "english": "every three/four days",
+      "id": "exam_modul-6_0210",
+      "german": "alle drei Tage",
+      "english": "every three days",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "every third day",
+        "every three days"
+      ]
     },
     {
-      "id": "exam_modul-6_0252",
+      "id": "exam_modul-6_0211",
       "german": "einmal die Woche",
       "english": "once a week",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "weekly",
+        "every week"
+      ]
     },
     {
-      "id": "exam_modul-6_0253",
-      "german": "fast jeden T",
-      "english": "almost every T",
+      "id": "exam_modul-6_0212",
+      "german": "fast jeden Tag",
+      "english": "almost every day",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "almost every daies"
+      ]
     },
     {
-      "id": "exam_modul-6_0254",
-      "german": "häufigjeg ringer til min",
-      "english": "frequently every wrestler until min",
+      "id": "exam_modul-6_0213",
+      "german": "häufig",
+      "english": "frequently",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "frequently"
+      ]
     },
     {
-      "id": "exam_modul-6_0255",
-      "german": "ich rufe meine Mutter anto gange om",
-      "english": "I call my mother anto gange om",
+      "id": "exam_modul-6_0214",
+      "german": "ich rufe meine Mutter an",
+      "english": "I call my mother",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "I phone my mother"
+      ]
     },
     {
-      "id": "exam_modul-6_0256",
-      "german": "zweimal wöchentlichalmindelige",
-      "english": "twice a week at least twice a week",
+      "id": "exam_modul-6_0215",
+      "german": "zweimal wöchentlich",
+      "english": "twice a week",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "twice a weeks"
+      ]
     },
     {
-      "id": "exam_modul-6_0257",
-      "german": "allgemeine Dingeom",
-      "english": "general thingsom",
+      "id": "exam_modul-6_0216",
+      "german": "allgemeine Dinge",
+      "english": "general things",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "general things"
+      ]
     },
     {
-      "id": "exam_modul-6_0258",
-      "german": "Klatsch und Tratschom stort og",
-      "english": "Gossip and chatter disturb the above",
+      "id": "exam_modul-6_0217",
+      "german": "Klatsch und Tratsch",
+      "english": "Gossip and gossip",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "small talk"
+      ]
     },
     {
-      "id": "exam_modul-6_0259",
-      "german": "über Gott und die Weltom mit",
+      "id": "exam_modul-6_0218",
+      "german": "über Gott und die Welt",
       "english": "about God and the world",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "about this and that"
+      ]
     },
     {
-      "id": "exam_modul-6_0260",
-      "german": "über meine Arbeithvordan de har",
-      "english": "about my workhvordan de har",
+      "id": "exam_modul-6_0219",
+      "german": "über meine Arbeit",
+      "english": "about my work",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "about my works"
+      ]
     },
     {
-      "id": "exam_modul-6_0261",
+      "id": "exam_modul-6_0220",
       "german": "wie es ihnen geht",
       "english": "how they are doing",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "how they are",
+        "how things are for them"
+      ]
     },
     {
-      "id": "exam_modul-6_0262",
-      "german": "abhängig/unabhängig seinblande",
-      "english": "to be dependent/independent",
+      "id": "exam_modul-6_0221",
+      "german": "abhängig sein",
+      "english": "be dependent",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "be dependents"
+      ]
     },
     {
-      "id": "exam_modul-6_0263",
+      "id": "exam_modul-6_0222",
+      "german": "unabhängig sein",
+      "english": "be independent",
+      "category": "exam",
+      "module": "modul-6",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "be independents"
+      ]
+    },
+    {
+      "id": "exam_modul-6_0223",
+      "german": "einmischen",
+      "english": "interfere",
+      "category": "exam",
+      "module": "modul-6",
+      "difficulty": "intermediate",
+      "article": "",
+      "exampleSentence": "",
+      "synonyms": [
+        "meddle"
+      ]
+    },
+    {
+      "id": "exam_modul-6_0224",
       "german": "Konflikt",
-      "english": "t",
+      "english": "conflict",
       "category": "exam",
       "module": "modul-6",
       "difficulty": "intermediate",
       "article": "der",
-      "exampleSentence": ""
+      "exampleSentence": "",
+      "synonyms": [
+        "dispute"
+      ]
     }
   ],
   "modules": [
@@ -14019,18 +14440,16 @@
         "exam_modul-1_0005",
         "exam_modul-1_0006",
         "exam_modul-1_0007",
-        "w668",
         "exam_modul-1_0008",
         "exam_modul-1_0009",
         "exam_modul-1_0010",
+        "w159",
         "exam_modul-1_0011",
         "exam_modul-1_0012",
         "exam_modul-1_0013",
-        "w477",
         "exam_modul-1_0014",
-        "w747",
-        "w745",
         "exam_modul-1_0015",
+        "w223",
         "exam_modul-1_0016",
         "exam_modul-1_0017",
         "exam_modul-1_0018",
@@ -14039,6 +14458,7 @@
         "exam_modul-1_0021",
         "exam_modul-1_0022",
         "exam_modul-1_0023",
+        "w775",
         "exam_modul-1_0024",
         "exam_modul-1_0025",
         "exam_modul-1_0026",
@@ -14050,6 +14470,7 @@
         "exam_modul-1_0032",
         "exam_modul-1_0033",
         "exam_modul-1_0034",
+        "w422",
         "exam_modul-1_0035",
         "exam_modul-1_0036",
         "exam_modul-1_0037",
@@ -14060,22 +14481,23 @@
         "exam_modul-1_0042",
         "exam_modul-1_0043",
         "exam_modul-1_0044",
-        "w159",
+        "w668",
         "exam_modul-1_0045",
         "exam_modul-1_0046",
         "exam_modul-1_0047",
         "exam_modul-1_0048",
         "exam_modul-1_0049",
-        "w223",
         "exam_modul-1_0050",
+        "w477",
         "exam_modul-1_0051",
+        "w747",
+        "w745",
         "exam_modul-1_0052",
         "exam_modul-1_0053",
         "exam_modul-1_0054",
         "exam_modul-1_0055",
         "exam_modul-1_0056",
         "exam_modul-1_0057",
-        "w775",
         "exam_modul-1_0058",
         "exam_modul-1_0059",
         "exam_modul-1_0060",
@@ -14087,29 +14509,56 @@
         "exam_modul-1_0066",
         "exam_modul-1_0067",
         "exam_modul-1_0068",
-        "w422",
         "exam_modul-1_0069",
-        "exam_modul-1_0070",
-        "exam_modul-1_0071",
-        "exam_modul-1_0072",
-        "exam_modul-1_0073",
-        "w005",
-        "exam_modul-1_0074",
-        "exam_modul-1_0075",
-        "exam_modul-1_0076"
+        "exam_modul-1_0070"
       ]
     },
     {
       "id": "modul-2",
       "name": "Modul 2 – Das Leben in der Großstadt",
       "wordIds": [
+        "w542",
+        "w543",
+        "w545",
+        "exam_modul-2_0071",
+        "w547",
+        "w870",
+        "w549",
+        "w550",
+        "w551",
+        "w552",
+        "w553",
+        "w554",
+        "w555",
+        "w556",
+        "w557",
+        "w558",
+        "w559",
+        "w560",
+        "w561",
+        "w564",
+        "w871",
+        "w265",
+        "exam_modul-2_0072",
+        "w567",
+        "w576",
+        "w569",
+        "w570",
+        "w873",
+        "w572",
+        "w573",
+        "w574",
+        "w575",
+        "w577",
+        "w578",
+        "w579",
         "w580",
         "w168",
         "w581",
         "w582",
         "w583",
         "w584",
-        "exam_modul-2_0077",
+        "exam_modul-2_0073",
         "w586",
         "w587",
         "w588",
@@ -14133,335 +14582,223 @@
         "w603",
         "w604",
         "w605",
-        "w606",
-        "w542",
-        "w543",
-        "exam_modul-2_0078",
-        "w545",
-        "exam_modul-2_0079",
-        "w547",
-        "w870",
-        "w549",
-        "w550",
-        "w551",
-        "w552",
-        "w553",
-        "w554",
-        "w555",
-        "w556",
-        "w557",
-        "w558",
-        "w559",
-        "w560",
-        "w561",
-        "w564",
-        "w871",
-        "w265",
-        "exam_modul-2_0080",
-        "w567",
-        "w576",
-        "w569",
-        "w570",
-        "w873",
-        "w572",
-        "w573",
-        "w574",
-        "w575",
-        "w577",
-        "w578",
-        "w579",
-        "exam_modul-2_0081",
-        "exam_modul-2_0082",
-        "exam_modul-2_0083",
-        "exam_modul-2_0084",
-        "exam_modul-2_0085",
-        "exam_modul-2_0086",
-        "exam_modul-2_0087",
-        "exam_modul-2_0088",
-        "exam_modul-2_0089",
-        "exam_modul-2_0090",
-        "exam_modul-2_0091",
-        "exam_modul-2_0092"
+        "w606"
       ]
     },
     {
       "id": "modul-3",
       "name": "Modul 3 – Kindheit und Jugend in der NS-Zeit",
       "wordIds": [
+        "exam_modul-3_0074",
+        "exam_modul-3_0075",
+        "exam_modul-3_0076",
+        "exam_modul-3_0077",
+        "exam_modul-3_0078",
+        "exam_modul-3_0079",
+        "exam_modul-3_0080",
+        "exam_modul-3_0081",
+        "exam_modul-3_0082",
+        "exam_modul-3_0083",
+        "exam_modul-3_0084",
+        "exam_modul-3_0085",
+        "exam_modul-3_0086",
+        "exam_modul-3_0087",
+        "exam_modul-3_0088",
+        "exam_modul-3_0089",
+        "exam_modul-3_0090",
+        "exam_modul-3_0091",
+        "exam_modul-3_0092",
         "exam_modul-3_0093",
         "exam_modul-3_0094",
+        "exam_modul-1_0020",
         "exam_modul-3_0095",
-        "w338",
         "exam_modul-3_0096",
         "exam_modul-3_0097",
-        "w668",
-        "exam_modul-1_0009",
         "exam_modul-3_0098",
         "exam_modul-3_0099",
-        "w477",
         "exam_modul-3_0100",
         "exam_modul-3_0101",
-        "w747",
         "exam_modul-3_0102",
-        "w745",
         "exam_modul-3_0103",
-        "exam_modul-1_0016",
         "exam_modul-3_0104",
-        "exam_modul-1_0018",
         "exam_modul-3_0105",
         "exam_modul-3_0106",
         "exam_modul-3_0107",
+        "w294",
         "exam_modul-3_0108",
         "exam_modul-3_0109",
         "exam_modul-3_0110",
+        "w338",
         "exam_modul-3_0111",
         "exam_modul-3_0112",
+        "w668",
+        "exam_modul-1_0045",
         "exam_modul-3_0113",
         "exam_modul-3_0114",
+        "w477",
         "exam_modul-3_0115",
         "exam_modul-3_0116",
+        "w747",
         "exam_modul-3_0117",
+        "w745",
         "exam_modul-3_0118",
+        "exam_modul-1_0052",
         "exam_modul-3_0119",
+        "exam_modul-1_0054",
         "exam_modul-3_0120",
         "exam_modul-3_0121",
         "exam_modul-3_0122",
-        "exam_modul-3_0123",
-        "exam_modul-3_0124",
-        "exam_modul-3_0125",
-        "exam_modul-3_0126",
-        "exam_modul-3_0127",
-        "exam_modul-3_0128",
-        "exam_modul-3_0129",
-        "exam_modul-1_0055",
-        "exam_modul-3_0130",
-        "exam_modul-3_0131",
-        "exam_modul-3_0132",
-        "exam_modul-3_0133",
-        "exam_modul-3_0134",
-        "exam_modul-3_0135",
-        "exam_modul-3_0136",
-        "exam_modul-3_0137",
-        "exam_modul-3_0138",
-        "exam_modul-3_0139",
-        "exam_modul-3_0140",
-        "exam_modul-3_0141",
-        "exam_modul-3_0142",
-        "w294",
-        "exam_modul-3_0143",
-        "exam_modul-3_0144",
-        "exam_modul-3_0145",
-        "w017",
-        "exam_modul-3_0146",
-        "exam_modul-3_0147",
-        "exam_modul-1_0038",
-        "exam_modul-1_0045",
-        "exam_modul-3_0148",
-        "exam_modul-3_0149",
-        "exam_modul-3_0150",
-        "exam_modul-3_0151",
-        "exam_modul-3_0152",
-        "exam_modul-3_0153",
-        "exam_modul-3_0154",
-        "exam_modul-3_0155",
-        "exam_modul-3_0156",
-        "exam_modul-3_0157",
-        "exam_modul-3_0158",
-        "exam_modul-3_0159",
-        "exam_modul-3_0160",
-        "exam_modul-3_0161"
+        "exam_modul-3_0123"
       ]
     },
     {
       "id": "modul-4",
       "name": "Modul 4 – Nachkriegszeit",
       "wordIds": [
-        "exam_modul-4_0162",
+        "exam_modul-4_0124",
+        "exam_modul-4_0125",
+        "exam_modul-4_0126",
+        "exam_modul-4_0127",
+        "exam_modul-4_0128",
+        "exam_modul-4_0129",
+        "exam_modul-4_0130",
+        "exam_modul-4_0131",
+        "exam_modul-4_0132",
+        "exam_modul-4_0133",
+        "exam_modul-4_0134",
+        "exam_modul-4_0135",
+        "exam_modul-4_0136",
+        "exam_modul-4_0137",
+        "exam_modul-4_0138",
+        "exam_modul-4_0139",
+        "exam_modul-4_0140",
+        "exam_modul-4_0141",
+        "w893",
+        "exam_modul-4_0142",
+        "exam_modul-3_0106",
+        "exam_modul-4_0143",
+        "exam_modul-4_0144",
+        "exam_modul-4_0145",
+        "exam_modul-4_0146",
         "w362",
         "w668",
         "w300",
-        "exam_modul-4_0163",
-        "exam_modul-4_0164",
-        "exam_modul-4_0165",
-        "exam_modul-4_0166",
-        "exam_modul-3_0104",
-        "exam_modul-4_0167",
-        "exam_modul-4_0168",
-        "exam_modul-3_0106",
-        "exam_modul-3_0107",
-        "exam_modul-4_0169",
-        "exam_modul-4_0170",
-        "exam_modul-4_0171",
-        "exam_modul-4_0172",
-        "exam_modul-4_0173",
-        "exam_modul-4_0174",
-        "exam_modul-4_0175",
-        "exam_modul-4_0176",
-        "exam_modul-4_0177",
-        "exam_modul-4_0178",
-        "exam_modul-4_0179",
-        "exam_modul-4_0180",
-        "exam_modul-4_0181",
-        "exam_modul-4_0182",
-        "exam_modul-4_0183",
-        "exam_modul-4_0184",
-        "exam_modul-4_0185",
-        "exam_modul-4_0186",
-        "w893",
-        "exam_modul-4_0187",
-        "exam_modul-3_0142",
-        "exam_modul-4_0188",
-        "exam_modul-4_0189",
-        "exam_modul-4_0190",
-        "w023",
-        "exam_modul-4_0191",
-        "exam_modul-4_0192",
-        "exam_modul-4_0193",
-        "exam_modul-4_0194",
-        "w017",
-        "exam_modul-3_0109",
-        "exam_modul-3_0147",
-        "exam_modul-3_0127",
-        "exam_modul-3_0148",
-        "exam_modul-1_0038",
-        "exam_modul-1_0045",
-        "exam_modul-3_0149",
-        "exam_modul-3_0150",
-        "exam_modul-3_0110",
-        "exam_modul-3_0151",
-        "exam_modul-3_0135",
-        "exam_modul-3_0152",
-        "exam_modul-3_0153",
-        "exam_modul-3_0154",
-        "exam_modul-3_0155",
-        "exam_modul-3_0156",
-        "exam_modul-3_0157",
-        "exam_modul-3_0158",
-        "exam_modul-3_0159",
-        "exam_modul-3_0160",
-        "exam_modul-3_0161",
-        "exam_modul-3_0162"
+        "exam_modul-4_0147",
+        "exam_modul-4_0148",
+        "exam_modul-4_0149",
+        "exam_modul-4_0150",
+        "exam_modul-3_0118",
+        "exam_modul-4_0151",
+        "exam_modul-4_0152",
+        "exam_modul-3_0120",
+        "exam_modul-3_0121"
       ]
     },
     {
       "id": "modul-5",
       "name": "Modul 5 – Reisefreiheit",
       "wordIds": [
-        "exam_modul-5_0195",
-        "exam_modul-5_0196",
-        "exam_modul-5_0197",
-        "exam_modul-5_0198",
-        "exam_modul-5_0199",
-        "exam_modul-5_0200",
-        "exam_modul-3_0158",
-        "exam_modul-3_0159",
-        "exam_modul-5_0201",
-        "exam_modul-3_0106",
-        "exam_modul-3_0107",
-        "exam_modul-5_0202",
-        "exam_modul-3_0161",
-        "exam_modul-3_0162",
-        "exam_modul-5_0203",
-        "exam_modul-5_0204",
-        "exam_modul-5_0205",
-        "exam_modul-5_0206",
+        "exam_modul-5_0153",
+        "exam_modul-5_0154",
+        "exam_modul-5_0155",
         "w258",
+        "exam_modul-5_0156",
+        "exam_modul-5_0157",
         "w551",
-        "exam_modul-5_0207",
-        "exam_modul-5_0208",
-        "exam_modul-5_0209",
-        "exam_modul-5_0210",
+        "exam_modul-5_0158",
+        "exam_modul-5_0159",
+        "exam_modul-5_0160",
+        "exam_modul-5_0161",
         "w265",
-        "exam_modul-5_0211",
-        "exam_modul-3_0148",
-        "exam_modul-5_0212",
-        "exam_modul-5_0213",
-        "exam_modul-5_0214",
-        "exam_modul-5_0215",
-        "exam_modul-5_0216",
-        "exam_modul-5_0217",
+        "exam_modul-5_0162",
+        "exam_modul-5_0163",
+        "exam_modul-5_0164",
+        "exam_modul-5_0165",
+        "exam_modul-5_0166",
+        "exam_modul-5_0167",
+        "exam_modul-5_0168",
+        "exam_modul-5_0169",
+        "exam_modul-5_0170",
+        "exam_modul-5_0171",
         "w785",
-        "exam_modul-5_0218",
-        "exam_modul-5_0219",
-        "exam_modul-5_0220",
-        "exam_modul-5_0221",
-        "exam_modul-5_0222",
-        "exam_modul-3_0143",
-        "exam_modul-5_0223",
-        "exam_modul-5_0224",
-        "exam_modul-5_0225",
-        "exam_modul-5_0226",
-        "w017",
-        "exam_modul-3_0109",
-        "exam_modul-3_0147",
-        "exam_modul-3_0127",
-        "exam_modul-1_0038",
-        "exam_modul-1_0045",
-        "exam_modul-3_0149",
-        "exam_modul-3_0150",
-        "exam_modul-3_0110",
-        "exam_modul-3_0151",
-        "exam_modul-3_0135",
-        "exam_modul-3_0152",
-        "exam_modul-3_0153",
-        "exam_modul-3_0154",
-        "exam_modul-3_0155",
-        "exam_modul-3_0156",
-        "exam_modul-3_0157",
-        "exam_modul-3_0160"
+        "exam_modul-5_0172",
+        "exam_modul-5_0173",
+        "exam_modul-5_0174",
+        "exam_modul-5_0175",
+        "exam_modul-5_0176",
+        "exam_modul-3_0107",
+        "exam_modul-5_0177",
+        "exam_modul-5_0178",
+        "exam_modul-5_0179",
+        "exam_modul-5_0180",
+        "exam_modul-5_0181",
+        "exam_modul-5_0182",
+        "exam_modul-5_0183",
+        "exam_modul-5_0184",
+        "exam_modul-5_0185",
+        "exam_modul-3_0120",
+        "exam_modul-3_0121",
+        "exam_modul-5_0186"
       ]
     },
     {
       "id": "modul-6",
       "name": "Modul 6 – Familienleben",
       "wordIds": [
-        "exam_modul-6_0227",
+        "exam_modul-6_0187",
         "w610",
         "w609",
-        "exam_modul-6_0228",
+        "exam_modul-6_0188",
         "w211",
-        "exam_modul-6_0229",
-        "exam_modul-6_0230",
-        "exam_modul-6_0231",
-        "exam_modul-6_0232",
+        "exam_modul-6_0189",
+        "exam_modul-6_0190",
+        "exam_modul-6_0191",
         "w220",
-        "exam_modul-6_0233",
-        "exam_modul-6_0234",
-        "exam_modul-6_0235",
+        "exam_modul-6_0192",
+        "exam_modul-6_0193",
+        "exam_modul-6_0194",
         "w364",
-        "exam_modul-6_0236",
         "w611",
-        "exam_modul-6_0237",
-        "exam_modul-6_0238",
-        "exam_modul-6_0239",
+        "exam_modul-6_0195",
+        "exam_modul-6_0196",
         "w859",
         "w394",
-        "exam_modul-6_0240",
-        "exam_modul-6_0241",
+        "exam_modul-6_0197",
+        "exam_modul-6_0198",
         "w641",
-        "exam_modul-6_0242",
-        "exam_modul-6_0243",
-        "exam_modul-6_0244",
-        "exam_modul-6_0245",
-        "w015",
-        "exam_modul-6_0246",
+        "exam_modul-6_0199",
+        "exam_modul-6_0200",
+        "exam_modul-6_0201",
+        "w311",
+        "exam_modul-6_0202",
+        "w295",
+        "w338",
+        "w660",
+        "exam_modul-6_0203",
+        "exam_modul-6_0204",
+        "w661",
         "w794",
-        "exam_modul-6_0247",
-        "exam_modul-6_0248",
-        "exam_modul-6_0249",
-        "exam_modul-6_0250",
-        "exam_modul-6_0251",
-        "exam_modul-6_0252",
-        "exam_modul-6_0253",
-        "exam_modul-6_0254",
-        "exam_modul-6_0255",
-        "exam_modul-6_0256",
-        "exam_modul-6_0257",
-        "exam_modul-6_0258",
-        "exam_modul-6_0259",
-        "exam_modul-6_0260",
-        "exam_modul-6_0261",
-        "exam_modul-6_0262"
+        "exam_modul-6_0205",
+        "exam_modul-6_0206",
+        "exam_modul-6_0207",
+        "exam_modul-6_0208",
+        "exam_modul-6_0209",
+        "exam_modul-6_0210",
+        "exam_modul-6_0211",
+        "exam_modul-6_0212",
+        "exam_modul-6_0213",
+        "exam_modul-6_0214",
+        "exam_modul-6_0215",
+        "exam_modul-6_0216",
+        "w801",
+        "exam_modul-6_0217",
+        "exam_modul-6_0218",
+        "exam_modul-6_0219",
+        "exam_modul-6_0220",
+        "exam_modul-6_0221",
+        "exam_modul-6_0222",
+        "exam_modul-6_0223",
+        "exam_modul-6_0224"
       ]
     }
   ]

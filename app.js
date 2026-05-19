@@ -52,12 +52,12 @@ let settings = {
 
 // Initialize App
 async function init() {
+    loadSettings();
     await loadVocabulary();
     loadCustomWords();
     applyWordOverrides();
     applyDeletedWords();
     loadProgress();
-    loadSettings();
     
     // Load voices before setting up recognition
     if ('speechSynthesis' in window) {
@@ -89,10 +89,20 @@ async function init() {
     document.getElementById('bulkAddWordsBtn').addEventListener('click', bulkAddWords);
     
     // Settings listeners
-    document.getElementById('masteryThreshold').addEventListener('change', (e) => {
-        settings.masteryThreshold = parseInt(e.target.value);
-        saveSettings();
-    });
+    function bindNumberSetting(id, key) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var persist = function() {
+            var n = parseInt(el.value, 10);
+            if (!isNaN(n)) {
+                settings[key] = n;
+                saveSettings();
+            }
+        };
+        el.addEventListener('change', persist);
+        el.addEventListener('input', persist);
+    }
+    bindNumberSetting('masteryThreshold', 'masteryThreshold');
     
     document.getElementById('ttsSpeed').addEventListener('input', (e) => {
         settings.ttsSpeed = parseFloat(e.target.value);
@@ -100,10 +110,7 @@ async function init() {
         saveSettings();
     });
     
-    document.getElementById('wordsPerSession').addEventListener('change', (e) => {
-        settings.wordsPerSession = parseInt(e.target.value);
-        saveSettings();
-    });
+    bindNumberSetting('wordsPerSession', 'wordsPerSession');
     
     document.getElementById('openaiApiKey').addEventListener('change', (e) => {
         settings.openaiApiKey = e.target.value.trim();
@@ -2367,6 +2374,7 @@ async function promptInstallApp() {
 function mergeModulesFromConfig(configModules) {
     if (!settings.examModules) settings.examModules = [];
     var existingIds = new Set(settings.examModules.map(function(m) { return m.id; }));
+    var added = false;
     configModules.forEach(function(m) {
         if (!m.id || existingIds.has(m.id)) return;
         settings.examModules.push({
@@ -2375,8 +2383,9 @@ function mergeModulesFromConfig(configModules) {
             wordIds: Array.isArray(m.wordIds) ? m.wordIds.slice() : []
         });
         existingIds.add(m.id);
+        added = true;
     });
-    saveSettings();
+    if (added) saveSettings();
 }
 
 function wordBelongsToModule(word, moduleId) {
